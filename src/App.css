@@ -1,7 +1,7 @@
-
 .App {
+  background-color: #f1f7fd;
   margin: 0 auto;
-  padding: 10px;
+  padding: 0px;
   display: flex;
   justify-content: space-evenly;
 }
