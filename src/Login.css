@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Roboto:wght@100;300;400;500&display=swap");
+
+.Login {
+  display: flex;
+}
+
+.App {
+  margin: 0 auto;
+  padding: 0px;
+  justify-content: space-evenly;
+}
+
+.App .Logo {
+  width: 350px;
+  height: 100px;
+  top: 222px;
+  left: 122px;
+}
+
+.App p {
+  top: 222px;
+  left: 122px;
+  font-family: Aoboshi One;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  padding-left: 30px;
+}
+
+.App .Hero {
+  width: 800px;
+  height: 540px;
+  top: 366px;
+  left: 120px;
+  opacity: 0.800000011920929px;
+}
+
+.Box {
+  background-color: #ffffff;
+  width: 500px;
+  height: 650px;
+  border-radius: 15px;
+  padding: 20px;
+  line-height: 1px;
+}
+
+/* .Box1{
+  width: 700px;
+} */
+
+.Box1 p {
+  display: flex;
+  width: 100%;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0em;
+}
+
+.email {
+  width: 400px;
+}
+
+.password {
+  width: 400px;
+}
+
+.login-btn {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  line-height: 20px;
+  background: #ec3d50;
+  color: white;
+  justify-content: center;
+  border-radius: 10px;
+  width: 419px;
+  height: 50px;
+}
+
+.login-btn .p {
+  display: flex;
+  align-items: center;
+}
+
+.Login-desp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox {
+  display: block;
+}
+
+.alignment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  text-align: "right";
+}
+
+.copyright {
+  margin-bottom: 0;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0.085em;
+  color: #18172580;
+}
