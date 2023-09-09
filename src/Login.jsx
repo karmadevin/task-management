@@ -87,12 +87,3 @@ const Login = () => {
 
 export default Login;
 
-// float ------>>>>
-
-<body background color>
-  <box>
-    <email></email>
-    <copyright></copyright>
-  </box>
-  ext
-</body>;
