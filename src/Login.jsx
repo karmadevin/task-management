@@ -12,69 +12,109 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const Login = () => {
   return (
     <div className="Login">
-      <Box
-        sx={{
-          padding: "40px",
-          width: "100%",
-          height: "100%",
-          bgcolor: "#F1F7Fd",
-        }}
-        className="Login"
-      >
-        <div className="App">
-          <img src={Logo} alt="Logo" className="Logo" />
-          <p>Welcome To The KarmaDev.in !</p>
-          <img src={HeroImage} alt="HeroImage" className="Hero" />
-        </div>
+      <div>
+        <Box
+          sx={{
+            padding: "40px",
+          }}
+        >
+          <div className="LogoImage">
+            <img src={Logo} alt="Logo" className="Logo" />
+            <p>Welcome To The KarmaDev.in !</p>
+            <img src={HeroImage} alt="HeroImage" className="Hero" />
+          </div>
+        </Box>
+      </div>
 
-        <div className="Box">
-          <Box className="Box1">
-            <p>Sign in to your account</p>
-            <div style={{ textAlign: "center", width: "420px" }}>
-              <h5 style={{ textAlign: "left", width: "60px" }}>Email</h5>
-              <TextField
-                id="outlined-basic"
-                label="Admin@gmail.com"
-                variant="outlined"
-                className="email"
-              />
-            </div>
+      <div className="Container">
+        <Box
+          sx={{
+            padding: "50px",
+          }}
+        >
+          <div className="Box">
+              <Box className="Field">
+                <p>Sign in to your account</p>
+                <div style={{ textAlign: "center", width: "420px" }}>
+                  <h5
+                    style={{
+                      textAlign: "left",
+                      width: "60px",
+                      marginTop: "20px",
+                      marginLeft: "5px",
+                    }}
+                  >
+                    Email
+                  </h5>
+                  <TextField
+                    id="outlined-basic"
+                    label="Admin@gmail.com"
+                    variant="outlined"
+                  />
+                </div>
 
-            <div style={{ textAlign: "center", width: "420px" }}>
-              <h5 style={{ textAlign: "left", width: "60px" }}>Password</h5>
-              <TextField
-                id="outlined-basic"
-                label="Enter Your Password"
-                variant="outlined"
-                className="password"
-              />
-            </div>
+                <div style={{ textAlign: "center", width: "420px" }}>
+                  <h5
+                    style={{
+                      textAlign: "left",
+                      width: "60px",
+                      marginLeft: "5px"
+                    }}
+                  >
+                    Password
+                  </h5>
+                  <TextField
+                    id="outlined-basic"
+                    label="Enter Your Password"
+                    variant="outlined"
+                  />
+                  <div className="alignment">
+                    <h6>
+                      Remember me <Checkbox {...label} />
+                    </h6>
+                    <h6>Forgot Password?</h6>
+                  </div>
+                </div>
 
-            <div style={{ textAlign: "right" }} className="alignment">
-              <h6>
-                Remember me <Checkbox {...label} />
-              </h6>
-              <h6>Forgot Password?</h6>
-            </div>
-
-            <div>
-              <div className="login-btn">
-                <Button variant="container">Login as Admin</Button>
-              </div>
-              <div className="login-btn">
-                <Button variant="container">Login as Team Manager</Button>
-              </div>
-              <div className="login-btn">
-                <Button variant="container">Login in as Developer</Button>
-              </div>
-              <div className="login-btn">
-                <Button variant="container">Login as Client</Button>
-              </div>
-            </div>
-          </Box>
+                <div className="Login-Btns">
+                  <div className="login-btn">
+                    <Button
+                      variant="contained"
+                      style={{ background: "#ec3d50", width: "419px" }}
+                    >
+                      Login as Admin
+                    </Button>
+                  </div>
+                  <div className="login-btn">
+                    <Button
+                      variant="contained"
+                      style={{ background: "#ec3d50", width: "419px" }}
+                    >
+                      Login as Team Manager
+                    </Button>
+                  </div>
+                  <div className="login-btn">
+                    <Button
+                      variant="contained"
+                      style={{ background: "#ec3d50", width: "419px" }}
+                    >
+                      Login in as Developer
+                    </Button>
+                  </div>
+                  <div className="login-btn">
+                    <Button
+                      variant="contained"
+                      style={{ background: "#ec3d50", width: "419px" }}
+                    >
+                      Login as Client
+                    </Button>
+                  </div>
+                </div>
+              </Box>
+          </div>
           <h3 className="copyright">Copyright @2023KarmaDev.in.</h3>
-        </div>
-      </Box>
+        </Box>
+      </div>
     </div>
   );
 };

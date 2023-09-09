@@ -1,25 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Roboto:wght@100;300;400;500&display=swap");
 
 .Login {
+  background-color: #f1f7fd;
+  height: fit-content;
   display: flex;
+  justify-content: space-between;
 }
 
-.App {
+.LogoImage {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
   margin: 0 auto;
   padding: 0px;
-  justify-content: space-evenly;
 }
 
-.App .Logo {
+.LogoImage .Logo {
   width: 350px;
   height: 100px;
   top: 222px;
   left: 122px;
 }
 
-.App p {
-  top: 222px;
-  left: 122px;
+.LogoImage p {
   font-family: Aoboshi One;
   font-size: 40px;
   font-weight: 400;
@@ -27,59 +31,65 @@
   padding-left: 30px;
 }
 
-.App .Hero {
-  width: 800px;
-  height: 540px;
+.LogoImage .Hero {
+  width: 700px;
+  height: 500px;
   top: 366px;
   left: 120px;
   opacity: 0.800000011920929px;
 }
 
-.Box {
-  background-color: #ffffff;
-  width: 500px;
-  height: 650px;
+.Container {
+  width: 780px;
+  height: 900px;
   border-radius: 15px;
-  padding: 20px;
-  line-height: 1px;
 }
 
-/* .Box1{
-  width: 700px;
-} */
-
-.Box1 p {
+.Box {
   display: flex;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  height: 650px;
+  border-radius: 15px;
+  padding: 50px;
+  line-height: 1px;
+}
+.Field {
+  border-bottom: 10px;
+}
+
+.Field p {
+  display: flex;
+  width: 90%;
   height: 30px;
   align-items: center;
   justify-content: center;
   font-family: Roboto;
   font-size: 25px;
   font-weight: 600;
-  line-height: 30px;
-  letter-spacing: 0em;
 }
 
-.email {
-  width: 400px;
+.Field h5 {
+  font-weight: 500;
+  font-size: 20px;
 }
 
-.password {
-  width: 400px;
+#outlined-basic {
+  width: 380px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1.5px;
 }
 
 .login-btn {
   display: flex;
-  margin: 10px;
+  margin: 15px;
   align-items: center;
-  line-height: 20px;
   background: #ec3d50;
   color: white;
   justify-content: center;
   border-radius: 10px;
-  width: 419px;
-  height: 50px;
 }
 
 .login-btn .p {
@@ -101,8 +111,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-direction: row;
-  text-align: "right";
+  top: 478px;
+  left: 1200px;
+}
+
+.alignment h6 {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19px;
+  margin-left: 5px;
 }
 
 .copyright {
