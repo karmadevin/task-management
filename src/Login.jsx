@@ -29,15 +29,23 @@ const Login = () => {
       <div className="Container">
         <Box
           sx={{
-            padding: "60px",
+            padding: "50px",
           }}
         >
           <div className="Box">
-            <div>
               <Box className="Field">
                 <p>Sign in to your account</p>
                 <div style={{ textAlign: "center", width: "420px" }}>
-                  <h5 style={{ textAlign: "left", width: "60px" }}>Email</h5>
+                  <h5
+                    style={{
+                      textAlign: "left",
+                      width: "60px",
+                      marginTop: "20px",
+                      marginLeft: "5px",
+                    }}
+                  >
+                    Email
+                  </h5>
                   <TextField
                     id="outlined-basic"
                     label="Admin@gmail.com"
@@ -46,37 +54,63 @@ const Login = () => {
                 </div>
 
                 <div style={{ textAlign: "center", width: "420px" }}>
-                  <h5 style={{ textAlign: "left", width: "60px" }}>Password</h5>
+                  <h5
+                    style={{
+                      textAlign: "left",
+                      width: "60px",
+                      marginLeft: "5px"
+                    }}
+                  >
+                    Password
+                  </h5>
                   <TextField
                     id="outlined-basic"
                     label="Enter Your Password"
                     variant="outlined"
                   />
+                  <div className="alignment">
+                    <h6>
+                      Remember me <Checkbox {...label} />
+                    </h6>
+                    <h6>Forgot Password?</h6>
+                  </div>
                 </div>
 
-                <div style={{ textAlign: "right" }} className="alignment">
-                  <h6>
-                    Remember me <Checkbox {...label} />
-                  </h6>
-                  <h6>Forgot Password?</h6>
-                </div>
-
-                <div>
+                <div className="Login-Btns">
                   <div className="login-btn">
-                    <Button variant="container">Login as Admin</Button>
+                    <Button
+                      variant="contained"
+                      style={{ background: "#ec3d50", width: "419px" }}
+                    >
+                      Login as Admin
+                    </Button>
                   </div>
                   <div className="login-btn">
-                    <Button variant="container">Login as Team Manager</Button>
+                    <Button
+                      variant="contained"
+                      style={{ background: "#ec3d50", width: "419px" }}
+                    >
+                      Login as Team Manager
+                    </Button>
                   </div>
                   <div className="login-btn">
-                    <Button variant="container">Login in as Developer</Button>
+                    <Button
+                      variant="contained"
+                      style={{ background: "#ec3d50", width: "419px" }}
+                    >
+                      Login in as Developer
+                    </Button>
                   </div>
                   <div className="login-btn">
-                    <Button variant="container">Login as Client</Button>
+                    <Button
+                      variant="contained"
+                      style={{ background: "#ec3d50", width: "419px" }}
+                    >
+                      Login as Client
+                    </Button>
                   </div>
                 </div>
               </Box>
-            </div>
           </div>
           <h3 className="copyright">Copyright @2023KarmaDev.in.</h3>
         </Box>
@@ -86,4 +120,3 @@ const Login = () => {
 };
 
 export default Login;
-
