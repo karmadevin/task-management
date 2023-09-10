@@ -2,6 +2,9 @@ import { Box } from "@mui/material";
 import React from "react";
 import "./Login.css";
 import Logo from "./assets/Logo.png";
+import doo1 from "./assets/doodles/Vector_4[1].png";
+import doo2 from "./assets/doodles/Vector_16[1].png";
+import doo3 from "./assets/doodles/Vector_17[1].png";
 import HeroImage from "./assets/HeroImage.svg";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
@@ -11,11 +14,12 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const Login = () => {
   return (
+    
     <div className="Login">
       <div>
         <Box
           sx={{
-            padding: "40px",
+            padding: "10px",
           }}
         >
           <div className="LogoImage">
@@ -29,42 +33,44 @@ const Login = () => {
       <div className="Container">
         <Box
           sx={{
-            padding: "50px",
+            paddingTop: "60px",
           }}
         >
           <div className="Box">
               <Box className="Field">
                 <p>Sign in to your account</p>
-                <div style={{ textAlign: "center", width: "420px" }}>
-                  <h5
+                <div className="Field1" style={{ textAlign: "center",
+                width: "350px" }}>
+                  <h4
                     style={{
                       textAlign: "left",
                       width: "60px",
-                      marginTop: "20px",
-                      marginLeft: "5px",
+                      marginTop: "10px",
+                      marginLeft: "-1px",
                     }}
                   >
                     Email
-                  </h5>
+                  </h4>
                   <TextField
-                    id="outlined-basic"
+                  className="textfield"
                     label="Admin@gmail.com"
                     variant="outlined"
                   />
                 </div>
 
-                <div style={{ textAlign: "center", width: "420px" }}>
-                  <h5
+                <div className="Field1" style={{ textAlign: "center", width: "350px" }}>
+                  <h4
                     style={{
                       textAlign: "left",
                       width: "60px",
-                      marginLeft: "5px"
+                      marginTop: "30px",
+                      marginLeft: "-1px",
                     }}
                   >
                     Password
-                  </h5>
+                  </h4>
                   <TextField
-                    id="outlined-basic"
+                    className="textfield"
                     label="Enter Your Password"
                     variant="outlined"
                   />
@@ -80,7 +86,7 @@ const Login = () => {
                   <div className="login-btn">
                     <Button
                       variant="contained"
-                      style={{ background: "#ec3d50", width: "419px" }}
+                      style={{ background: "#ec3d50", width: "350px",height:"50px",borderRadius:"10px" }}
                     >
                       Login as Admin
                     </Button>
@@ -88,7 +94,7 @@ const Login = () => {
                   <div className="login-btn">
                     <Button
                       variant="contained"
-                      style={{ background: "#ec3d50", width: "419px" }}
+                      style={{ background: "#ec3d50", width: "350px",height:"50px",borderRadius:"10px"  }}
                     >
                       Login as Team Manager
                     </Button>
@@ -96,7 +102,7 @@ const Login = () => {
                   <div className="login-btn">
                     <Button
                       variant="contained"
-                      style={{ background: "#ec3d50", width: "419px" }}
+                      style={{ background: "#ec3d50", width: "350px",height:"50px",borderRadius:"10px"  }}
                     >
                       Login in as Developer
                     </Button>
@@ -104,7 +110,7 @@ const Login = () => {
                   <div className="login-btn">
                     <Button
                       variant="contained"
-                      style={{ background: "#ec3d50", width: "419px" }}
+                      style={{ background: "#ec3d50", width: "350px",height:"50px",borderRadius:"10px"  }}
                     >
                       Login as Client
                     </Button>
@@ -115,8 +121,16 @@ const Login = () => {
           <h3 className="copyright">Copyright @2023KarmaDev.in.</h3>
         </Box>
       </div>
+      <img className="doodle1" src={doo1}/>
+      <img className="doodle2" src={doo2}/>
+      <img className="doodle3" src={doo3}/>
     </div>
-  );
+    
+    
+  
+    );
 };
 
 export default Login;
+
+
