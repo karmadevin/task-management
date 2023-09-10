@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Roboto:wght@100;300;400;500&display=swap");
+
+
+.Login {
+  background-color: rgb(227, 232, 241);
+  height: 710px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  
+}
+
+.LogoImage {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+
+.LogoImage .Logo {
+  width: 350px;
+  height: 100px;
+  top: 222px;
+  left: 122px;
+  margin-left: 80px;
+  margin-top: 30px;
+}
+
+.LogoImage p {
+  font-family: Aoboshi One;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  padding-left: 30px;
+  margin-left: 80px;
+}
+
+.LogoImage .Hero {
+  width: 700px;
+  height: 400px;
+  margin-left: 40px;
+  top: 366px;
+  left: 120px;
+  opacity: 0.800000011920929px;
+}
+
+.Container {
+  width: 780px;
+  height: 700px;
+  border-radius: 15px;
+}
+
+.Box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  width: 460px;
+  height: 600px;
+  margin-left: 90px;
+  border-radius: 15px;
+  padding: 0 25px;
+  line-height: 1px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.Field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Field p {
+  
+  margin-top: 0px;
+  display: flex;
+  width: 90%;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.Field h5 {
+  font-weight: 500;
+  font-size: 20px;
+}
+.Field1{
+  
+
+}
+.Field1 > .textfield{
+  width: 350px;
+  height: 50px;
+}
+.Field1 > h5{
+  margin-bottom: 20px;
+  margin-left: -1px !important;
+ 
+}
+
+#outlined-basic {
+  width: 380px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1.5px;
+}
+.Login-Btns{
+  
+}
+.login-btn {
+  width: 350px;
+  height: 50px;
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  background: #ec3d50;
+  color: white;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.login-btn .p {
+  display: flex;
+  align-items: center;
+}
+
+.Login-desp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox {
+  display: block;
+}
+
+.alignment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 478px;
+  left: 1200px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.alignment h6 {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19px;
+  margin-left: 5px;
+}
+
+.copyright {
+  width: 500px;
+  margin-left: 100px;
+  margin-top: 4px;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #18172580;
+}
+.doodle1{
+  width: 80px;
+  height: 40px;
+  position: absolute;
+  top: 44px;
+  left: 645px;
+}
+.doodle2{
+  width: 190px;
+  height: 80px;
+  position: absolute;
+  top: 50px;
+  left: 755px;
+}
+.doodle3{
+  width: 40px;
+  height: 15px;
+  position: absolute;
+  top: 68px;
+  left: 717px;
+}
+@media (min-width: 320px) and (max-width:370px) {
+  .Login{
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    width: 420px;
+  }
+  .Container{
+    width: 420px;
+  }
+  
+
+}
+@media (min-width: 371px) and (max-width:420px) {
+  .Login{
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    width: 420px;
+  }
+  .Container{
+    width: 420px;
+  }
+}
+
+@media (min-width: 320px) and (max-width:450px) {
+  .doodle1{
+    display: none;
+  }
+  .doodle2{
+    display: none;
+  }
+  .doodle3{
+    display: none;
+  }
+.Login{
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+}
+.LogoImage .Logo{
+  max-width: 200px;
+  height: 60px;
+  margin-left: 0px;
+  margin-top: 10px;
+}
+.LogoImage p{
+  font-size: 25px;
+  margin-left: -20px;
+  margin-top: 10px;
+}
+.LogoImage .Hero{
+  display: none;
+}
+.Container{
+  max-width: 425px;
+  margin-top: -30px;
+}
+.Container .Box{
+ max-width: 350px;
+ margin: auto;
+ margin-top: -35px;
+}
+.copyright {
+  max-width: 425px;
+  margin-left: 0;
+}
+}
+@media (min-width: 451px) and (max-width:780px) {
+  .doodle1{
+    display: none;
+  }
+  .doodle2{
+    display: none;
+  }
+  .doodle3{
+    display: none;
+  }
+.Login{
+  display: flex;
+  flex-direction: column;
+  height: 1300px;
+}
+.LogoImage .Logo{
+  max-width: 300px;
+  height: 80px;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+.LogoImage p{
+  font-size: 25px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.Container{
+  max-width: 768px;
+  margin-top: 30px;
+}
+.Container .Box{
+ 
+ max-width: 550px !important;
+ margin: auto;
+ margin-top: -5px;
+}
+.copyright {
+  margin-top: 5px !important;
+  max-width: 425px;
+  margin: auto;
+}
+
+}
+@media (min-width: 781px) and (max-width:1050px) {
+  .Login{
+    width: 132.5%;
+    padding: auto;
+  }
+  
+  .Container .Box{
+    max-width: 550px !important;
+    margin: auto;
+    margin-top: -5px;
+   }
+   
+   .LogoImage .Logo{
+    margin-left: 20px;
+   }
+   .LogoImage p{
+    margin-left: 25px;
+   }
+   .copyright {
+    max-width: 500px;
+    margin-left: 50px;
+  }
+}
