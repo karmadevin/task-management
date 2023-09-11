@@ -3,7 +3,8 @@
 
 .Login {
   background-color: rgb(227, 232, 241);
-  height: 710px;
+  
+  height: 705px;
   display: flex;
   justify-content: space-between;
   position: relative;
