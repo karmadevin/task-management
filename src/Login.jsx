@@ -1,104 +1,20 @@
-import React, { useState } from "react";
+import { Box } from "@mui/material";
+import React from "react";
 import "./Login.css";
-//Assets imports
 import Logo from "./assets/Logo.png";
 import doo1 from "./assets/doodles/Vector_4[1].png";
 import doo2 from "./assets/doodles/Vector_16[1].png";
 import doo3 from "./assets/doodles/Vector_17[1].png";
 import HeroImage from "./assets/HeroImage.svg";
-//formik import
+import TextField from "@mui/material/TextField";
+import Checkbox from "@mui/material/Checkbox";
+import Button from "@mui/material/Button";
 import { Formik } from "formik";
-// Material UI Imports
-import { TextField, Button, Checkbox, Alert, Stack, Box } from "@mui/material";
 
-// Material UI Icon Imports
-// import Visibility from "@mui/icons-material/Visibility";
-// import VisibilityOff from "@mui/icons-material/VisibilityOff";
-// import LoginIcon from "@mui/icons-material/Login";
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const Login = () => {
-  // Email Validation
-  const isEmail = (email) =>
-    /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
 
-  const [showPassword, setShowPassword] = React.useState(false);
-
-  //Inputs
-  const [emailInput, setEmailInput] = useState();
-  const [passwordInput, setPasswordInput] = useState();
-  const [rememberMe, setRememberMe] = useState();
-
-  // Inputs Errors
-  const [emailError, setEmailError] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
-
-  // Overall Form Validity
-  const [formValid, setFormValid] = useState();
-  const [success, setSuccess] = useState();
-
-  // Handles Display and Hide Password
-  // const handleClickShowPassword = () => setShowPassword((show) => !show);
-  // const handleMouseDownPassword = (event) => {
-  //   event.preventDefault();
-  // };
-
-  // Label for Checkbox
-  const label = { inputProps: { "aria-label": "Checkbox demo" } };
-
-  // Validation for onBlur Email
-  const handleEmail = () => {
-    console.log(isEmail(emailInput));
-    if (!isEmail(emailInput)) {
-      setEmailError(true);
-      <p style={{color:"red"}}>Required</p>
-      return;
-    }
-
-    setEmailError(false);
-  };
-
-  // Validation for onBlur Password
-  const handlePassword = () => {
-    if (
-      !passwordInput ||
-      passwordInput.length < 5 ||
-      passwordInput.length > 20
-    ) {
-      setPasswordError(true);
-      return;
-    }
-
-    setPasswordError(false);
-  };
-
-  //handle Submittion
-  const handleSubmit = () => {
-    setSuccess(null);
-    //First of all Check for Errors
-
-    // If Email error is true
-    if (emailError || !emailInput) {
-      setFormValid("Email is Invalid. Please Re-Enter");
-      return;
-    }
-
-    // If Password error is true
-    if (passwordError || !passwordInput) {
-      setFormValid(
-        "Password is set btw 5 - 20 characters long. Please Re-Enter"
-      );
-      return;
-    }
-    setFormValid(null);
-
-    // Proceed to use the information passed
-    console.log("Email : " + emailInput);
-    console.log("Password : " + passwordInput);
-    console.log("Remember : " + rememberMe);
-
-    //Show Successfull Submittion
-    setSuccess("Form Submitted Successfully");
-  };
 
   return (
     <div className="Login">
@@ -147,7 +63,13 @@ const Login = () => {
                   }, 400);
                 }}
               >
-                {({ values, errors, touched, handleChange, handleSubmit }) => (
+                {({
+                  values,
+                  errors,
+                  touched,
+                  handleChange,
+                  handleSubmit
+                }) => (
                   <form onSubmit={handleSubmit}>
                     <div
                       className="Field1"
@@ -169,15 +91,9 @@ const Login = () => {
                         className="textfield"
                         label="Admin@gmail.com"
                         variant="outlined"
+                        onChange={handleChange}
+                        value={values.email}
                         required
-                        fullWidth
-                        error={emailError}
-                        value={emailInput}
-                        InputProps={{}}
-                        onBlur={handleEmail}
-                        onChange={(event) => {
-                          setEmailInput(event.target.value);
-                        }}
                       />
                       {errors.email && touched.email && errors.email}
                     </div>
@@ -199,30 +115,17 @@ const Login = () => {
                       <TextField
                         name="password"
                         type="password"
-                        fullWidth
-                        error={passwordError}
-                        onBlur={handlePassword}
-                        InputProps={{}}
+                        onChange={handleChange}
+                        value={values.password}
                         className="textfield"
                         label="Enter Your Password"
                         variant="outlined"
                         required
-                        onChange={(event) => {
-                          setEmailInput(event.target.value);
-                        }}
                       />
                       {errors.password && touched.password && errors.password}
-
                       <div className="alignment">
                         <h6>
-                          Remember me{" "}
-                          <Checkbox
-                            {...label}
-                            size="small"
-                            onChange={(event) =>
-                              setRememberMe(event.target.checked)
-                            }
-                          />
+                          Remember me <Checkbox {...label} />
                         </h6>
                         <a href="#">Forgot Password?</a>
                       </div>
@@ -232,8 +135,6 @@ const Login = () => {
                       <div className="login-btn">
                         <a href="#">
                           <Button
-                            fullWidth
-                            onClick={handleSubmit}
                             type="submit"
                             variant="contained"
                             style={{
@@ -250,9 +151,6 @@ const Login = () => {
                       <div className="login-btn">
                         <a href="#">
                           <Button
-                            fullWidth
-                            onClick={handleSubmit}
-                            type="submit"
                             variant="contained"
                             style={{
                               background: "#ec3d50",
@@ -268,9 +166,6 @@ const Login = () => {
                       <div className="login-btn">
                         <a href="#">
                           <Button
-                            fullWidth
-                            onClick={handleSubmit}
-                            type="submit"
                             variant="contained"
                             style={{
                               background: "#ec3d50",
@@ -286,9 +181,6 @@ const Login = () => {
                       <div className="login-btn">
                         <a href="#">
                           <Button
-                            fullWidth
-                            onClick={handleSubmit}
-                            type="submit"
                             variant="contained"
                             style={{
                               background: "#ec3d50",
@@ -302,29 +194,6 @@ const Login = () => {
                         </a>
                       </div>
                     </div>
-                    {/* Show Form Error if any */}
-                    {formValid && (
-                      <Stack
-                        sx={{ width: "100%", paddingTop: "10px" }}
-                        spacing={2}
-                      >
-                        <Alert severity="error" size="small">
-                          {formValid}
-                        </Alert>
-                      </Stack>
-                    )}
-
-                    {/* Show Success if no issues */}
-                    {success && (
-                      <Stack
-                        sx={{ width: "100%", paddingTop: "10px" }}
-                        spacing={2}
-                      >
-                        <Alert severity="success" size="small">
-                          {success}
-                        </Alert>
-                      </Stack>
-                    )}
                   </form>
                 )}
               </Formik>
