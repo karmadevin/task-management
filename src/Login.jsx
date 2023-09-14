@@ -9,12 +9,43 @@ import HeroImage from "./assets/HeroImage.svg";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
-import { Formik } from "formik";
+import { useFormik } from "formik";
+import * as yup from "yup";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const Login = () => {
+  const FormValidationSchema = yup.object({
+    email: yup
+      .string()
+      .email()
+      .min(6, <em style={{ fontSize: "11px" }}>Enter Valid Email</em>)
+      .required(<em style={{ fontSize: "11px" }}>Email is required</em>),
+    password: yup
+      .string()
+      .required(<em style={{ fontSize: "11px" }}>Please enter a password</em>)
+      .min(
+        8,
+        <em style={{ fontSize: "11px" }}>
+          Password must have at least 8 characters
+        </em>
+      )
+      .matches(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&]).{8,}$/, {
+        message: <em style={{ fontSize: "11px" }}>Invalid password</em>,
+      }),
+  });
 
+  const { handleSubmit, values, handleChange, handleBlur, touched, errors } =
+    useFormik({
+      initialValues: {
+        email: "",
+        password: "",
+      },
+      validationSchema: FormValidationSchema,
+      onSubmit: (values) => {
+        console.log("onSubmit =", values);
+      },
+    });
 
   return (
     <div className="Login">
@@ -41,162 +72,141 @@ const Login = () => {
           <div className="Box">
             <Box className="Field">
               <p>Sign in to your account</p>
-              <Formik
-                initialValues={{ email: "", password: "" }}
-                validate={(values) => {
-                  const errors = {};
-                  if (!values.email) {
-                    errors.email = "Required";
-                  } else if (
-                    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
-                      values.email
-                    )
-                  ) {
-                    errors.email = "Invalid email address";
-                  }
-                  return errors;
-                }}
-                onSubmit={(values, { setSubmitting }) => {
-                  setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
-                    setSubmitting(false);
-                  }, 400);
-                }}
-              >
-                {({
-                  values,
-                  errors,
-                  touched,
-                  handleChange,
-                  handleSubmit
-                }) => (
-                  <form onSubmit={handleSubmit}>
-                    <div
-                      className="Field1"
-                      style={{ textAlign: "center", width: "350px" }}
-                    >
-                      <h4
+
+              <form onSubmit={handleSubmit}>
+                <div
+                  className="Field1"
+                  style={{ textAlign: "center", width: "350px" }}
+                >
+                  <h4
+                    style={{
+                      textAlign: "left",
+                      width: "60px",
+                      marginTop: "10px",
+                      marginLeft: "-1px",
+                    }}
+                  >
+                    Email
+                  </h4>
+                  <TextField
+                    type="email"
+                    name="email"
+                    className="textfield"
+                    variant="outlined"
+                    label="Admin@gmail.com"
+                    onChange={handleChange}
+                    value={values.email}
+                    error={touched.email && errors.email ? true : false}
+                    helperText={
+                      touched.email && errors.email ? errors.email : ""
+                    }
+                  />
+                </div>
+
+                <div
+                  className="Field1"
+                  style={{ textAlign: "center", width: "350px" }}
+                >
+                  <h4
+                    style={{
+                      textAlign: "left",
+                      width: "60px",
+                      marginTop: "30px",
+                      marginLeft: "-1px",
+                    }}
+                  >
+                    Password
+                  </h4>
+                  <TextField
+                    name="password"
+                    type="password"
+                    onChange={handleChange}
+                    value={values.password}
+                    className="textfield"
+                    label="Enter Your Password"
+                    variant="outlined"
+                    error={touched.password && errors.password ? true : false}
+                    helperText={
+                      touched.password && errors.password ? errors.password : ""
+                    }
+                  />
+
+                  <div className="alignment">
+                    <h6>
+                      Remember me
+                      <Checkbox {...label} />
+                    </h6>
+                    <a href="#">Forgot Password?</a>
+                  </div>
+                </div>
+
+                <div className="Login-Btns">
+                  <div className="login-btn">
+                    <a href="#">
+                      <Button
+                        type="submit"
+                        variant="contained"
                         style={{
-                          textAlign: "left",
-                          width: "60px",
-                          marginTop: "10px",
-                          marginLeft: "-1px",
+                          background: "#ec3d50",
+                          width: "350px",
+                          height: "50px",
+                          borderRadius: "10px",
                         }}
                       >
-                        Email
-                      </h4>
-                      <TextField
-                        type="email"
-                        name="email"
-                        className="textfield"
-                        label="Admin@gmail.com"
-                        variant="outlined"
-                        onChange={handleChange}
-                        value={values.email}
-                        required
-                      />
-                      {errors.email && touched.email && errors.email}
-                    </div>
-
-                    <div
-                      className="Field1"
-                      style={{ textAlign: "center", width: "350px" }}
-                    >
-                      <h4
+                        Login as Admin
+                      </Button>
+                    </a>
+                  </div>
+                  <div className="login-btn">
+                    <a href="#">
+                      <Button
+                        type="submit"
+                        variant="contained"
                         style={{
-                          textAlign: "left",
-                          width: "60px",
-                          marginTop: "30px",
-                          marginLeft: "-1px",
+                          background: "#ec3d50",
+                          width: "350px",
+                          height: "50px",
+                          borderRadius: "10px",
                         }}
                       >
-                        Password
-                      </h4>
-                      <TextField
-                        name="password"
-                        type="password"
-                        onChange={handleChange}
-                        value={values.password}
-                        className="textfield"
-                        label="Enter Your Password"
-                        variant="outlined"
-                        required
-                      />
-                      {errors.password && touched.password && errors.password}
-                      <div className="alignment">
-                        <h6>
-                          Remember me <Checkbox {...label} />
-                        </h6>
-                        <a href="#">Forgot Password?</a>
-                      </div>
-                    </div>
-
-                    <div className="Login-Btns">
-                      <div className="login-btn">
-                        <a href="#">
-                          <Button
-                            type="submit"
-                            variant="contained"
-                            style={{
-                              background: "#ec3d50",
-                              width: "350px",
-                              height: "50px",
-                              borderRadius: "10px",
-                            }}
-                          >
-                            Login as Admin
-                          </Button>
-                        </a>
-                      </div>
-                      <div className="login-btn">
-                        <a href="#">
-                          <Button
-                            variant="contained"
-                            style={{
-                              background: "#ec3d50",
-                              width: "350px",
-                              height: "50px",
-                              borderRadius: "10px",
-                            }}
-                          >
-                            Login as Team Manager
-                          </Button>
-                        </a>
-                      </div>
-                      <div className="login-btn">
-                        <a href="#">
-                          <Button
-                            variant="contained"
-                            style={{
-                              background: "#ec3d50",
-                              width: "350px",
-                              height: "50px",
-                              borderRadius: "10px",
-                            }}
-                          >
-                            Login in as Developer
-                          </Button>
-                        </a>
-                      </div>
-                      <div className="login-btn">
-                        <a href="#">
-                          <Button
-                            variant="contained"
-                            style={{
-                              background: "#ec3d50",
-                              width: "350px",
-                              height: "50px",
-                              borderRadius: "10px",
-                            }}
-                          >
-                            Login as Client
-                          </Button>
-                        </a>
-                      </div>
-                    </div>
-                  </form>
-                )}
-              </Formik>
+                        Login as Team Manager
+                      </Button>
+                    </a>
+                  </div>
+                  <div className="login-btn">
+                    <a href="#">
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        style={{
+                          background: "#ec3d50",
+                          width: "350px",
+                          height: "50px",
+                          borderRadius: "10px",
+                        }}
+                      >
+                        Login in as Developer
+                      </Button>
+                    </a>
+                  </div>
+                  <div className="login-btn">
+                    <a href="#">
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        style={{
+                          background: "#ec3d50",
+                          width: "350px",
+                          height: "50px",
+                          borderRadius: "10px",
+                        }}
+                      >
+                        Login as Client
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </form>
             </Box>
           </div>
           <h3 className="copyright">Copyright @2023KarmaDev.in.</h3>
