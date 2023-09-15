@@ -1,0 +1,9 @@
+.Sidenav .taskicon{
+    background: #000;
+    width: 80px;
+}
+
+.acontainer {
+    text-align: right;
+    display: inline-block;
+}
