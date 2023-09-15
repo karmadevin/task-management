@@ -19,19 +19,19 @@ const Login = () => {
     email: yup
       .string()
       .email()
-      .min(6, <em style={{ fontSize: "11px" }}>Enter Valid Email</em>)
-      .required(<em style={{ fontSize: "11px" }}>Email is required</em>),
+      .min(6, <p style={{ fontSize: "11px", justifyContent: "left", marginLeft: "-50px"}}>Enter Valid Email</p>)
+      .required(<p style={{ fontSize: "11px", justifyContent: "left", marginLeft: "-50px" }}>Email is required</p>),
     password: yup
       .string()
-      .required(<em style={{ fontSize: "11px" }}>Please enter a password</em>)
+      .required(<p style={{ fontSize: "11px", justifyContent: "left", marginLeft: "-50px" }}>Please enter a password</p>)
       .min(
         8,
-        <em style={{ fontSize: "11px" }}>
+        <p style={{ fontSize: "11px", justifyContent: "left", marginLeft: "-50px" }}>
           Password must have at least 8 characters
-        </em>
+        </p>
       )
       .matches(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&]).{8,}$/, {
-        message: <em style={{ fontSize: "11px" }}>Invalid password</em>,
+        message: <p style={{ fontSize: "11px", justifyContent: "left", marginLeft: "-50px" }}>Invalid password</p>,
       }),
   });
 
