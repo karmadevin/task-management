@@ -1,0 +1,10 @@
+.Sidenav .taskicon {
+  background: #000;
+  width: 80px;
+}
+
+.acontainer {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
