@@ -13,6 +13,38 @@ import Button from "@mui/material/Button";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const Login = () => {
+  const FormValidationSchema = yup.object({
+    email: yup
+      .string()
+      .email()
+      .min(6, <p style={{ fontSize: "11px", justifyContent: "left", marginLeft: "-50px"}}>Enter Valid Email</p>)
+      .required(<p style={{ fontSize: "11px", justifyContent: "left", marginLeft: "-50px" }}>Email is required</p>),
+    password: yup
+      .string()
+      .required(<p style={{ fontSize: "11px", justifyContent: "left", marginLeft: "-50px" }}>Please enter a password</p>)
+      .min(
+        8,
+        <p style={{ fontSize: "11px", justifyContent: "left", marginLeft: "-50px" }}>
+          Password must have at least 8 characters
+        </p>
+      )
+      .matches(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&]).{8,}$/, {
+        message: <p style={{ fontSize: "11px", justifyContent: "left", marginLeft: "-50px" }}>Invalid password</p>,
+      }),
+  });
+
+  const { handleSubmit, values, handleChange, handleBlur, touched, errors } =
+    useFormik({
+      initialValues: {
+        email: "",
+        password: "",
+      },
+      validationSchema: FormValidationSchema,
+      onSubmit: (values) => {
+        console.log("onSubmit =", values);
+      },
+    });
+
   return (
     
     <div className="Login">
