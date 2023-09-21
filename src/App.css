@@ -5,3 +5,27 @@
   display: flex;
   justify-content: space-evenly;
 } */
+
+.columns {
+  display: flex;
+  border: 2px solid red;
+  justify-content: space-around;
+}
+.card2{
+ margin-bottom: 10px;
+  border-top: 2px solid green;
+  background-color: aquamarine;
+  border-radius: 15px;
+  width: 22%;
+  padding: 5px;
+  margin-top: 10px;
+  
+}
+.cards{
+ 
+  
+}
+.card{
+  border: 1px solid black;
+  margin-bottom: 5px;
+}

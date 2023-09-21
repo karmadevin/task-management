@@ -1,4 +1,4 @@
-.superadminproject-heading{
+.superadminleads-heading{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -6,18 +6,18 @@
     margin-bottom: 10px;
     
 }
-.superadminproject-head-content1{
+.superadminleads-head-content1{
     
     width: 50%;
     height: 100%;
     margin-left: 20px;
 }
-.superadminproject-head-content1 > h2{
+.superadminleads-head-content1 > h2{
     letter-spacing: 1px;
-    color: rgb(120, 117, 117);
-     margin-top: 10px;
+   color: rgb(120, 117, 117);
+    margin-top: 10px;
 }
-.superadminproject-head-content1 > .superadminproject-box >.superadminproject-breadcrumbs{
+.superadminleads-head-content1 > .superadminleads-box >.superadminleads-breadcrumbs{
     
    font-size: 20px !important;
    font-size: 10px !important;
@@ -28,49 +28,50 @@
 }
 
 
-.superadminproject-typography{
+.superadminleads-typography{
     font-size: 10px !important;
-    font-weight: 800 !important;
+   font-weight: 800 !important;
    color: rgb(120, 117, 117);
 }
-.superadminproject-head-content2{
+.superadminleads-head-content2{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 120px;
+    margin-left: 50px;
+    
 }
-.superadminproject-search{
+.superadminleads-search{
     padding: 4px 0;
     border-radius: 5px;
     display: flex;
    background-color: rgb(221, 216, 216);
 }
-.superadminproject-searchIcon{
+.superadminleads-searchIcon{
     
     margin: auto !important;
     height: 30px;
     padding-top: 5px;
     padding-left: 10px;
 }
-.superadminproject-search > input{
+.superadminleads-search > input{
     padding-left: 10px;
     border:0;
     background-color: transparent;
 }
-.superadminproject-profileIcon{
+.superadminleads-profileIcon{
     margin-left: 10px;
     border-radius: 5px; 
     padding: 7px 5px 2px 5px ;
     background-color: rgb(221, 216, 216);
 }
-.superadminproject-addproject{
+.superadminleads-addproject{
     margin-left: 10px !important;
     color: white !important;
 background-color: rgb(82, 180, 146) !important;
 padding: 6px 20px 6px 20px !important;
 }
 @media (min-width: 320px) and (max-width:700px) {
-    .superadminproject-head-content1 > h4{
+    .superadminleads-head-content1 > h4{
         font-size: 15px;
         color: rgb(120, 117, 117);
          margin-top: 10px;

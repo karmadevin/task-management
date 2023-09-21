@@ -8,9 +8,9 @@ import ProjectList from './ProjectList';
 
 const Superadminprojects = () => {
   return (
-    <div className='superadminprojects'>
+    <div className='superadminproject-superadminprojects'>
       <ProjectHeading/>
-    <div className='project'>
+    <div className='superadminproject-project'>
         {CardData.map(data=>(
           <ProjectCard
           count={data.count}

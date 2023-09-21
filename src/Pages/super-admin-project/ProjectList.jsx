@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Avatar,LinearProgress, } from '@mui/material';
+import React, { useState } from 'react';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Avatar,LinearProgress, TablePagination, } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import IosShareIcon from '@mui/icons-material/IosShare';
@@ -70,12 +70,25 @@ function getColorForStatus(status) {
 }
 
 const ProjectList = () => {
+
+  const handlechangepage=(event,newpage)=>{
+    pagechange(newpage)
+  }
+  const handleRowsPerPage=(event)=>{
+    rowperpageChange(+event.target.value)
+    pagechange(0)
+  }
+
+const[page,pagechange] = useState(0);
+const[rowperpage,rowperpageChange] = useState(5);
+ 
     return (
+      <div>
         <TableContainer component={Paper}>
-          <Table className='table'>
-            <TableHead className='thead'>
-              <TableRow className='thead1'>
-              <Checkbox className='theadcheckbox' {...label} />
+          <Table className='superadminproject-table'>
+            <TableHead className='superadminproject-thead'>
+              <TableRow className='superadminproject-thead1'>
+              <Checkbox className='superadminproject-theadcheckbox' {...label} />
                 <TableCell>ID</TableCell>
                 <TableCell>Title</TableCell>
                 <TableCell>Client</TableCell>
@@ -87,14 +100,16 @@ const ProjectList = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {data.map((row, index) => (
-                <TableRow className='tablerow' key={index}>
-                    <Checkbox className='Checkbox' {...label} />
-                    <TableCell className='id'>{row.id}</TableCell>
-                  <TableCell className='titlecontent'>{row.Title}</TableCell>
-                  <TableCell className='clientcontent'>{row.Client}</TableCell>
-                  <TableCell className='datecontent'>{row.DueDate}</TableCell>
-                  <TableCell className='colorbarcontent'>
+              {data
+              .slice(page * rowperpage, page * rowperpage + rowperpage)
+              .map((row, index) => (
+                <TableRow className='superadminproject-tablerow' key={index}>
+                    <Checkbox className='superadminproject-Checkbox' {...label} />
+                    <TableCell className='superadminproject-id'>{row.id}</TableCell>
+                  <TableCell className='superadminproject-titlecontent'>{row.Title}</TableCell>
+                  <TableCell className='superadminproject-clientcontent'>{row.Client}</TableCell>
+                  <TableCell className='superadminproject-datecontent'>{row.DueDate}</TableCell>
+                  <TableCell className='superadminproject-colorbarcontent'>
                   <LinearProgress
                   variant="determinate"
                   value={row.progress}
@@ -111,19 +126,19 @@ const ProjectList = () => {
                   }}
                 />
                 </TableCell>
-                  <TableCell className='pic'>
+                  <TableCell className='superadminproject-pic'>
                     {row.avatars.map((avatar, avatarIndex) => (
                       <Avatar key={avatarIndex} alt={`Avatar ${avatarIndex + 1}`} src={avatar} />
                     ))}
                   </TableCell>
-                  <TableCell className='statuscontent'><span style={{ color: getColorForStatus(row.Status) }}>{row.Status}</span></TableCell>
-                  <TableCell className='iconscontent'>
+                  <TableCell className='superadminproject-statuscontent'><span style={{ color: getColorForStatus(row.Status) }}>{row.Status}</span></TableCell>
+                  <TableCell className='superadminproject-iconscontent'>
 
-                  <EditNoteIcon className="icons" color="success" />
-                  <IosShareIcon className="icons" color="secondary"/>
-                  <Person2OutlinedIcon className="icons" color="default"/>
-                  <DeleteOutlineOutlinedIcon className="icons" color='error'/>
-                  <MoreHorizOutlinedIcon className="icons" color="default"/>
+                  <EditNoteIcon className="superadminproject-icons" color="success" />
+                  <IosShareIcon className="superadminproject-icons" color="secondary"/>
+                  <Person2OutlinedIcon className="superadminproject-icons" color="default"/>
+                  <DeleteOutlineOutlinedIcon className="superadminproject-icons" color='error'/>
+                  <MoreHorizOutlinedIcon className="superadminproject-icons" color="default"/>
 
                   </TableCell>
                   
@@ -132,7 +147,22 @@ const ProjectList = () => {
               ))}
             </TableBody>
           </Table>
+
+          
         </TableContainer>
+        <TablePagination
+        rowsPerPageOptions={[5,10,25]}
+        rowsPerPage={rowperpage}
+        page={page}
+        count={data.length}
+        component="div"
+        onPageChange={handlechangepage}
+        onRowsPerPageChange={handleRowsPerPage}
+        >
+
+        </TablePagination>
+
+        </div>
       );
     };
 

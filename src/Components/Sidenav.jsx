@@ -37,6 +37,13 @@ import leads from '../assets/leads.svg'
 import payslip from '../assets/Payslip.svg'
 import user from '../assets/user.svg'
 import Superadminprojects from '../Pages/super-admin-project/Superadminprojects';
+
+import TaskHeading from '../Pages/super-admin-task/TaskHeading';
+import Superadmintasks from '../Pages/super-admin-task/Superadmintasks';
+import Demo from '../Demo';
+import { Superadminleads } from '../Pages/super-admin-leads/Superadminleads';
+
+
 const openedMixin = (theme) => ({
   width: drawerWidth,
   transition: theme.transitions.create('width', {
@@ -327,10 +334,10 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        <Superadminprojects/>
-        {/* <div>
-          <Superadminprojects/>
-        </div> */}
+        {/* <Superadmintasks/> */}
+        
+        {/* <Superadminprojects/> */}
+        <Superadminleads/>
       </Box>
     </Box>
   );

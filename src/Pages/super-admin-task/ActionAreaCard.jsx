@@ -8,17 +8,17 @@ import "./ActionAreaCard.css";
 
 export default function ProjectCard(props) {
   return (
-    <Card className='superadminproject-card'>
-      <CardActionArea className='superadminproject-card1'>
-        <CardContent className='superadminproject-card2'>
-          <Typography gutterBottom variant="h5" component="div" className='superadminproject-count'>
+    <Card className='superadmintask-card'>
+      <CardActionArea className='superadmintask-card1'>
+        <CardContent className='superadmintask-card2'>
+          <Typography gutterBottom variant="h5" component="div" className='superadmintask-count'>
             {props.count}
           </Typography>
-          <Typography variant="body2" color="text.secondary" className='superadminproject-status'>
+          <Typography variant="body2" color="text.secondary" className='superadmintask-status'>
             {props.status}
           </Typography>
         </CardContent>
-        <div className='superadminproject-line' style={{
+        <div className='superadmintask-line' style={{
         backgroundColor:`${props.color}`,
         }}></div>
       </CardActionArea>
