@@ -41,7 +41,7 @@ import "./DashLayout.css";
 // import SuperadminUser from "../features/SuperAdmin-User/SuperadminUser";
 // import SuperadminClient from "../features/SuperAdmin-Client/SuperadminClient";
 import { Outlet } from "react-router-dom";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 

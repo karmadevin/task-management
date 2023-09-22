@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Table,
   TableBody,
@@ -67,17 +66,6 @@ const PayslipList = () => {
   const [page, pagechange] = useState(0);
   const [rowperpage, rowperpageChange] = useState(5);
 
-  const ProjectList = () => {
-    const handlechangepage = (event, newpage) => {
-      pagechange(newpage);
-    };
-    const handleRowsPerPage = (event) => {
-      rowperpageChange(+event.target.value);
-      pagechange(0);
-    };
-
-    const [page, pagechange] = useState(0);
-    const [rowperpage, rowperpageChange] = useState(5);
     return (
       <div>
         <TableContainer component={Paper}>
@@ -141,5 +129,4 @@ const PayslipList = () => {
       </div>
     );
   };
-};
 export default PayslipList;

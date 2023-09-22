@@ -11,6 +11,7 @@ import SuperAdminPayslip from "./features/super-admin-payslip/SuperAdminPayslip"
 import SuperAdminLeads from "./features/super-admin-leads/SuperAdminLeads";
 import SuperAdminClient from "./features/super-admin-client/SuperAdminClient";
 import SuperAdminUser from "./features/super-admin-user/SuperAdminUser";
+import SuperAdminDashboard from "./features/super-admin-dashboard/SuperAdminDashboard";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
 
           {/* Private Routes */}
           <Route path="dashboard" element={<DashLayout />}>
-            <Route index element={<SuperAdminProjects />} />
+            <Route index element={<SuperAdminDashboard/>} />
 
             <Route path="projects" element={<SuperAdminProjects />} />
             <Route path="tasks" element={<SuperAdminTasks />} />

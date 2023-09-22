@@ -1,4 +1,3 @@
-import React from "react";
 import "./Bars1.css";
 import { Cell } from "recharts";
 import {
@@ -6,18 +5,16 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
-  CartesianGrid,
   Bar,
 } from "recharts";
 
 const Bars1 = () => {
   const data = [
-    { name: "All", Status: 10, color: "#ED9AA9",borderColor: "#D10328" },
-    { name: "In Progress", Status:2, color: "#F5F6BB", borderColor: "#DFE227" },
-    { name: "Testing", Status: 7, color: "#C4ECC3", borderColor: "#6BD069" },
-    { name: "Feedback", Status: 5, color: "#A3A1F2", borderColor: "#1814DE" },
-    { name: "Completed", Status: 8, color: "#D0D0D6", borderColor: "#a3a1f2" },
+    { name: "All", Status: 40, color: "#ED9AA9",borderColor: "#D10328" },
+    { name: "In Progress", Status:5, color: "#F5F6BB", borderColor: "#DFE227" },
+    { name: "Testing", Status: 14, color: "#C4ECC3", borderColor: "#6BD069" },
+    { name: "Feedback", Status: 10, color: "#A3A1F2", borderColor: "#1814DE" },
+    { name: "Completed", Status: 16, color: "#D0D0D6", borderColor: "#a3a1f2" },
   ];
  
 

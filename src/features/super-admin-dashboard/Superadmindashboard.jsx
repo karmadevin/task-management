@@ -1,4 +1,3 @@
-import React from 'react';
 import ActionAreaCard from "./ActionAreaCard"
 
 import CardData from './CardData';
@@ -8,12 +7,13 @@ import Bars2 from './Bars2';
 import Tabs from './Tabs';
 
 
-const Superadmindashboard = () => {
+const SuperAdminDashboard = () => {
   return (
     <div className='dashboardcontent'>
     <div className='superadmindashboard-card'>
-        {CardData.map ((data)=>(
+        {CardData.map ((data,index)=>(
             <ActionAreaCard
+            key={index}
             img={data.img}
             title={data.title}
             subtitle={data.subtitle}
@@ -30,4 +30,4 @@ const Superadmindashboard = () => {
   )
 }
 
-export default Superadmindashboard
+export default SuperAdminDashboard
