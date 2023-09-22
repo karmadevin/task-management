@@ -1,0 +1,26 @@
+.dashboardcontent{
+    width: 100% !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column;
+    padding-left: 40px;
+    
+}
+
+
+.superadmindashboard-card{
+    border: 1px solid ;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    border: none;
+    margin: 5px;
+}
+.bars{
+    
+    width: 100%;
+    display: flex;
+    padding-right: 10px;
+    
+}
