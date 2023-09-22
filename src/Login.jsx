@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
-import React from "react";
 import "./Login.css";
 import Logo from "./assets/Logo.png";
 import doo1 from "./assets/doodles/Vector_4[1].png";
@@ -142,7 +142,7 @@ const Login = () => {
 
                 <div className="Login-Btns">
                   <div className="login-btn">
-                    <a href="#">
+                    <Link to="/dashboard" >
                       <Button
                         type="submit"
                         variant="contained"
@@ -155,7 +155,7 @@ const Login = () => {
                       >
                         Login as Admin
                       </Button>
-                    </a>
+                    </Link>
                   </div>
                   <div className="login-btn">
                     <a href="#">

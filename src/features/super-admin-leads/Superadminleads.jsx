@@ -1,7 +1,6 @@
-import React from 'react'
-import LeadsHeading from"../super-admin-leads/LeadsHeading"
+import LeadsHeading from"./LeadsHeading"
 import DragAndDrop from './DragAndDrop'
-export const Superadminleads = () => {
+const SuperAdminLeads = () => {
   return (
     <div>
         <LeadsHeading/>
@@ -9,3 +8,5 @@ export const Superadminleads = () => {
     </div>
   )
 }
+
+export default SuperAdminLeads;

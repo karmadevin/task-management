@@ -1,11 +1,8 @@
-import React from "react";
 import "./SuperadminClient.css";
-import UserHeader from "../SuperAdmin-User/userHeader";
-import UserList from "../SuperAdmin-User/userList";
 import ClientHeader from "./clientHeader";
 import ClientList from "./clientList";
 
-const SuperadminClient = () => {
+const SuperAdminClient = () => {
   return (
     <div className="SuperadminUser">
       <ClientHeader/>
@@ -14,4 +11,4 @@ const SuperadminClient = () => {
   );
 };
 
-export default SuperadminClient;
+export default SuperAdminClient;

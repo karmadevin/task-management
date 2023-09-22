@@ -1,9 +1,8 @@
-import React from "react";
 import "./Superadminpayslip.css";
 import PayslipHeader from "./PayslipHeader";
 import PayslipList from "./PayslipList";
 
-const Superadminpayslip = () => {
+const SuperAdminPayslip = () => {
   return (
     <div className="Superadminpayslip">
       <PayslipHeader />
@@ -12,4 +11,4 @@ const Superadminpayslip = () => {
   );
 };
 
-export default Superadminpayslip;
+export default SuperAdminPayslip;

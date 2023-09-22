@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
@@ -7,39 +7,41 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
+// import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+// import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { Button, colors } from "@mui/material";
+// import { Button, colors } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import Tooltip from "@mui/material/Tooltip";
 import Avatar from "@mui/material/Avatar";
 import DashboardRoundedIcon from "@mui/icons-material/DashboardRounded";
-import AssignmentRoundedIcon from "@mui/icons-material/AssignmentRounded";
-import ScatterPlotIcon from "@mui/icons-material/ScatterPlot";
-import { green, orange, pink, red, teal, yellow } from "@mui/material/colors";
+// import AssignmentRoundedIcon from "@mui/icons-material/AssignmentRounded";
+// import ScatterPlotIcon from "@mui/icons-material/ScatterPlot";
+import { green, pink, teal } from "@mui/material/colors";
 import profile2 from "../assets/profile2.png";
 import SettingsIcon from "@mui/icons-material/Settings";
 import proicon from "../assets/proicon.svg";
 import Badge from "@mui/material/Badge";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import taskicon from "../assets/taskicon.svg";
-import logo from "../assets/logo.svg";
+// import logo from "../assets/logo.svg";
 import clients from "../assets/clients.svg";
 import leads from "../assets/leads.svg";
 import payslip from "../assets/Payslip.svg";
 import user from "../assets/user.svg";
-import "./Sidenav.css";
-import Superadminpayslip from "../features/Superadmin-payslip/Superadminpayslip";
-import SuperadminUser from "../features/SuperAdmin-User/SuperadminUser";
-import SuperadminClient from "../features/SuperAdmin-Client/SuperadminClient";
+import "./DashLayout.css";
+// import Superadminpayslip from "../features/Superadmin-payslip/Superadminpayslip";
+// import SuperadminUser from "../features/SuperAdmin-User/SuperadminUser";
+// import SuperadminClient from "../features/SuperAdmin-Client/SuperadminClient";
+import { Outlet } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -119,7 +121,7 @@ export default function MiniDrawer() {
     setAnchorElUser(null);
   };
 
-  const theme = useTheme();
+  // const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -129,6 +131,9 @@ export default function MiniDrawer() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const navigate = useNavigate();
+
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -228,12 +233,14 @@ export default function MiniDrawer() {
                         height: "32px",
                         width: "32px",
                       }}
+                      onClick={()=> navigate("/dashboard")}
                     />
                   ) : (
                     <img
                       src={proicon}
                       alt="task icon"
                       style={{ height: "32px", width: "32px" }}
+                      onClick={()=> navigate("/dashboard/projects")}
                     />
                   )}
                 </ListItemIcon>
@@ -264,12 +271,14 @@ export default function MiniDrawer() {
                       src={taskicon}
                       alt="Karmaev.in"
                       style={{ height: "28px", width: "32px" }}
+                      onClick={()=> navigate("/dashboard/tasks")}
                     />
                   ) : (
                     <img
                       src={payslip}
                       alt="Karmadev.im"
                       style={{ height: "32px", width: "32px" }}
+                      onClick={()=> navigate("/dashboard/payslip")}
                     />
                   )}
                 </ListItemIcon>
@@ -299,12 +308,15 @@ export default function MiniDrawer() {
                       src={leads}
                       alt="Karmaev.in"
                       style={{ height: "28px", width: "32px" }}
+                      onClick={()=> navigate("/dashboard/leads")}
                     />
                   ) : (
                     <img
                       src={user}
                       alt="Karmadev.im"
                       style={{ height: "32px", width: "32px" }}
+                      onClick={()=> navigate("/dashboard/users")}
+
                     />
                   )}
                 </ListItemIcon>
@@ -312,8 +324,8 @@ export default function MiniDrawer() {
               </ListItemButton>
             </ListItem>
           ))}
-          {["Client"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
+            {/* Clients */}
+            <ListItem disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -321,6 +333,7 @@ export default function MiniDrawer() {
                   px: 2.5,
                   color: teal["A700"],
                 }}
+                onClick={()=> navigate("/dashboard/clients")}
               >
                 <ListItemIcon
                   sx={{
@@ -331,21 +344,19 @@ export default function MiniDrawer() {
                 >
                   <img
                     src={clients}
-                    alt="Karmaev.in"
+                    alt="clients"
                     style={{ color: green, height: "28px", width: "32px" }}
                   />
                 </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={"Client"} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
-          ))}
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        {/* <Superadminpayslip /> */}
-        {/* <SuperadminUser /> */}
-        <SuperadminClient/>
+      <DrawerHeader />
+
+        <Outlet />
       </Box>
     </Box>
   );
