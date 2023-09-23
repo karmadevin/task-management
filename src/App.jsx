@@ -5,7 +5,7 @@ import Layout from "./components/Layout";
 import NotFound from "./components/NotFound";
 // import Public from "./components/Public";
 import DashLayout from "./components/DashLayout";
-import SuperAdminProjects from "./features/super-admin-project/SuperAdminProjects";
+import SuperAdminProjects from "./features/superAdminProject/SuperAdminProjects";
 import SuperAdminTasks from "./features/super-admin-task/SuperAdminTasks";
 import SuperAdminPayslip from "./features/super-admin-payslip/SuperAdminPayslip";
 import SuperAdminLeads from "./features/super-admin-leads/SuperAdminLeads";
