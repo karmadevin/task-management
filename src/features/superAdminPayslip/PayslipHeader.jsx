@@ -1,4 +1,3 @@
-import React from "react";
 import "./PayslipHeader.css";
 import { Box, Breadcrumbs, Button, Link, Typography } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";

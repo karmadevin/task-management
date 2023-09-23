@@ -6,12 +6,12 @@ import NotFound from "./components/NotFound";
 // import Public from "./components/Public";
 import DashLayout from "./components/DashLayout";
 import SuperAdminProjects from "./features/superAdminProject/SuperAdminProjects";
-import SuperAdminTasks from "./features/super-admin-task/SuperAdminTasks";
-import SuperAdminPayslip from "./features/super-admin-payslip/SuperAdminPayslip";
-import SuperAdminLeads from "./features/super-admin-leads/SuperAdminLeads";
-import SuperAdminClient from "./features/super-admin-client/SuperAdminClient";
-import SuperAdminUser from "./features/super-admin-user/SuperAdminUser";
-import SuperAdminDashboard from "./features/super-admin-dashboard/SuperAdminDashboard";
+import SuperAdminTasks from "./features/superAdminTask/SuperAdminTasks";
+import SuperAdminPayslip from "./features/superAdminPayslip/SuperAdminPayslip";
+import SuperAdminLeads from "./features/superAdminLeads/SuperAdminLeads";
+import SuperAdminClient from "./features/superAdminClient/SuperAdminClient";
+import SuperAdminUser from "./features/superAdminUser/SuperAdminUser";
+import SuperAdminDashboard from "./features/superAdminDashboard/SuperAdminDashboard";
 
 function App() {
   return (
