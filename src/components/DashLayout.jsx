@@ -34,7 +34,7 @@ import taskicon from "../assets/taskicon.svg";
 // import logo from "../assets/logo.svg";
 import clients from "../assets/clients.svg";
 import leads from "../assets/leads.svg";
-import payslip from "../assets/Payslip.svg";
+import payslip from "../assets/payslip.svg";
 import user from "../assets/user.svg";
 import "./DashLayout.css";
 // import Superadminpayslip from "../features/Superadmin-payslip/Superadminpayslip";

@@ -1,5 +1,4 @@
-import React from "react";
-import "./PayslipHeader.css";
+import "./clientHeader.css";
 import { Box, Breadcrumbs, Button, Link, Typography } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import SearchIcon from "@mui/icons-material/Search";
@@ -7,11 +6,11 @@ import Reload from "../../assets/reload.svg";
 import Grid from "../../assets/grid.svg";
 import Download from "../../assets/download.svg";
 
-const PayslipHeader = () => {
+const ClientHeader = () => {
   return (
     <div className="heading">
       <div className="head-content1">
-        <h4>PAYSLIP</h4>
+        <h4>CLIENTS</h4>
         <Box className="box">
           <Breadcrumbs
             className="breadcrumbs"
@@ -21,7 +20,7 @@ const PayslipHeader = () => {
             <Link underline="hover" color="rgb(159, 165, 165)" href="#">
               SUPER ADMIN
             </Link>
-            <Typography className="typography">PAYSLIPS</Typography>
+            <Typography className="typography">CLIENTS</Typography>
           </Breadcrumbs>
         </Box>
       </div>
@@ -41,10 +40,10 @@ const PayslipHeader = () => {
         <div className="profileIcon">
           <img src={Download} alt="download" />
         </div>
-        <Button className="addproject"> + New Payslip</Button>
+        <Button className="addproject">+ Add Client</Button>
       </div>
     </div>
-  )
+  );
 };
 
-export default PayslipHeader;
+export default ClientHeader;
