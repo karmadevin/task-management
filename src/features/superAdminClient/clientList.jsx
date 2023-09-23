@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Table,
   TableBody,
@@ -16,7 +15,7 @@ import IosShareIcon from "@mui/icons-material/IosShare";
 import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
-import menu from "../../assets/menu.svg";
+// import menu from "../../assets/menu.svg";
 import Arrow from "../../assets/Arrow-payslip.png";
 import "./clientList.css";
 import profile from "../../assets/profile2.png";
