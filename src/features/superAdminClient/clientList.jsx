@@ -136,76 +136,6 @@ const data = [
       "https://m.media-amazon.com/images/I/51oTVlqzzLL._AC_UF894,1000_QL80_.jpg",
     ],
   },
-  {
-    id: "10",
-    Company: "Dellon Inc",
-    Owner: "Elleno",
-    Project: "1",
-    Invoice: "Rs. 5,000",
-    Tag: "UI/UX designer",
-    Status: "Active",
-    avatars: [
-      "https://s3.ivisa.com/website-assets/blog/hungary-photo-size-requirements.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfNNcQfBQd0_DLK0odTFHKQUcTjAVYigfY_A&usqp=CAU",
-      "https://m.media-amazon.com/images/I/51oTVlqzzLL._AC_UF894,1000_QL80_.jpg",
-    ],
-  },
-  {
-    id: "10",
-    Company: "Dellon Inc",
-    Owner: "Elleno",
-    Project: "1",
-    Invoice: "Rs. 5,000",
-    Tag: "UI/UX designer",
-    Status: "Active",
-    avatars: [
-      "https://s3.ivisa.com/website-assets/blog/hungary-photo-size-requirements.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfNNcQfBQd0_DLK0odTFHKQUcTjAVYigfY_A&usqp=CAU",
-      "https://m.media-amazon.com/images/I/51oTVlqzzLL._AC_UF894,1000_QL80_.jpg",
-    ],
-  },
-  {
-    id: "10",
-    Company: "Dellon Inc",
-    Owner: "Elleno",
-    Project: "1",
-    Invoice: "Rs. 5,000",
-    Tag: "UI/UX designer",
-    Status: "Active",
-    avatars: [
-      "https://s3.ivisa.com/website-assets/blog/hungary-photo-size-requirements.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfNNcQfBQd0_DLK0odTFHKQUcTjAVYigfY_A&usqp=CAU",
-      "https://m.media-amazon.com/images/I/51oTVlqzzLL._AC_UF894,1000_QL80_.jpg",
-    ],
-  },
-  {
-    id: "10",
-    Company: "Dellon Inc",
-    Owner: "Elleno",
-    Project: "1",
-    Invoice: "Rs. 5,000",
-    Tag: "UI/UX designer",
-    Status: "Active",
-    avatars: [
-      "https://s3.ivisa.com/website-assets/blog/hungary-photo-size-requirements.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfNNcQfBQd0_DLK0odTFHKQUcTjAVYigfY_A&usqp=CAU",
-      "https://m.media-amazon.com/images/I/51oTVlqzzLL._AC_UF894,1000_QL80_.jpg",
-    ],
-  },
-  {
-    id: "10",
-    Company: "Dellon Inc",
-    Owner: "Elleno",
-    Project: "1",
-    Invoice: "Rs. 5,000",
-    Tag: "UI/UX designer",
-    Status: "Active",
-    avatars: [
-      "https://s3.ivisa.com/website-assets/blog/hungary-photo-size-requirements.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfNNcQfBQd0_DLK0odTFHKQUcTjAVYigfY_A&usqp=CAU",
-      "https://m.media-amazon.com/images/I/51oTVlqzzLL._AC_UF894,1000_QL80_.jpg",
-    ],
-  },
 ];
 
 function getColorForStatus(status) {
@@ -273,43 +203,49 @@ const ClientList = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map((row, index) => (
-              <TableRow className="tablerow" key={index}>
-                <Checkbox className="Checkbox" {...label} />
-                <TableCell className="titlecontent" align="center">
-                  {row.id}
-                </TableCell>
-                <TableCell className="titlecontent" align="center">
-                  {row.Company}
-                </TableCell>
-                <TableCell className="profile" align="center">
-                  <img src={profile} alt="profile" />
-                  {row.Owner}
-                </TableCell>
-                <TableCell className="titlecontent" align="center">
-                  {row.Project}
-                </TableCell>
-                <TableCell className="titlecontent" align="center">
-                  {row.Invoice}
-                </TableCell>
-                <TableCell className="titlecontent" align="center">
-                  {row.Tag}
-                  <img src={Circle} alt="profile" />
-                </TableCell>
-                <TableCell className="statuscontent" align="center">
-                  <span style={{ color: getColorForStatus(row.Status) }}>
-                    {row.Status}
-                  </span>
-                </TableCell>
-                <TableCell className="iconscontent" align="center">
-                  <MailOutlineOutlinedIcon className="icons" color="A200" />
-                  <PhoneOutlinedIcon className="icons" color="error" />
-                  <EditNoteIcon className="icons" color="success" />
-                  <IosShareIcon className="icons" color="secondary" />
-                  <MoreHorizOutlinedIcon className="icons" color="default" />
-                </TableCell>
-              </TableRow>
-            ))}
+            {data
+              .slice(page * rowperpage, page * rowperpage + rowperpage)
+              .map((row, index) => (
+                <TableRow className="tablerow" key={index}>
+                  <Checkbox className="Checkbox" {...label} />
+                  <TableCell className="titlecontent" align="center">
+                    {row.id}
+                  </TableCell>
+                  <TableCell className="titlecontent" align="center">
+                    {row.Company}
+                  </TableCell>
+                  <TableCell className="profile" align="center">
+                    <div className="Profile">
+                      <img src={profile} alt="profile" />
+                      {row.Owner}
+                    </div>
+                  </TableCell>
+                  <TableCell className="titlecontent" align="center">
+                    {row.Project}
+                  </TableCell>
+                  <TableCell className="titlecontent" align="center">
+                    {row.Invoice}
+                  </TableCell>
+                  <TableCell className="titlecontent" align="center">
+                    <div className="Profile">
+                      {row.Tag}
+                      <img src={Circle} alt="profile" />
+                    </div>
+                  </TableCell>
+                  <TableCell className="statuscontent" align="center">
+                    <span style={{ color: getColorForStatus(row.Status) }}>
+                      {row.Status}
+                    </span>
+                  </TableCell>
+                  <TableCell className="iconscontent" align="center">
+                    <MailOutlineOutlinedIcon className="icons" color="A200" />
+                    <PhoneOutlinedIcon className="icons" color="error" />
+                    <EditNoteIcon className="icons" color="success" />
+                    <IosShareIcon className="icons" color="secondary" />
+                    <MoreHorizOutlinedIcon className="icons" color="default" />
+                  </TableCell>
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </TableContainer>

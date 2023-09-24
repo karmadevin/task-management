@@ -17,7 +17,7 @@ const TaskHeading = () => {
             separator={<NavigateNextIcon fontSize="small" />}
           >
             <Link underline="hover" color="rgb(159, 165, 165)" href="#">
-              SUPER ADMIN
+              DEVELOPER
             </Link>
             <Typography className="superadmintask-typography">TASKS</Typography>
           </Breadcrumbs>

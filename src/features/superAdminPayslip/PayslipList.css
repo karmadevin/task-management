@@ -54,3 +54,15 @@
 .titlecontent img {
   height: 20px;
 }
+
+.payslip-TableHead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payslip-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

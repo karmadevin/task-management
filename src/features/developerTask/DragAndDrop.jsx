@@ -6,18 +6,14 @@ import MessageIcon from "@mui/icons-material/Message";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import { Avatar } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
-import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
-import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
-import TaskOutlinedIcon from "@mui/icons-material/TaskOutlined";
 
 function DragAndDrop() {
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      title: "Mobile Banking App Development",
-      description: "$4500.00",
-      column: "New",
+      title: "Initial Design Concepts & Mockups",
+      description: "Normal",
+      column: "todo",
       avatars: [
         "https://img.freepik.com/free-photo/happy-young-businessman-walking-near-business-center_171337-19784.jpg",
         "https://media.istockphoto.com/id/1318482009/photo/young-woman-ready-for-job-business-concept.jpg?s=612x612&w=0&k=20&c=Jc1NcoUMoM78AxPTh9EApaPU2kXh2evb499JgW99b0g=",
@@ -25,9 +21,9 @@ function DragAndDrop() {
     },
     {
       id: 2,
-      title: "Mobile Banking App Development",
-      description: "$4500.00",
-      column: "Disqualified",
+      title: "Additions Mockup Designs",
+      description: "Normal",
+      column: "inProgress",
       avatars: [
         "https://img.freepik.com/free-photo/happy-young-businessman-walking-near-business-center_171337-19784.jpg",
         "https://media.istockphoto.com/id/1318482009/photo/young-woman-ready-for-job-business-concept.jpg?s=612x612&w=0&k=20&c=Jc1NcoUMoM78AxPTh9EApaPU2kXh2evb499JgW99b0g=",
@@ -35,9 +31,9 @@ function DragAndDrop() {
     },
     {
       id: 3,
-      title: "Mobile Banking App Development",
-      description: "$4500.00",
-      column: "Qualified",
+      title: "Initial Design Concepts & Mockups",
+      description: "Normal",
+      column: "Testing",
       avatars: [
         "https://img.freepik.com/free-photo/happy-young-businessman-walking-near-business-center_171337-19784.jpg",
         "https://media.istockphoto.com/id/1318482009/photo/young-woman-ready-for-job-business-concept.jpg?s=612x612&w=0&k=20&c=Jc1NcoUMoM78AxPTh9EApaPU2kXh2evb499JgW99b0g=",
@@ -45,9 +41,9 @@ function DragAndDrop() {
     },
     {
       id: 4,
-      title: "Mobile Banking App Development",
-      description: "$4500.00",
-      column: "Contacted",
+      title: "Additions Mockup Designs",
+      description: "Normal",
+      column: "Awaiting Feedback",
       avatars: [
         "https://img.freepik.com/free-photo/happy-young-businessman-walking-near-business-center_171337-19784.jpg",
         "https://media.istockphoto.com/id/1318482009/photo/young-woman-ready-for-job-business-concept.jpg?s=612x612&w=0&k=20&c=Jc1NcoUMoM78AxPTh9EApaPU2kXh2evb499JgW99b0g=",
@@ -55,9 +51,9 @@ function DragAndDrop() {
     },
     {
       id: 5,
-      title: "Mobile Banking App Development",
-      description: "$4500.00",
-      column: "New",
+      title: "Additions Mockup Designs",
+      description: "Normal",
+      column: "Awaiting Feedback",
       avatars: [
         "https://img.freepik.com/free-photo/happy-young-businessman-walking-near-business-center_171337-19784.jpg",
         "https://media.istockphoto.com/id/1318482009/photo/young-woman-ready-for-job-business-concept.jpg?s=612x612&w=0&k=20&c=Jc1NcoUMoM78AxPTh9EApaPU2kXh2evb499JgW99b0g=",
@@ -65,9 +61,9 @@ function DragAndDrop() {
     },
     {
       id: 6,
-      title: "Mobile Banking App Development",
-      description: "$4500.00",
-      column: "Disqualified",
+      title: "Initial Design Concepts & Mockups",
+      description: "Normal",
+      column: "inProgress",
       avatars: [
         "https://img.freepik.com/free-photo/happy-young-businessman-walking-near-business-center_171337-19784.jpg",
         "https://media.istockphoto.com/id/1318482009/photo/young-woman-ready-for-job-business-concept.jpg?s=612x612&w=0&k=20&c=Jc1NcoUMoM78AxPTh9EApaPU2kXh2evb499JgW99b0g=",
@@ -75,9 +71,9 @@ function DragAndDrop() {
     },
     {
       id: 7,
-      title: "Mobile Banking App Development",
-      description: "$4500.00",
-      column: "Disqualified",
+      title: "Initial Design Concepts & Mockups",
+      description: "Normal",
+      column: "Awaiting Feedback",
       avatars: [
         "https://img.freepik.com/free-photo/happy-young-businessman-walking-near-business-center_171337-19784.jpg",
         "https://media.istockphoto.com/id/1318482009/photo/young-woman-ready-for-job-business-concept.jpg?s=612x612&w=0&k=20&c=Jc1NcoUMoM78AxPTh9EApaPU2kXh2evb499JgW99b0g=",
@@ -85,7 +81,7 @@ function DragAndDrop() {
     },
   ]);
 
-  const columns = ["New", "Disqualified", "Qualified", "Contacted"];
+  const columns = ["todo", "inProgress", "Testing", "Awaiting Feedback"];
 
   const handleDragStart = (e, id) => {
     e.dataTransfer.setData("text/plain", id.toString());
@@ -116,13 +112,7 @@ function DragAndDrop() {
             onDrop={(e) => handleDrop(e, column)}
             onDragOver={(e) => allowDrop(e)}
           >
-            <div className="dcardhead">
-              <h2>{column.charAt(0).toUpperCase() + column.slice(1)}</h2>
-              <div>
-                <AddCircleOutlinedIcon />
-              </div>
-            </div>
-
+            <h2>{column.charAt(0).toUpperCase() + column.slice(1)}</h2>
             <div className="dcards">
               {tasks
                 .filter((task) => task.column === column)
@@ -137,39 +127,27 @@ function DragAndDrop() {
                       <h3>{task.title}</h3>
                       <MoreVertIcon />
                     </div>
-                    <div className="Designer">UI/UX Designer</div>
-                    <p className="dbuttondesc">{task.description}</p>
+                    <p className="dbutton">{task.description}</p>
                     <div>
-                      Telephone: <span>__ __ __</span>
+                      Project:<span>Fitness Web App</span>
                     </div>
                     <div>
-                      Created: <span>20-09-2023</span>
+                      Client:<span>Rapid Fitness Inc</span>
                     </div>
                     <div>
-                      Contacted: <span>20-09-2023</span>
+                      Created:<span>18-09-2023</span>
                     </div>
                     <div>
-                      Email: <span>-- -- --</span>
-                    </div>
-                    <div>
-                      Content Type: <span>Unknown</span>
-                    </div>
-                    <div>
-                      Target Date: <span>01-10-2023</span>
+                      Due:<span>18-09-2023</span>
                     </div>
                     <div className="lastcontent">
-                      <div className="lastcontent-icons5">
+                      <div className="lastcontent-icons">
                         <AccountCircleRoundedIcon
                           style={{ color: "rgb(50,205,239)" }}
                         />
-                        <StarOutlinedIcon style={{ color: "rgb(74,232,93)" }} />
                         <AttachmentIcon style={{ color: "rgb(160,160,162)" }} />
                         <MessageIcon style={{ color: "rgb(160,160,162)" }} />
-                        <TaskOutlinedIcon
-                          style={{ color: "rgb(160,160,162)" }}
-                        />
                       </div>
-
                       <div className="lastcontent-pic">
                         {task.avatars.map((avatar, avatarIndex) => (
                           <Avatar

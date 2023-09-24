@@ -7,7 +7,7 @@ function Tabs() {
 
   const tabs = [
     {
-      label: "Tab 1",
+      label: "Project",
       data: [
         {
           id: 1,
@@ -72,7 +72,7 @@ function Tabs() {
       ],
     },
     {
-      label: "Tab 2",
+      label: "Task",
       data: [
         {
           id: 1,

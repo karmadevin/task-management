@@ -1,5 +1,5 @@
 // import React from 'react';
-import "./Superadminprojects.css";
+import "./developerprojects.css";
 import CardData from "./CardData";
 import ProjectCard from "./ActionAreaCard";
 // import { Typography } from '@mui/material';

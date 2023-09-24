@@ -12,6 +12,7 @@
   display: flex !important;
   flex-direction: row !important;
   width: 100% !important;
+  justify-content: center;
   border: none;
   margin: 5px;
 }

@@ -1,7 +1,7 @@
 import TaskHeading from "./TaskHeading";
 import ActionAreaCard from "./ActionAreaCard";
 import CardData from "./CardData";
-import "./Superadmintasks.css";
+import "./developerTasks.css";
 import DragAndDrop from "./DragAndDrop";
 
 const SuperAdminTasks = () => {

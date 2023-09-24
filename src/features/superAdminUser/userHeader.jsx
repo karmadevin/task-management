@@ -24,7 +24,6 @@ const UserHeader = () => {
       <div className="head-content2">
         <Button className="addproject">+ Add User</Button>
       </div>
-
     </div>
   );
 };

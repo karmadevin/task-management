@@ -78,6 +78,28 @@ const data = [
       "https://m.media-amazon.com/images/I/51oTVlqzzLL._AC_UF894,1000_QL80_.jpg",
     ],
   },
+  {
+    Title: "Amanda Omar",
+    Role: "UI/UX designer",
+    Assigned: "revamp website",
+    Status: "Active",
+    avatars: [
+      "https://s3.ivisa.com/website-assets/blog/hungary-photo-size-requirements.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfNNcQfBQd0_DLK0odTFHKQUcTjAVYigfY_A&usqp=CAU",
+      "https://m.media-amazon.com/images/I/51oTVlqzzLL._AC_UF894,1000_QL80_.jpg",
+    ],
+  },
+  {
+    Title: "Amanda Omar",
+    Role: "UI/UX designer",
+    Assigned: "revamp website",
+    Status: "Active",
+    avatars: [
+      "https://s3.ivisa.com/website-assets/blog/hungary-photo-size-requirements.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfNNcQfBQd0_DLK0odTFHKQUcTjAVYigfY_A&usqp=CAU",
+      "https://m.media-amazon.com/images/I/51oTVlqzzLL._AC_UF894,1000_QL80_.jpg",
+    ],
+  },
 ];
 
 function getColorForStatus(status) {
@@ -111,54 +133,71 @@ const UserList = () => {
             <TableRow className="thead1">
               <Checkbox className="theadcheckbox" {...label} />
               <TableCell className="tableCell">
-                Name
-                <img src={Arrow} alt="arrow" className="arrow" />
+                <div className="TableHead">
+                  Name
+                  <img src={Arrow} alt="arrow" className="arrow" />
+                </div>
               </TableCell>
               <TableCell className="tableCell">
-                Role
-                <img src={Arrow} alt="arrow" className="arrow" />
+                <div className="TableHead">
+                  Role
+                  <img src={Arrow} alt="arrow" className="arrow" />
+                </div>
               </TableCell>
               <TableCell className="tableCell">
+                <div className="TableHead"></div>
                 Assigned
                 <img src={Arrow} alt="arrow" className="arrow" />
               </TableCell>
               <TableCell className="tableCell">
-                Status
-                <img src={Arrow} alt="arrow" className="arrow" />
+                <div className="TableHead">
+                  Status
+                  <img src={Arrow} alt="arrow" className="arrow" />
+                </div>
               </TableCell>
               <TableCell className="tableCell">
-                Action
-                <img src={Arrow} alt="arrow" className="arrow" />
+                <div className="TableHead">
+                  Action
+                  <img src={Arrow} alt="arrow" className="arrow" />
+                </div>
               </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map((row, index) => (
-              <TableRow className="tablerow" key={index}>
-                <Checkbox className="Checkbox" {...label} />
-                <TableCell className="titlecontent" id="profile">
-                  <img src={profile} alt="profile" />
-                  {row.Title}
-                </TableCell>
-                <TableCell className="clientcontent">
-                  {row.Role}
-                  <img src={Circle} alt="profile" />
-                </TableCell>
-                <TableCell className="titlecontent">{row.Assigned}</TableCell>
-                <TableCell className="statuscontent">
-                  <span style={{ color: getColorForStatus(row.Status) }}>
-                    {row.Status}
-                  </span>
-                </TableCell>
-                <TableCell className="iconscontent">
-                  <MailOutlineOutlinedIcon className="icons" color="A200" />
-                  <PhoneOutlinedIcon className="icons" color="error" />
-                  <EditNoteIcon className="icons" color="success" />
-                  <IosShareIcon className="icons" color="secondary" />
-                  <MoreHorizOutlinedIcon className="icons" color="default" />
-                </TableCell>
-              </TableRow>
-            ))}
+            {data
+              .slice(page * rowperpage, page * rowperpage + rowperpage)
+              .map((row, index) => (
+                <TableRow className="tablerow" key={index}>
+                  <Checkbox className="Checkbox" {...label} />
+                  <TableCell className="titlecontent" id="profile">
+                    <div className="Profile">
+                      <img src={profile} alt="profile" />
+                      {row.Title}
+                    </div>
+                  </TableCell>
+                  <TableCell className="clientcontent">
+                    <div className="Profile">
+                      {row.Role}
+                      <img src={Circle} alt="profile" />
+                    </div>
+                  </TableCell>
+                  <TableCell className="titlecontent">{row.Assigned}</TableCell>
+                  <TableCell className="statuscontent">
+                    <div className="Profile">
+                      <span style={{ color: getColorForStatus(row.Status) }}>
+                        {row.Status}
+                      </span>
+                    </div>
+                  </TableCell>
+                  <TableCell className="iconscontent">
+                    <MailOutlineOutlinedIcon className="icons" color="A200" />
+                    <PhoneOutlinedIcon className="icons" color="error" />
+                    <EditNoteIcon className="icons" color="success" />
+                    <IosShareIcon className="icons" color="secondary" />
+                    <MoreHorizOutlinedIcon className="icons" color="default" />
+                  </TableCell>
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </TableContainer>
