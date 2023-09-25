@@ -1,12 +1,12 @@
-import LeadsHeading from"./LeadsHeading"
-import DragAndDrop from './DragAndDrop'
+import LeadsHeading from "./LeadsHeading";
+import DragAndDrop from "./DragAndDrop";
 const SuperAdminLeads = () => {
   return (
     <div>
-        <LeadsHeading/>
-        <DragAndDrop/>
+      <LeadsHeading />
+      <DragAndDrop />
     </div>
-  )
-}
+  );
+};
 
 export default SuperAdminLeads;

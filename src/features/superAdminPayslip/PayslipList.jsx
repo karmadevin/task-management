@@ -53,6 +53,33 @@ const data = [
     Deductions: "INR: 1,000",
     NetPay: "INR: 23,400",
   },
+  {
+    Title: "Payslip-5",
+    User: "Amanda Omar",
+    Month: "July 2023",
+    Salary: "INR: 20,000",
+    Earnings: "INR: 20,000",
+    Deductions: "INR: 1,000",
+    NetPay: "INR: 23,400",
+  },
+  {
+    Title: "Payslip-6",
+    User: "Amanda Omar",
+    Month: "July 2023",
+    Salary: "INR: 20,000",
+    Earnings: "INR: 20,000",
+    Deductions: "INR: 1,000",
+    NetPay: "INR: 23,400",
+  },
+  {
+    Title: "Payslip-7",
+    User: "Amanda Omar",
+    Month: "July 2023",
+    Salary: "INR: 20,000",
+    Earnings: "INR: 20,000",
+    Deductions: "INR: 1,000",
+    NetPay: "INR: 23,400",
+  },
 ];
 const PayslipList = () => {
   const handlechangepage = (event, newpage) => {
@@ -66,67 +93,75 @@ const PayslipList = () => {
   const [page, pagechange] = useState(0);
   const [rowperpage, rowperpageChange] = useState(5);
 
-    return (
-      <div>
-        <TableContainer component={Paper}>
-          <Table className="table">
-            <TableHead className="thead">
-              <TableRow className="thead1">
-                <Checkbox className="theadcheckbox" {...label} />
-                <TableCell className="tableCell">
+  return (
+    <div>
+      <TableContainer component={Paper}>
+        <Table className="table">
+          <TableHead className="thead">
+            <TableRow className="thead1">
+              <Checkbox className="theadcheckbox" {...label} />
+              <TableCell className="tableCell">
+                <div className="payslip-TableHead">
                   Payslip
                   <img src={Arrow} alt="arrow" className="arrow" />
-                </TableCell>
-                <TableCell className="tableCell">
+                </div>
+              </TableCell>
+              <TableCell className="tableCell">
+                <div className="payslip-TableHead">
                   User name <img src={Arrow} alt="arrow" className="arrow" />
-                </TableCell>
-                <TableCell className="tableCell">
+                </div>
+              </TableCell>
+              <TableCell className="tableCell">
+                <div className="payslip-TableHead">
                   Payslip month{" "}
                   <img src={Arrow} alt="arrow" className="arrow" />
-                </TableCell>
-                <TableCell className="tableCell">
+                </div>
+              </TableCell>
+              <TableCell className="tableCell">
+                <div className="payslip-TableHead">
                   Basic Salary <img src={Arrow} alt="arrow" className="arrow" />
-                </TableCell>
-                <TableCell>Total Earnings</TableCell>
-                <TableCell>Total Deductions</TableCell>
-                <TableCell>Net Pay</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {data
-                .slice(page * rowperpage, page * rowperpage + rowperpage)
-                .map((row, index) => (
-                  <TableRow className="tablerow" key={index}>
-                    <Checkbox className="Checkbox" {...label} />
-                    <TableCell className="titlecontent">
+                </div>
+              </TableCell>
+              <TableCell>Total Earnings</TableCell>
+              <TableCell>Total Deductions</TableCell>
+              <TableCell>Net Pay</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {data
+              .slice(page * rowperpage, page * rowperpage + rowperpage)
+              .map((row, index) => (
+                <TableRow className="tablerow" key={index}>
+                  <Checkbox className="Checkbox" {...label} />
+                  <TableCell className="titlecontent">
+                    <div className="payslip-profile">
                       {row.Title}
                       <img src={menu} alt="menu" className="menu" />
-                    </TableCell>
-                    <TableCell className="clientcontent">{row.User}</TableCell>
-                    <TableCell className="datecontent">{row.Month}</TableCell>
-                    <TableCell className="datecontent">{row.Salary}</TableCell>
-                    <TableCell className="datecontent">
-                      {row.Earnings}
-                    </TableCell>
-                    <TableCell className="datecontent">
-                      {row.Deductions}
-                    </TableCell>
-                    <TableCell className="datecontent">{row.NetPay}</TableCell>
-                  </TableRow>
-                ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
-          rowsPerPage={rowperpage}
-          page={page}
-          count={data.length}
-          component="div"
-          onPageChange={handlechangepage}
-          onRowsPerPageChange={handleRowsPerPage}
-        ></TablePagination>
-      </div>
-    );
-  };
+                    </div>
+                  </TableCell>
+                  <TableCell className="clientcontent">{row.User}</TableCell>
+                  <TableCell className="datecontent">{row.Month}</TableCell>
+                  <TableCell className="datecontent">{row.Salary}</TableCell>
+                  <TableCell className="datecontent">{row.Earnings}</TableCell>
+                  <TableCell className="datecontent">
+                    {row.Deductions}
+                  </TableCell>
+                  <TableCell className="datecontent">{row.NetPay}</TableCell>
+                </TableRow>
+              ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <TablePagination
+        rowsPerPageOptions={[5, 10, 25]}
+        rowsPerPage={rowperpage}
+        page={page}
+        count={data.length}
+        component="div"
+        onPageChange={handlechangepage}
+        onRowsPerPageChange={handleRowsPerPage}
+      ></TablePagination>
+    </div>
+  );
+};
 export default PayslipList;

@@ -17,15 +17,5 @@ const CardData = [
     title: "Total Tasks",
     subtitle: "680",
   },
-  {
-    img: <Person2OutlinedIcon fontSize="large" />,
-    title: "User",
-    subtitle: "680",
-  },
-  {
-    img: <GroupsOutlinedIcon fontSize="large" />,
-    title: "Clients",
-    subtitle: "450",
-  },
 ];
 export default CardData;

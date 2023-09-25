@@ -43,7 +43,7 @@ const PayslipHeader = () => {
         <Button className="addproject"> + New Payslip</Button>
       </div>
     </div>
-  )
+  );
 };
 
 export default PayslipHeader;

@@ -1,7 +1,6 @@
 .project {
-    display: flex;
-  }
-  .SuperadminClient {
-    width: 100%;
-  }
-  
+  display: flex;
+}
+.SuperadminClient {
+  width: 100%;
+}

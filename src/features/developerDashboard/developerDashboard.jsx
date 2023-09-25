@@ -1,7 +1,7 @@
 import ActionAreaCard from "./ActionAreaCard";
 
 import CardData from "./CardData";
-import "./Superadmindashboard.css";
+import "./developerDashboard.css";
 import Bars1 from "./Bars1";
 import Bars2 from "./Bars2";
 import Tabs from "./Tabs";

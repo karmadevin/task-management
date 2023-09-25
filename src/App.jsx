@@ -12,7 +12,9 @@ import SuperAdminLeads from "./features/superAdminLeads/SuperAdminLeads";
 import SuperAdminClient from "./features/superAdminClient/SuperAdminClient";
 import SuperAdminUser from "./features/superAdminUser/SuperAdminUser";
 import SuperAdminDashboard from "./features/superAdminDashboard/SuperAdminDashboard";
-
+import DeveloperDashboard from "./features/developerDashboard/developerDashboard";
+import DeveloperProject from "./features/developerProject/developerProjects";
+import DeveloperTask from "./features/developerTask/developerTasks";
 function App() {
   return (
     <Paper elevation={0} style={{ Height: "100vh", borderRadius: "0px" }}>

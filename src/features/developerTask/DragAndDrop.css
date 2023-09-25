@@ -59,39 +59,14 @@
   padding-bottom: 5px;
   font-size: 14px;
 }
-.dcardhead > h2 {
+.dcolumns-1 > h2 {
   padding-left: 15px;
   color: rgb(128, 136, 132);
   font-size: 20px;
-  padding-bottom: 0px;
+  padding-bottom: 10px;
 }
-.dcardhead > div {
-  padding-right: 15px;
-  color: rgb(128, 136, 132);
-  font-size: 25px !important;
-  padding-bottom: 0px;
-}
-.lastcontent-icons5 {
+.lastcontent-icons {
   display: flex;
   justify-content: space-between;
-  width: 130px;
-}
-.dcardhead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.Designer {
-  padding-left: 10px;
-  margin-bottom: 5px;
-  color: rgb(128, 136, 132);
-}
-.dbuttondesc {
-  color: rgb(84, 76, 232);
-  background-color: rgb(221, 219, 250);
-  font-weight: 500;
-  border-radius: 5px;
-  width: 100px;
-  padding: 4px 15px;
-  margin-top: 0px;
+  width: 80px;
 }
