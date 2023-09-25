@@ -1,0 +1,60 @@
+/* Add this CSS to your stylesheet or component */
+.tabs {
+    display: flex;
+  }
+  
+  .tabs > button {
+    width: 15%;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid rgb(0, 0, 2); /* Change the border color to your desired color */
+  }
+  
+  button.active {
+    border: 1px solid rgb(0, 0, 0); /* Change the border color to your desired color */
+    border-bottom: transparent;
+    background-color: #fff;
+  }
+  .tab-item{
+    display: flex;
+    width: 100% !important;
+  }
+  .tab-content{
+    
+    padding: 15px;
+    
+  }
+  .tab-content-text {
+    margin-left: 20px;
+    width: 100%;
+  }
+  .tab-content-text > h5{
+    margin: 0px;
+  }
+  .tab-content-text > h5 > span{
+    font-size: 10px;
+    padding-left: 5px;
+    color: gray;
+  }
+  .tab-content-text > p{
+    margin: 0px;
+    font-size: 10px;
+    color: gray;
+
+  }
+  .tab-content-text > div{
+    background-color: rgb(241, 236, 236);
+    width: 80%;
+    font-size: 12px;
+    color: gray;
+
+    margin-bottom: 30px;
+  }
+  .overalltabs{
+    width: 100%;
+    margin-top: 20px;
+    
+  }
+  
