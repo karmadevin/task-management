@@ -1,0 +1,73 @@
+.inv-label{
+    margin: auto 10px;
+    width: 100px;
+}
+.inv-segone{
+    display: flex;
+    margin-bottom: 15px;
+    
+    }
+    .inv-segonelast{
+        display: flex;
+        margin-bottom: 15px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid black;
+    }
+.inv-textfield{
+    border: 1px solid black !important;
+    height: 40px !important;
+    width: 500px;
+    display: flex;
+    justify-content: flex-end;
+}
+.inv-segthree{
+    display: flex;
+    flex-direction: column;
+}
+.inv-labelthree{
+    margin: auto 10px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+.inv-textfieldthree{
+    border: 1px solid black !important;
+    height: 40px !important;
+    width: 640px;
+    display: flex;
+    margin: 0px auto !important;
+    justify-content: flex-end;
+    margin-bottom: 10px !important;
+}
+.logoss{
+    margin-top: 10px;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 10px ;
+}
+.inv-labelthree1{
+    margin-bottom: 10px;
+}
+.btns{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.btn1{
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.btn2{
+    height: 30px;
+    width: 100px;
+    border: none;
+    background-color: rgb(219, 217, 217);
+    border-radius: 5px;
+}
+.inv-headclose{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

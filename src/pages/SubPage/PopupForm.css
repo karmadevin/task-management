@@ -1,0 +1,41 @@
+
+
+.segone{
+display: flex;
+margin-bottom: 5px;
+
+}
+.label{
+    margin: auto 10px;
+    width: 200px;
+}
+.textfield{
+    height: 40px !important;
+    width: 500px;
+    display: flex;
+    justify-content: flex-end;
+}
+.taskbtn{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.taskbtn > button{
+    margin-right: 10px;
+}
+.segtwo{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.secondsec{
+    border-top: 1px solid grey  ;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.headclose{
+    display: flex;
+    justify-content: space-between;
+}

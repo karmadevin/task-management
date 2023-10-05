@@ -1,0 +1,72 @@
+.financial-card{
+    margin-top: 10px;
+width: 100%;
+margin-right: 20px;
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start !important;
+    margin-bottom: 20px;
+}
+.financial-card1{
+    margin-top: 0px;
+    margin-right: 5px !important;
+    width: 90% !important;
+}
+.financial-card2{
+    margin-left: -10px;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    
+}
+.financial-line{
+    width: 100%;
+        background-color:rgb(201, 191, 191);
+        height: 6px;
+        margin: 10px auto !important;
+        border-radius: 5px !important;
+}
+.financial-count{
+    font-size: 17px !important;
+    font-weight: 600 !important;
+}
+.financial-status{
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    color: gray;
+}
+
+@media (min-width: 320px) and (max-width:700px) {
+    .financial-card{
+        margin-top: 20px;
+        margin-right: 5px;
+        padding: 0 !important;
+        
+    }
+    .financial-count{
+        font-size: 10px !important;
+        font-weight: 600 !important;
+    }
+    .financial-status{
+        font-size: 10px !important;
+        font-weight: 800 !important;
+        color: gray; 
+    }
+    .financial-line{
+        width: 100% !important;
+        margin: 5px 2px !important;
+    }
+}
+
+@media (min-width: 700px) and (max-width:780px) {
+    .financial-count{
+        font-size: 10px !important;
+        font-weight: 600 !important;
+    }
+    .financial-status{
+        font-size: 12px !important;
+        font-weight: 800 !important;
+        color: gray;
+    }
+}

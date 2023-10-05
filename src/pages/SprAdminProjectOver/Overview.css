@@ -1,0 +1,121 @@
+
+.overview{
+    display: flex;
+    gap: 30px;
+    
+}
+
+.overviewsection1{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px;
+    width: 50%;
+    
+}
+.overviewsection2{
+    background-color: white;
+    margin: 10px;
+    width: 50%;
+}
+.overviewfirst{
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(219, 215, 215);
+}
+.overviewfirst > div >div{
+    color: rgb(148,148,148);
+    font-size: 18px;
+    font-weight: 500;
+}
+.overviewfirst > div >p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.overviewfirst > .bar{
+    width: 20%;
+}
+.overviewsecond{
+    padding: 20px 50px;
+    border-bottom: 2px solid rgb(219, 215, 215);
+}
+.ap{
+    display: flex;
+    
+}
+.Assigned > div{
+    display: flex;
+    gap: 10px;
+}
+.Assigned {
+    margin-right: 200px;
+}
+.tagsthree > button{
+    margin-right: 15px;
+    background-color: rgb(204, 206, 209);
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500 !important;
+}
+.overviewthird{
+    padding: 20px 50px;
+    border-bottom: 2px solid rgb(219, 215, 215);
+}
+.overviewthird-first{
+    display: flex;
+    padding-bottom: 10px;
+}
+.overviewthird-second{
+    display: flex;
+}
+.sdate{
+    margin-right:200px;
+}
+.cate{
+    margin-right:150px;
+}
+.overviewfourth{
+    padding: 20px 50px;
+}
+.overviewfourth-first{
+    display: flex;
+}
+.billing{
+    margin-right:200px;
+
+}
+.light{
+    color: rgb(148,148,148);
+    font-weight: 500;
+}
+.onhold{
+    margin-right: 15px;
+    background-color: rgb(204, 206, 209);
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500 !important;
+}
+
+.overviewsection2{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px 100px;
+}
+.overviewsection2-fcontent{
+    padding-top: 50px;
+    display: flex;
+    gap: 40px;
+}
+.overviewsection2-con > div >span{
+    color: rgb(148,148,148);
+    font-weight: 300;
+    font-size: 12px;
+}
+.overviewsection2-con > div {
+    font-weight: 500;
+    color: rgb(148,148,148);
+}

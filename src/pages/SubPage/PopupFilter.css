@@ -1,0 +1,32 @@
+.filtersegone{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    
+    }
+    .filterlabel{
+        margin: auto 10px;
+        width: 200px;
+    }
+    .twoinput{
+        display: flex;
+    }
+    .filtertextfield1{
+width: 165px !important;
+margin-left: 4px !important;
+    }
+    .filtertaskbtn{
+       padding-bottom: 30px;
+        display: flex;
+        justify-content: end;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+    .filtertaskbtn > button{
+        margin-right: 10px;
+    }
+   .popfil{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
