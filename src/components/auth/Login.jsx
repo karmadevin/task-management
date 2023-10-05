@@ -35,7 +35,7 @@ const Login = () => {
       }),
   });
 
-  const { handleSubmit, values, handleChange, handleBlur, touched, errors } =
+  const { handleSubmit, values, handleChange, touched, errors } =
     useFormik({
       initialValues: {
         email: "",
