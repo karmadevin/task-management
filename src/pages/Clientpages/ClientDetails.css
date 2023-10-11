@@ -1,0 +1,12 @@
+.ClientDetails{
+    padding: 20px 100px;
+}
+.light{
+    color: rgb(81, 79, 79);
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.dhead{
+    text-decoration: underline;
+}

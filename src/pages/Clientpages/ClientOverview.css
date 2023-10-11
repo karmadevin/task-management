@@ -1,0 +1,111 @@
+
+.ClientOverview{
+    display: flex;
+    gap: 30px;
+    
+}
+
+
+.ClientOverviewsection2{
+    background-color: white;
+    margin: 10px;
+    width: 100%;
+}
+
+.ClientOverviewsecond{
+    padding: 20px 50px;
+    border-bottom: 2px solid rgb(219, 215, 215);
+}
+.ap{
+    display: flex;
+    
+}
+.Assigned > div{
+    display: flex;
+    gap: 10px;
+}
+.Assigned {
+    margin-right: 200px;
+}
+.tagsthree > button{
+    margin-right: 15px;
+    background-color: rgb(204, 206, 209);
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500 !important;
+}
+.ClientOverviewthird{
+    padding: 20px 50px;
+    border-bottom: 2px solid rgb(219, 215, 215);
+}
+.ClientOverviewthird-first{
+    display: flex;
+    padding-bottom: 10px;
+}
+.ClientOverviewthird-second{
+    display: flex;
+}
+.sdate{
+    margin-right:200px;
+}
+.cate{
+    margin-right:150px;
+}
+.ClientOverviewfourth{
+    padding: 20px 50px;
+}
+.ClientOverviewfourth-first{
+    display: flex;
+}
+.billing{
+    margin-right:200px;
+
+}
+.light{
+    color: rgb(148,148,148);
+    font-weight: 500;
+}
+.onhold{
+    margin-right: 15px;
+    background-color: rgb(204, 206, 209);
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500 !important;
+}
+
+.ClientOverviewsection2{
+    padding: 0px 80px;
+}
+.ClientOverviewsection2-fcontent{
+    padding-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 40px;
+}
+.ClientOverviewsection2-con > div >span{
+    color: rgb(148,148,148);
+    font-weight: 300;
+    font-size: 12px;
+}
+.ClientOverviewsection2-con > div {
+    font-weight: 500;
+    color: rgb(86,82,242);
+}
+.lsmall{
+    color: black !important;
+    font-size: 13px !important;
+}
+.ClientOverviewsection2-con > p {
+    font-size: 15px;
+    background-color: rgb(233,233,234);
+    width: 700px!important;
+    padding: 2px;
+    color: rgb(74, 69, 218);
+    font-weight: 400;
+    margin-bottom: -5px;
+    margin-top: 5px;
+}

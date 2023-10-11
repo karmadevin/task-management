@@ -1,0 +1,85 @@
+.OverviewHead-heading{
+    background-color: rgb(241,247,253);
+}
+
+
+.OverviewHead-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height:70px;
+    margin-bottom: -20px;
+    
+    
+}
+.OverviewHead-head-content1{
+    width: 50%;
+    height: 100%;
+    margin-left: 20px;
+}
+.OverviewHead-head-content1 > h2{
+    letter-spacing: 1px;
+   font-size: 19px;
+     margin-top: 10px;
+}
+.OverviewHead-head-content1 > .OverviewHead-box >.OverviewHead-breadcrumbs{
+    
+   font-size: 20px !important;
+   font-size: 10px !important;
+   font-weight: 600;
+    margin-top: -20px;
+    
+
+}
+
+
+.OverviewHead-typography{
+    font-size: 10px !important;
+    font-weight: 800 !important;
+   color: rgb(120, 117, 117);
+}
+.OverviewHead-head-content2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 350px;
+}
+.OverviewHead-search{
+    padding: 4px 0;
+    border-radius: 5px;
+    display: flex;
+   background-color: rgb(221, 216, 216);
+}
+.OverviewHead-searchIcon{
+    
+    margin: auto !important;
+    height: 30px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+.OverviewHead-search > input{
+    padding-left: 10px;
+    border:0;
+    background-color: transparent;
+}
+.OverviewHead-profileIcon{
+    margin-left: 10px;
+    border-radius: 5px; 
+    padding: 4px 3px 0px 3px ;
+    background-color: rgb(221, 216, 216);
+}
+.OverviewHead-addproject{
+    margin-left: 10px !important;
+    color: white !important;
+background-color: rgb(82, 180, 146) !important;
+padding: 6px 20px 6px 20px !important;
+}
+@media (min-width: 320px) and (max-width:700px) {
+    .OverviewHead-head-content1 > h4{
+        font-size: 15px;
+        color: rgb(120, 117, 117);
+         margin-top: 10px;
+     }
+     
+
+}
