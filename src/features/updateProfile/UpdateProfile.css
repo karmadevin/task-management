@@ -1,0 +1,70 @@
+.updateprofile-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.updateprofile-x{
+    height: 20px;
+    width: 20px;
+}
+.updateprofile-frm{
+    display: flex;
+    width: 1000px;
+    gap: 100px;
+}
+.updateprofile-input{
+   
+    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    border-radius: 0px;
+    width: 700px;
+    background: white;
+    color: black;
+    border: black 2px solid;
+    border-radius: 2px;
+}
+.updateprofile-txtinfo{
+    gap: 35px;
+    display: flex;
+    flex-direction:column;
+    align-items: start;
+    justify-content: start;
+}
+.updateprofile-txtbox{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.updateprofile-frminfo{
+display: flex;
+justify-content: space-between;
+gap: 100px;
+}
+p{
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.updateprofile-btmdiv{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    margin-right: 45px;
+}
+.updateprofile-csbuttons{
+    display: flex !important;
+    gap: 10px;
+    justify-content: end !important;
+    align-items: end !important;
+    padding-right: 45px;
+    padding-top: 50px;
+}
+.updateprofile-close,.updateprofile-submit{
+    background: white;
+    color: black;
+    border: transparent;
+ 
+}
