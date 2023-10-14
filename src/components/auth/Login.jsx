@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
 import "./Login.css";
-import Logo from "./assets/Logo.png";
-import doo1 from "./assets/doodles/Vector_4[1].png";
-import doo2 from "./assets/doodles/Vector_16[1].png";
-import doo3 from "./assets/doodles/Vector_17[1].png";
-import HeroImage from "./assets/HeroImage.svg";
+import Logo from "../../assets/Logo.png";
+import doo1 from "../../assets/doodles/Vector_4[1].png";
+import doo2 from "../../assets/doodles/Vector_16[1].png";
+import doo3 from "../../assets/doodles/Vector_17[1].png";
+import HeroImage from "../../assets/HeroImage.svg";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";

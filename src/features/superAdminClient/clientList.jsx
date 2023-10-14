@@ -20,6 +20,7 @@ import Arrow from "../../assets/Arrow-payslip.png";
 import "./clientList.css";
 import profile from "../../assets/profile2.png";
 import Circle from "../../assets/circle-menu.svg";
+import { useNavigate } from "react-router-dom";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -158,6 +159,7 @@ const ClientList = () => {
     pagechange(0);
   };
 
+  const navigate = useNavigate();
   const [page, pagechange] = useState(0);
   const [rowperpage, rowperpageChange] = useState(5);
 
@@ -208,7 +210,13 @@ const ClientList = () => {
               .map((row, index) => (
                 <TableRow className="tablerow" key={index}>
                   <Checkbox className="Checkbox" {...label} />
-                  <TableCell className="titlecontent" align="center">
+                  <TableCell
+                    className="titlecontent"
+                    align="center"
+                    onClick={() =>
+                      navigate("../../pages/Clientpages/ClientOverview.jsx")
+                    }
+                  >
                     {row.id}
                   </TableCell>
                   <TableCell className="titlecontent" align="center">
