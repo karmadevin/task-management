@@ -17,9 +17,11 @@ import IosShareIcon from "@mui/icons-material/IosShare";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
-
+import { useNavigate } from "react-router-dom";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 import "./ProjectList.css";
+
+
 const data = [
   {
     id: 1,
@@ -136,6 +138,7 @@ const ProjectList = () => {
     pagechange(0);
   };
 
+  const navigate = useNavigate();
   const [page, pagechange] = useState(0);
   const [rowperpage, rowperpageChange] = useState(5);
 
@@ -165,7 +168,12 @@ const ProjectList = () => {
               .map((row, index) => (
                 <TableRow className="superadminproject-tablerow" key={index}>
                   <Checkbox className="superadminproject-Checkbox" {...label} />
-                  <TableCell className="superadminproject-id">
+                  <TableCell
+                    className="superadminproject-id"
+                    onClick={() =>
+                      navigate("../../pages/Clientpages/ClientOverview.jsx")
+                    }
+                  >
                     {row.id}
                   </TableCell>
                   <TableCell className="superadminproject-titlecontent">

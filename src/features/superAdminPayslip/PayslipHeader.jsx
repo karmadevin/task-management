@@ -5,8 +5,12 @@ import SearchIcon from "@mui/icons-material/Search";
 import Reload from "../../assets/reload.svg";
 import Grid from "../../assets/grid.svg";
 import Download from "../../assets/download.svg";
+import { useNavigate } from "react-router-dom";
 
 const PayslipHeader = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="heading">
       <div className="head-content1">
@@ -40,7 +44,13 @@ const PayslipHeader = () => {
         <div className="profileIcon">
           <img src={Download} alt="download" />
         </div>
-        <Button className="addproject"> + New Payslip</Button>
+        <Button
+          variant="outlined"
+          className="addproject"
+          onClick={() => navigate("../paySlip/PaySlip.jsx")}
+        >
+          + New Payslip
+        </Button>
       </div>
     </div>
   );
