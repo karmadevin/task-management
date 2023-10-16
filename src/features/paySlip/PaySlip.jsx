@@ -1,8 +1,7 @@
-import React from 'react'
 import './Payslip.css'
 function PaySlip() {
   return (
-    <div maindiv>
+    <div className='payslip-form'>
       <div id='payslip-longinput'>
         <p>Username</p>
         <input placeholder='Username'className='payslip-longinput'/>

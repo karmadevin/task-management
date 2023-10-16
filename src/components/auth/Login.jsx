@@ -142,7 +142,7 @@ const Login = () => {
 
                 <div className="Login-Btns">
                   <div className="login-btn">
-                    <Link to="/dashboard" >
+                    <Link to="/super-admin-dashboard" >
                       <Button
                         type="submit"
                         variant="contained"
@@ -158,7 +158,7 @@ const Login = () => {
                     </Link>
                   </div>
                   <div className="login-btn">
-                    <a href="#">
+                    <Link to="/manager-dashboard">
                       <Button
                         type="submit"
                         variant="contained"
@@ -171,10 +171,10 @@ const Login = () => {
                       >
                         Login as Team Manager
                       </Button>
-                    </a>
+                    </Link>
                   </div>
                   <div className="login-btn">
-                    <a href="#">
+                    <Link to="/developer-dashboard">
                       <Button
                         type="submit"
                         variant="contained"
@@ -187,10 +187,10 @@ const Login = () => {
                       >
                         Login in as Developer
                       </Button>
-                    </a>
+                    </Link>
                   </div>
                   <div className="login-btn">
-                    <a href="#">
+                    <Link to="/client-dashboard">
                       <Button
                         type="submit"
                         variant="contained"
@@ -203,7 +203,7 @@ const Login = () => {
                       >
                         Login as Client
                       </Button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </form>

@@ -32,9 +32,9 @@ import Badge from "@mui/material/Badge";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import taskicon from "../assets/taskicon.svg";
 // import logo from "../assets/logo.svg";
-import clients from "../assets/clients.svg";
-import leads from "../assets/leads.svg";
-import payslip from "../assets/payslip.svg";
+// import clients from "../assets/clients.svg";
+// import leads from "../assets/leads.svg";
+// import payslip from "../assets/payslip.svg";
 import user from "../assets/user.svg";
 import "./DashLayout.css";
 // import Superadminpayslip from "../features/Superadmin-payslip/Superadminpayslip";
@@ -212,8 +212,8 @@ export default function MiniDrawer() {
           </IconButton>
         </DrawerHeader>
         <List>
-          {["Dashboard", "Project"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
+          {/* Default Dashboard */}
+            <ListItem disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -230,105 +230,23 @@ export default function MiniDrawer() {
                     justifyContent: "center",
                   }}
                 >
-                  {index % 3 == 0 ? (
                     <DashboardRoundedIcon
                       sx={{
                         color: teal["A700"],
                         height: "32px",
                         width: "32px",
                       }}
-                      onClick={()=> navigate("/super-admin-dashboard")}
+                      onClick={()=> navigate("/manager-dashboard")}
                     />
-                  ) : (
-                    <img
-                      src={proicon}
-                      alt="task icon"
-                      style={{ height: "32px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/projects")}
-                    />
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
 
-          {["Task", "Payslip"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  color: teal["A700"],
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 3 == 0 ? (
-                    <img
-                      src={taskicon}
-                      alt="Karmaev.in"
-                      style={{ height: "28px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/tasks")}
-                    />
-                  ) : (
-                    <img
-                      src={payslip}
-                      alt="Karmadev.im"
-                      style={{ height: "32px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/payslip")}
-                    />
-                  )}
                 </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={"Dashboard"} sx={{ opacity: open ? 1 : 0 }} 
+                onClick={()=> navigate("/manager-dashboard")}
+                />
               </ListItemButton>
             </ListItem>
-          ))}
-          {["Leads", "User"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  color: teal["A700"],
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 3 == 0 ? (
-                    <img
-                      src={leads}
-                      alt="Karmaev.in"
-                      style={{ height: "28px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/leads")}
-                    />
-                  ) : (
-                    <img
-                      src={user}
-                      alt="Karmadev.im"
-                      style={{ height: "32px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/users")}
 
-                    />
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-            {/* Clients */}
+            {/* Task */}
             <ListItem disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
@@ -337,7 +255,7 @@ export default function MiniDrawer() {
                   px: 2.5,
                   color: teal["A700"],
                 }}
-                onClick={()=> navigate("/super-admin-dashboard/clients")}
+                onClick={()=> navigate("/manager-dashboard/tasks")}
               >
                 <ListItemIcon
                   sx={{
@@ -347,12 +265,74 @@ export default function MiniDrawer() {
                   }}
                 >
                   <img
-                    src={clients}
-                    alt="clients"
+                    src={taskicon}
+                    alt="taskIcon"
                     style={{ color: green, height: "28px", width: "32px" }}
                   />
                 </ListItemIcon>
-                <ListItemText primary={"Client"} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={"Tasks"} sx={{ opacity: open ? 1 : 0 }} 
+                onClick={()=> navigate("/manager-dashboard/tasks")} 
+                />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Projects */}
+            <ListItem disablePadding sx={{ display: "block" }}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                  color: teal["A700"],
+                }}
+                onClick={()=> navigate("/manager-dashboard/projects")}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img
+                    src={proicon}
+                    alt="projects"
+                    style={{ color: green, height: "28px", width: "32px" }}
+                  />
+                </ListItemIcon>
+                <ListItemText primary={"Projects"} sx={{ opacity: open ? 1 : 0 }} 
+                onClick={()=> navigate("/manager-dashboard/projects")}
+                />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Users */}
+            <ListItem disablePadding sx={{ display: "block" }}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                  color: teal["A700"],
+                }}
+                onClick={()=> navigate("/manager-dashboard/users")}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img
+                    src={user}
+                    alt="user"
+                    style={{ color: green, height: "28px", width: "32px" }}
+                  />
+                </ListItemIcon>
+                <ListItemText primary={"Users"} sx={{ opacity: open ? 1 : 0 }} 
+                onClick={()=> navigate("/manager-dashboard/users")} 
+                />
               </ListItemButton>
             </ListItem>
         </List>

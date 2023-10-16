@@ -1,8 +1,7 @@
-import React from 'react'
 import "./Clientcard.css"
-import taskicon from "./icons/taskicon.svg"
+import taskicon from "../../assets/taskicon.svg"
 
-import proicon from './icons/proicon.svg'
+import proicon from '../../assets/proicon.svg'
 
 function Clientcard() {
   return (

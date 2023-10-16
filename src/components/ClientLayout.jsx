@@ -32,10 +32,10 @@ import Badge from "@mui/material/Badge";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import taskicon from "../assets/taskicon.svg";
 // import logo from "../assets/logo.svg";
-import clients from "../assets/clients.svg";
-import leads from "../assets/leads.svg";
-import payslip from "../assets/payslip.svg";
-import user from "../assets/user.svg";
+// import clients from "../assets/clients.svg";
+// import leads from "../assets/leads.svg";
+// import payslip from "../assets/payslip.svg";
+// import user from "../assets/user.svg";
 import "./DashLayout.css";
 // import Superadminpayslip from "../features/Superadmin-payslip/Superadminpayslip";
 // import SuperadminUser from "../features/SuperAdmin-User/SuperadminUser";
@@ -109,7 +109,6 @@ const Drawer = styled(MuiDrawer, {
     "& .MuiDrawer-paper": closedMixin(theme),
   }),
 }));
-// const settings = ["Profile", "Account", "Dashboard", "Logout"];
 export default function MiniDrawer() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -185,6 +184,7 @@ export default function MiniDrawer() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
+                
                 <MenuItem  onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">Profile</Typography>
                   </MenuItem>
@@ -212,8 +212,8 @@ export default function MiniDrawer() {
           </IconButton>
         </DrawerHeader>
         <List>
-          {["Dashboard", "Project"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
+          {/* Default Dashboard */}
+            <ListItem disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -230,105 +230,23 @@ export default function MiniDrawer() {
                     justifyContent: "center",
                   }}
                 >
-                  {index % 3 == 0 ? (
                     <DashboardRoundedIcon
                       sx={{
                         color: teal["A700"],
                         height: "32px",
                         width: "32px",
                       }}
-                      onClick={()=> navigate("/super-admin-dashboard")}
+                      onClick={()=> navigate("/client-dashboard")}
                     />
-                  ) : (
-                    <img
-                      src={proicon}
-                      alt="task icon"
-                      style={{ height: "32px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/projects")}
-                    />
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
 
-          {["Task", "Payslip"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  color: teal["A700"],
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 3 == 0 ? (
-                    <img
-                      src={taskicon}
-                      alt="Karmaev.in"
-                      style={{ height: "28px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/tasks")}
-                    />
-                  ) : (
-                    <img
-                      src={payslip}
-                      alt="Karmadev.im"
-                      style={{ height: "32px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/payslip")}
-                    />
-                  )}
                 </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={"Developer"} sx={{ opacity: open ? 1 : 0 }} 
+                onClick={()=> navigate("/client-dashboard")}
+                />
               </ListItemButton>
             </ListItem>
-          ))}
-          {["Leads", "User"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  color: teal["A700"],
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 3 == 0 ? (
-                    <img
-                      src={leads}
-                      alt="Karmaev.in"
-                      style={{ height: "28px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/leads")}
-                    />
-                  ) : (
-                    <img
-                      src={user}
-                      alt="Karmadev.im"
-                      style={{ height: "32px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/users")}
 
-                    />
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-            {/* Clients */}
+            {/* Task */}
             <ListItem disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
@@ -337,7 +255,7 @@ export default function MiniDrawer() {
                   px: 2.5,
                   color: teal["A700"],
                 }}
-                onClick={()=> navigate("/super-admin-dashboard/clients")}
+                onClick={()=> navigate("/client-dashboard/tasks")}
               >
                 <ListItemIcon
                   sx={{
@@ -347,12 +265,44 @@ export default function MiniDrawer() {
                   }}
                 >
                   <img
-                    src={clients}
-                    alt="clients"
+                    src={taskicon}
+                    alt="taskIcon"
                     style={{ color: green, height: "28px", width: "32px" }}
                   />
                 </ListItemIcon>
-                <ListItemText primary={"Client"} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={"Tasks"} sx={{ opacity: open ? 1 : 0 }} 
+                onClick={()=> navigate("/client-dashboard/tasks")} 
+                />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Projects */}
+            <ListItem disablePadding sx={{ display: "block" }}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                  color: teal["A700"],
+                }}
+                onClick={()=> navigate("/client-dashboard/projects")}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img
+                    src={proicon}
+                    alt="projects"
+                    style={{ color: green, height: "28px", width: "32px" }}
+                  />
+                </ListItemIcon>
+                <ListItemText primary={"Projects"} sx={{ opacity: open ? 1 : 0 }} 
+                onClick={()=> navigate("/client-dashboard/projects")}
+                />
               </ListItemButton>
             </ListItem>
         </List>

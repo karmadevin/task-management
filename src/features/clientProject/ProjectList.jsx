@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import {
   Table,
   TableBody,
@@ -7,16 +7,15 @@ import {
   TableHead,
   TableRow,
   Paper,
-  Avatar,
   LinearProgress,
   TablePagination,
 } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
-import EditNoteIcon from "@mui/icons-material/EditNote";
-import IosShareIcon from "@mui/icons-material/IosShare";
-import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
+// import EditNoteIcon from "@mui/icons-material/EditNote";
+// import IosShareIcon from "@mui/icons-material/IosShare";
+// import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
+// import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+// import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 import "./ProjectList.css";
@@ -151,12 +150,12 @@ const ProjectList = () => {
               />
               <TableCell>ID</TableCell>
               <TableCell>Title</TableCell>
-              <TableCell>Client</TableCell>
+              {/* <TableCell>Client</TableCell> */}
               <TableCell>Due Date</TableCell>
               <TableCell>Progress</TableCell>
-              <TableCell>Team</TableCell>
+              {/* <TableCell>Team</TableCell> */}
               <TableCell>Status</TableCell>
-              <TableCell>Action</TableCell>
+              {/* <TableCell>Action</TableCell> */}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -171,9 +170,9 @@ const ProjectList = () => {
                   <TableCell className="superadminproject-titlecontent">
                     {row.Title}
                   </TableCell>
-                  <TableCell className="superadminproject-clientcontent">
+                  {/* <TableCell className="superadminproject-clientcontent">
                     {row.Client}
-                  </TableCell>
+                  </TableCell> */}
                   <TableCell className="superadminproject-datecontent">
                     {row.DueDate}
                   </TableCell>
@@ -193,7 +192,7 @@ const ProjectList = () => {
                       }}
                     />
                   </TableCell>
-                  <TableCell className="superadminproject-pic">
+                  {/* <TableCell className="superadminproject-pic">
                     {row.avatars.map((avatar, avatarIndex) => (
                       <Avatar
                         key={avatarIndex}
@@ -201,13 +200,13 @@ const ProjectList = () => {
                         src={avatar}
                       />
                     ))}
-                  </TableCell>
+                  </TableCell> */}
                   <TableCell className="superadminproject-statuscontent">
                     <span style={{ color: getColorForStatus(row.Status) }}>
                       {row.Status}
                     </span>
                   </TableCell>
-                  <TableCell className="superadminproject-iconscontent">
+                  {/* <TableCell className="superadminproject-iconscontent">
                     <EditNoteIcon
                       className="superadminproject-icons"
                       color="success"
@@ -228,7 +227,7 @@ const ProjectList = () => {
                       className="superadminproject-icons"
                       color="default"
                     />
-                  </TableCell>
+                  </TableCell> */}
                 </TableRow>
               ))}
           </TableBody>

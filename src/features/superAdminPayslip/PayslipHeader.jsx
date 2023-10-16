@@ -47,7 +47,7 @@ const PayslipHeader = () => {
         <Button
           variant="outlined"
           className="addproject"
-          onClick={() => navigate("../paySlip/PaySlip.jsx")}
+          onClick={() => navigate("/super-admin-dashboard/newpayslip")}
         >
           + New Payslip
         </Button>
