@@ -78,7 +78,7 @@ function getStyles(name, personName, theme) {
 function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
 
-  const handleClose = () => {
+  const handleCloseProject = () => {
     onClose(selectedValue);
   };
 
@@ -93,14 +93,14 @@ function SimpleDialog(props) {
   };
 
   return (
-    <Dialog onClose={handleClose} open={open}>
+    <Dialog onClose={handleCloseProject} open={open}>
       <div>
         <div className="DialogHead">
           <DialogTitle>
             <div className="DialogHeader">
               <p>Create A New Project</p>
               <Button style={{ color: "#000" }}>
-                <ClearIcon onClick={handleClose}></ClearIcon>
+                <ClearIcon onClick={handleCloseProject}></ClearIcon>
               </Button>
             </div>
           </DialogTitle>
@@ -221,7 +221,7 @@ function SimpleDialog(props) {
                 border: "1px solid black",
                 width: "50px",
               }}
-              onClick={handleClose}
+              onClick={handleCloseProject}
             >
               Close
             </Button>
@@ -430,11 +430,11 @@ const ProjectHeading = () => {
   const [FilterOpen, SetFilterOpen] = React.useState(false);
   const [selectedValue, setSelectedValue] = React.useState(emails[1]);
 
-  const handleClickOpen = () => {
+  const handleClickOpenProject = () => {
     setOpen(true);
   };
 
-  const handleClose = (value) => {
+  const handleCloseProject = (value) => {
     setOpen(false);
     setSelectedValue(value);
   };
@@ -493,18 +493,18 @@ const ProjectHeading = () => {
             onClose={handleCloseFilter}
           />
         </div>
-        {/* <Button className="superadminproject-addproject">+ Add Project</Button> */}
+        {/* + Add Project button */}
         <Button
           className="superadminproject-addproject"
           variant="outlined"
-          onClick={handleClickOpen}
+          onClick={handleClickOpenProject}
         >
           + Add Project
         </Button>
         <SimpleDialog
           selectedValue={selectedValue}
           open={open}
-          onClose={handleClose}
+          onClose={handleCloseProject}
         />
       </div>
     </div>

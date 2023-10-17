@@ -42,6 +42,9 @@ import "./DashLayout.css";
 // import SuperadminClient from "../features/SuperAdmin-Client/SuperadminClient";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import clock from "../assets/clock.svg";
+import lock from "../assets/lock.svg";
+import user from "../assets/user.svg";
 
 const drawerWidth = 240;
 
@@ -185,7 +188,7 @@ export default function MiniDrawer() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                <MenuItem  onClick={handleCloseUserMenu}>
+                {/* <MenuItem  onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">Profile</Typography>
                   </MenuItem>
                   <MenuItem  onClick={handleCloseUserMenu}>
@@ -193,7 +196,47 @@ export default function MiniDrawer() {
                   </MenuItem>
                   <MenuItem  onClick={handleCloseUserMenu}>
                     <Typography textAlign="center" onClick={()=> navigate("/")}>Logout</Typography>
+                  </MenuItem> */}
+                  <div className="profileinfo-maindiv">
+        <div>
+          <div className="profileinfo-topcard">
+            <div id="profileinfo-Pfofile">
+              <img
+                src={profile2}
+                alt="Karmadev"
+                className="profileinfo-Profile"
+              />
+            </div>
+            <div className="profileinfo-profile2">
+              <div className="profileinfo-username">
+                <h3>Steven Mallet</h3>{" "}
+              </div>
+              <div className="profileinfo-usermail">
+                {" "}
+                <p>amanda@gmail.com</p>
+              </div>
+              <button className="profileinfo-Button">Edit</button>
+            </div>
+          </div>
+          <div className="profileinfo-bottomcard">
+            <div className="profileinfo-bottomcards">
+              <img src={user} alt="karmadev" className="profileinfo-user" />{" "}
+              <p>Update My Profile</p>
+            </div>
+            <div className="profileinfo-bottomcards">
+              <img src={clock} alt="karmadev" className="profileinfo-clock" />
+              <p>My Time Sheets</p>
+            </div>
+            <div className="profileinfo-bottomcards">
+              <img src={lock} alt="karmadev" className="profileinfo-lock" />
+              <p>Update Password</p>
+            </div>
+          </div>
+          <MenuItem  onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center" onClick={()=> navigate("/")}>Logout</Typography>
                   </MenuItem>
+        </div>
+      </div>
               </Menu>
             </Box>
           </div>
@@ -307,7 +350,7 @@ export default function MiniDrawer() {
             </ListItem>
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box className="dash-layout" component="main" sx={{ flexGrow: 1, p: 3 }}>
       <DrawerHeader />
 
         <Outlet />

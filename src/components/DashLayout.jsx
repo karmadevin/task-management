@@ -42,6 +42,15 @@ import "./DashLayout.css";
 // import SuperadminClient from "../features/SuperAdmin-Client/SuperadminClient";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  Switch,
+  TextField,
+} from "@mui/material";
+import ClearIcon from "@mui/icons-material/Clear";
 
 const drawerWidth = 240;
 
@@ -109,6 +118,168 @@ const Drawer = styled(MuiDrawer, {
     "& .MuiDrawer-paper": closedMixin(theme),
   }),
 }));
+
+const label = { inputProps: { "aria-label": "Switch demo" } };
+function SimpleDialog(props) {
+  const { onClose, selectedValue, open } = props;
+
+  const handleCloseProject = () => {
+    onClose(selectedValue);
+  };
+
+  const handleListItemClick = (value) => {
+    onClose(value);
+  };
+
+  const [age, setAge] = React.useState("");
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+  return (
+    <Dialog onClose={handleCloseProject} open={open}>
+      <div>
+        <div className="DialogHead">
+          <DialogTitle>
+            <div className="DialogHeader">
+              <p>Create A New Project</p>
+              <Button style={{ color: "#000" }}>
+                <ClearIcon onClick={handleCloseProject}></ClearIcon>
+              </Button>
+            </div>
+          </DialogTitle>
+        </div>
+        <DialogContent className="Container1">
+          <div className="Dialog-textfield">
+            <p>Company Name</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>First Name</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>Last Name</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>Email Address</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+        </DialogContent>
+
+        <DialogContent className="Container2">
+          <div className="Dialog-textfield">
+            <p>Project Title *</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>Start Date *</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>Deadline</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+        </DialogContent>
+
+        <DialogContent className="Container3">
+          <div className="switches">
+            <p>Description & Details</p>
+            <Switch {...label} /*onClick={toggler} */ />
+          </div>
+          <div className="switches">
+            <p>Category & Users</p>
+            <Switch {...label} />
+          </div>
+          <div className="switches">
+            <p>Additional Settings</p>
+            <Switch {...label} />
+          </div>
+          <div className="switches">
+            <p>Progress</p>
+            <Switch {...label} />
+          </div>
+          <div className="switches">
+            <p>More Information</p>
+            <Switch {...label} />
+          </div>
+          <div>
+            <p style={{ fontSize: "12px" }}>
+              Show project after its been created
+            </p>
+          </div>
+          <div className="Buttons">
+            <Button
+              style={{
+                color: "#000",
+                border: "1px solid black",
+                width: "50px",
+              }}
+              onClick={handleCloseProject}
+            >
+              Close
+            </Button>
+            <Button style={{ color: "#000", border: "1px solid black" }}>
+              Submit
+            </Button>
+          </div>
+        </DialogContent>
+      </div>
+    </Dialog>
+  );
+}
+
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
 export default function MiniDrawer() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -134,6 +305,16 @@ export default function MiniDrawer() {
 
   const navigate = useNavigate();
 
+  const [openProject, setOpenProject] = React.useState(false);
+  const [selectedValue, setSelectedValue] = React.useState(false);
+  const handleClickOpenProject = () => {
+    setOpenProject(true);
+  };
+
+  const handleCloseProject = (value) => {
+    setOpenProject(false);
+    setSelectedValue(value);
+  };
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -185,15 +366,30 @@ export default function MiniDrawer() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                <MenuItem  onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">Profile</Typography>
-                  </MenuItem>
-                  <MenuItem  onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">Account</Typography>
-                  </MenuItem>
-                  <MenuItem  onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center" onClick={()=> navigate("/")}>Logout</Typography>
-                  </MenuItem>
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography
+                    textAlign="center"
+                    onClick={handleClickOpenProject}
+                  >
+                    Profile
+                  </Typography>
+                  <SimpleDialog
+                    selectedValue={selectedValue}
+                    open={openProject}
+                    onClose={handleCloseProject}
+                  />
+                </MenuItem>
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">Account</Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center" onClick={() => navigate("/super-admin-dashboard/timesheets")}>TimeSheets</Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center" onClick={() => navigate("/")}>
+                    Logout
+                  </Typography>
+                </MenuItem>
               </Menu>
             </Box>
           </div>
@@ -237,14 +433,16 @@ export default function MiniDrawer() {
                         height: "32px",
                         width: "32px",
                       }}
-                      onClick={()=> navigate("/super-admin-dashboard")}
+                      onClick={() => navigate("/super-admin-dashboard")}
                     />
                   ) : (
                     <img
                       src={proicon}
                       alt="task icon"
                       style={{ height: "32px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/projects")}
+                      onClick={() =>
+                        navigate("/super-admin-dashboard/projects")
+                      }
                     />
                   )}
                 </ListItemIcon>
@@ -275,14 +473,14 @@ export default function MiniDrawer() {
                       src={taskicon}
                       alt="Karmaev.in"
                       style={{ height: "28px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/tasks")}
+                      onClick={() => navigate("/super-admin-dashboard/tasks")}
                     />
                   ) : (
                     <img
                       src={payslip}
                       alt="Karmadev.im"
                       style={{ height: "32px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/payslip")}
+                      onClick={() => navigate("/super-admin-dashboard/payslip")}
                     />
                   )}
                 </ListItemIcon>
@@ -312,15 +510,14 @@ export default function MiniDrawer() {
                       src={leads}
                       alt="Karmaev.in"
                       style={{ height: "28px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/leads")}
+                      onClick={() => navigate("/super-admin-dashboard/leads")}
                     />
                   ) : (
                     <img
                       src={user}
                       alt="Karmadev.im"
                       style={{ height: "32px", width: "32px" }}
-                      onClick={()=> navigate("/super-admin-dashboard/users")}
-
+                      onClick={() => navigate("/super-admin-dashboard/users")}
                     />
                   )}
                 </ListItemIcon>
@@ -328,37 +525,37 @@ export default function MiniDrawer() {
               </ListItemButton>
             </ListItem>
           ))}
-            {/* Clients */}
-            <ListItem disablePadding sx={{ display: "block" }}>
-              <ListItemButton
+          {/* Clients */}
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+                color: teal["A700"],
+              }}
+              onClick={() => navigate("/super-admin-dashboard/clients")}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  color: teal["A700"],
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
                 }}
-                onClick={()=> navigate("/super-admin-dashboard/clients")}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img
-                    src={clients}
-                    alt="clients"
-                    style={{ color: green, height: "28px", width: "32px" }}
-                  />
-                </ListItemIcon>
-                <ListItemText primary={"Client"} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
+                <img
+                  src={clients}
+                  alt="clients"
+                  style={{ color: green, height: "28px", width: "32px" }}
+                />
+              </ListItemIcon>
+              <ListItemText primary={"Client"} sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-      <DrawerHeader />
+        <DrawerHeader />
 
         <Outlet />
       </Box>

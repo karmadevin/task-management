@@ -26,6 +26,7 @@ import ClientDashboard from "./features/clientDashBoard/ClientDashBoard";
 import ClientProject from "./features/clientProject/ClientProjects";
 import ClientTask from "./features/clientTask/ClientTasks";
 import ClientLayout from "./components/ClientLayout";
+import TimeSheets from "./features/timeSheets/TimeSheets";
 function App() {
   return (
     <Paper elevation={0} style={{ Height: "100vh", borderRadius: "0px" }}>
@@ -47,6 +48,7 @@ function App() {
             <Route path="clients" element={<SuperAdminClient />} />
             <Route path="users" element={<SuperAdminUser />} />
             <Route path="newpayslip" element={<PaySlip/>} />
+            <Route path="timesheets" element={<TimeSheets/>} />
           </Route>
           {/* Team Manager Dashbaord */}
           <Route path="manager-dashboard" element={<TeamManagerLayout/>}>
