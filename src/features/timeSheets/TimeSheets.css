@@ -1,145 +1,165 @@
 .heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 70px;
-    margin-bottom: 10px;
-    
-  }
-  .head-content1 {
-    width: 150px;
-    height: 100%;
-    margin-left: 20px;
-    text-align: start;
-  }
-  .head-content1 > h4 {
-    color: rgb(120, 117, 117);
-    margin-top: 10px;
-  }
-  .head-content1 > .box > .breadcrumbs {
-    font-size: 20px !important;
-    font-size: 10px !important;
-    font-weight: 600;
-    margin-top: -20px;
-  }
-  
-  .typography {
-    font-size: 10px !important;
-    font-weight: 600;
-    color: rgb(120, 117, 117);
-  }
-  .head-content2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 550px;
-  }
-  .search {
-    padding: 4px 0;
-    border-radius: 5px;
-    display: flex;
-    background-color: rgb(221, 216, 216);
-  }
-  .searchIcon {
-    margin: auto !important;
-    height: 30px;
-    padding-top: 5px;
-    padding-left: 10px;
-  }
-  .search > input {
-    padding-left: 10px;
-    border: 0;
-    background-color: transparent;
-  }
-  .time-filter {
-    margin-left: 10px;
-    border-radius: 5px;
-    padding: 7px 5px 2px 5px;
-    background-color: rgb(221, 216, 216);
-  }
-  
-  .time-filter img {
-    height: 25px;
-    
-  }
-  
-  .add-time-record {
-    color: white !important;
-    background-color: rgb(82, 180, 146) !important;
-    width: 200px;
-  
-  }
-  .time-button-group{
-    gap: 20px;
-    display: flex;
-    align-items: end;
-    justify-content: end;
-  }
-  .time-body-content{
-border-bottom: rgb(75, 75, 75) solid 1px;
-display: flex;
-align-items: center;
-width: 100%;
-  }
-  .Time-avatar-content,.Time-name-content{
-    padding-left: 5px;
-  }
-  .Time-Task-content,.Time-date-content,.Time-time-content,.time-btn-content,.Time-project-content,.Time-invoiced-content{
-padding-left: 80px;
-  }
-  .time-btn-content{
-    padding-left: 80px;
-  }
-  .time-head-content{
-    display: flex;
-    align-items: center;
-border: 1px solid;
-border-radius: 5px;
-  }
-  .Time-name-head-content,.Time-date-head-content,.Time-invoiced-head-content,.Time-time-head-content,.Time-Task-head-conten{
-    padding-left: 20px;
-  }
-.time-arrow{
-  height: 13px;
-  width: 13px;
-padding-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  margin-bottom: 10px;
+}
+.head-content1 {
+  width: 150px;
+  height: 100%;
+  margin-left: 20px;
+  text-align: start;
+}
+.head-content1 > h4 {
+  color: rgb(120, 117, 117);
+  margin-top: 10px;
+}
+.head-content1 > .box > .breadcrumbs {
+  font-size: 20px !important;
+  font-size: 10px !important;
+  font-weight: 600;
+  margin-top: -20px;
 }
 
-.Time-user-head-content{
+.typography {
+  font-size: 10px !important;
+  font-weight: 600;
+  color: rgb(120, 117, 117);
+}
+.head-content2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 550px;
+}
+.search {
+  padding: 4px 0;
+  border-radius: 5px;
+  display: flex;
+  background-color: rgb(221, 216, 216);
+}
+.searchIcon {
+  margin: auto !important;
+  height: 30px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+.search > input {
+  padding-left: 10px;
+  border: 0;
+  background-color: transparent;
+}
+.time-filter {
+  margin-left: 10px;
+  border-radius: 5px;
+  padding: 7px 5px 2px 5px;
+  background-color: rgb(221, 216, 216);
+}
+
+.time-filter img {
+  height: 25px;
+}
+
+.add-time-record {
+  color: white !important;
+  background-color: rgb(82, 180, 146) !important;
+  width: 200px;
+}
+.time-button-group {
+  gap: 20px;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.time-body-content {
+  border-bottom: rgb(75, 75, 75) solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.Time-avatar-content {
+  padding-left: 5px;
+  display: flex;
+  gap: 15px;
+}
+/* .Time-Task-content,
+.Time-date-content,
+.Time-time-content,
+.time-btn-content,
+.Time-project-content,
+.Time-invoiced-content {
+  padding-left: 80px;
+} */
+.time-btn-content {
+  padding-left: 80px;
+  display: flex;
+}
+.time-head-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid;
+}
+.head-content {
+  display: flex;
+  padding-left: 20px;
+}
+.time-arrow {
+  height: 13px;
+  width: 13px;
+  padding-left: 5px;
+}
+
+.Time-user-head-content {
   padding-left: 10px;
   font-size: 15px;
   font-weight: 700;
-  
 }
-.Time-task-head-content{
+.Time-task-head-content {
   padding-left: 110px;
   font-size: 15px;
   font-weight: 700;
 }
-.Time-project-head-content{
+.Time-project-head-content {
   padding-left: 115px;
   font-size: 15px;
   font-weight: 700;
 }
-.Time-date-head-content{
+.Time-date-head-content {
   padding-left: 68px;
   font-size: 15px;
   font-weight: 700;
 }
 
-.Time-invoiced-head-content{
+.Time-invoiced-head-content {
   padding-left: 68px;
   font-size: 15px;
   font-weight: 700;
 }
-.Time-time-head-content{
+.Time-time-head-content {
   padding-left: 70px;
   font-size: 15px;
   font-weight: 700;
 }
-.Time-action-head-content{
+.Time-action-head-content {
   padding-left: 65px;
   font-size: 15px;
   font-weight: 700;
 }
 
+.Container-1 {
+  line-height: 25px;
+}
+.Dialog-Head p, .Container-1 p{
+  color: #000;
+}
+
+.Time-Date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}

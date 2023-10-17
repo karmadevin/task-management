@@ -249,10 +249,6 @@ function FilterDialog(props) {
     onClose(selectedValue);
   };
 
-  const handleListItemClick = (value) => {
-    onClose(value);
-  };
-
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
 

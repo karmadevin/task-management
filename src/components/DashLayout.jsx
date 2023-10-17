@@ -51,6 +51,10 @@ import {
   TextField,
 } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
+import clock from "../assets/clock.svg";
+import lock from "../assets/lock.svg";
+import PaswordEdit from "../assets/PaswordEdit.svg";
+import UpdatePasswordImg from "../assets/updatePassword.svg";
 
 const drawerWidth = 240;
 
@@ -119,40 +123,83 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
+const IOSSwitch = styled((props) => (
+  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
+))(({ theme }) => ({
+  width: 42,
+  height: 26,
+  padding: 0,
+  "& .MuiSwitch-switchBase": {
+    padding: 0,
+    margin: 2,
+    transitionDuration: "300ms",
+    "&.Mui-checked": {
+      transform: "translateX(16px)",
+      color: "#fff",
+      "& + .MuiSwitch-track": {
+        backgroundColor: theme.palette.mode === "dark" ? "#2ECA45" : "#65C466",
+        opacity: 1,
+        border: 0,
+      },
+      "&.Mui-disabled + .MuiSwitch-track": {
+        opacity: 0.5,
+      },
+    },
+    "&.Mui-focusVisible .MuiSwitch-thumb": {
+      color: "#33cf4d",
+      border: "6px solid #fff",
+    },
+    "&.Mui-disabled .MuiSwitch-thumb": {
+      color:
+        theme.palette.mode === "light"
+          ? theme.palette.grey[100]
+          : theme.palette.grey[600],
+    },
+    "&.Mui-disabled + .MuiSwitch-track": {
+      opacity: theme.palette.mode === "light" ? 0.7 : 0.3,
+    },
+  },
+  "& .MuiSwitch-thumb": {
+    boxSizing: "border-box",
+    width: 22,
+    height: 22,
+  },
+  "& .MuiSwitch-track": {
+    borderRadius: 26 / 2,
+    backgroundColor: theme.palette.mode === "light" ? "#9e9e9e" : "#bdbdbd",
+    opacity: 1,
+    transition: theme.transitions.create(["background-color"], {
+      duration: 500,
+    }),
+  },
+}));
+
 const label = { inputProps: { "aria-label": "Switch demo" } };
-function SimpleDialog(props) {
+
+// UPDATE PROFILE
+function UpdateMyProfile(props) {
   const { onClose, selectedValue, open } = props;
 
-  const handleCloseProject = () => {
+  const handleCloseProjectInfo = () => {
     onClose(selectedValue);
   };
 
-  const handleListItemClick = (value) => {
-    onClose(value);
-  };
-
-  const [age, setAge] = React.useState("");
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
   return (
-    <Dialog onClose={handleCloseProject} open={open}>
-      <div>
-        <div className="DialogHead">
+    <Dialog onClose={handleCloseProjectInfo} open={open}>
+      <div className="ProfileInfoDialog">
+        <div>
           <DialogTitle>
             <div className="DialogHeader">
-              <p>Create A New Project</p>
+              <p> Update My Profile</p>
               <Button style={{ color: "#000" }}>
-                <ClearIcon onClick={handleCloseProject}></ClearIcon>
+                <ClearIcon onClick={handleCloseProjectInfo}></ClearIcon>
               </Button>
             </div>
           </DialogTitle>
         </div>
-        <DialogContent className="Container1">
+        <DialogContent className="Container-1">
           <div className="Dialog-textfield">
-            <p>Company Name</p>
+            <p>First Name*</p>
             <TextField
               id="outlined-size-small"
               defaultValue=" "
@@ -163,7 +210,7 @@ function SimpleDialog(props) {
             ></TextField>
           </div>
           <div className="Dialog-textfield">
-            <p>First Name</p>
+            <p>Last Name*</p>
             <TextField
               id="outlined-size-small"
               defaultValue=" "
@@ -174,7 +221,7 @@ function SimpleDialog(props) {
             ></TextField>
           </div>
           <div className="Dialog-textfield">
-            <p>Last Name</p>
+            <p>Email Address*</p>
             <TextField
               id="outlined-size-small"
               defaultValue=" "
@@ -185,21 +232,7 @@ function SimpleDialog(props) {
             ></TextField>
           </div>
           <div className="Dialog-textfield">
-            <p>Email Address</p>
-            <TextField
-              id="outlined-size-small"
-              defaultValue=" "
-              size="small"
-              style={{
-                width: "350px",
-              }}
-            ></TextField>
-          </div>
-        </DialogContent>
-
-        <DialogContent className="Container2">
-          <div className="Dialog-textfield">
-            <p>Project Title *</p>
+            <p>Telephone</p>
             <TextField
               id="outlined-size-small"
               defaultValue=" "
@@ -210,18 +243,7 @@ function SimpleDialog(props) {
             ></TextField>
           </div>
           <div className="Dialog-textfield">
-            <p>Start Date *</p>
-            <TextField
-              id="outlined-size-small"
-              defaultValue=" "
-              size="small"
-              style={{
-                width: "350px",
-              }}
-            ></TextField>
-          </div>
-          <div className="Dialog-textfield">
-            <p>Deadline</p>
+            <p>position</p>
             <TextField
               id="outlined-size-small"
               defaultValue=" "
@@ -232,33 +254,13 @@ function SimpleDialog(props) {
             ></TextField>
           </div>
         </DialogContent>
-
         <DialogContent className="Container3">
           <div className="switches">
-            <p>Description & Details</p>
-            <Switch {...label} /*onClick={toggler} */ />
-          </div>
-          <div className="switches">
-            <p>Category & Users</p>
+            <p>Social Profile</p>
             <Switch {...label} />
           </div>
-          <div className="switches">
-            <p>Additional Settings</p>
-            <Switch {...label} />
-          </div>
-          <div className="switches">
-            <p>Progress</p>
-            <Switch {...label} />
-          </div>
-          <div className="switches">
-            <p>More Information</p>
-            <Switch {...label} />
-          </div>
-          <div>
-            <p style={{ fontSize: "12px" }}>
-              Show project after its been created
-            </p>
-          </div>
+        </DialogContent>
+        <DialogContent>
           <div className="Buttons">
             <Button
               style={{
@@ -266,7 +268,7 @@ function SimpleDialog(props) {
                 border: "1px solid black",
                 width: "50px",
               }}
-              onClick={handleCloseProject}
+              onClick={handleCloseProjectInfo}
             >
               Close
             </Button>
@@ -275,6 +277,76 @@ function SimpleDialog(props) {
             </Button>
           </div>
         </DialogContent>
+      </div>
+    </Dialog>
+  );
+}
+
+//UPDATE PASSWORD
+function UpdatePassword(props) {
+  const { onClose, selectedValue, open } = props;
+
+  const handleClosePaswordUpdate = () => {
+    onClose(selectedValue);
+  };
+  return (
+    <Dialog onClose={handleClosePaswordUpdate} open={open}>
+      <div>
+        <div className="password-nav">
+          <DialogTitle>
+            <div className="DialogHeader">
+              <p> Update Password</p>
+              <Button style={{ color: "#000" }}>
+                <ClearIcon onClick={handleClosePaswordUpdate}></ClearIcon>
+              </Button>
+            </div>
+          </DialogTitle>
+
+          <DialogContent className="Container-1">
+            <div>
+              <img src={UpdatePasswordImg} alt="X" className="password-x" />
+            </div>
+            <div className="Password-TextField">
+              <p>Change Your password. Minimum of 6 characters </p>
+              <TextField
+                id="outlined-size-small"
+                defaultValue="Password"
+                size="small"
+                style={{
+                  width: "500px",
+                }}
+              ></TextField>
+            </div>
+            <br></br>
+            <div>
+              <TextField
+                id="outlined-size-small"
+                defaultValue="Confirm Password"
+                size="small"
+                style={{
+                  width: "500px",
+                }}
+              ></TextField>
+            </div>
+          </DialogContent>
+          <DialogContent>
+            <div className="Buttons">
+              <Button
+                style={{
+                  color: "#000",
+                  border: "1px solid black",
+                  width: "50px",
+                }}
+                onClick={handleClosePaswordUpdate}
+              >
+                Close
+              </Button>
+              <Button style={{ color: "#000", border: "1px solid black" }}>
+                Submit
+              </Button>
+            </div>
+          </DialogContent>
+        </div>
       </div>
     </Dialog>
   );
@@ -305,14 +377,23 @@ export default function MiniDrawer() {
 
   const navigate = useNavigate();
 
-  const [openProject, setOpenProject] = React.useState(false);
+  const [openProjectInfo, setOpenProjectInfo] = React.useState(false);
+  const [openPasswordUpdate, setopenPasswordUpdate] = React.useState(false);
   const [selectedValue, setSelectedValue] = React.useState(false);
-  const handleClickOpenProject = () => {
-    setOpenProject(true);
+
+  const handleClickOpenProjectInfo = () => {
+    setOpenProjectInfo(true);
+  };
+  const handleClickOpenPasswordUpdate = () => {
+    setopenPasswordUpdate(true);
   };
 
-  const handleCloseProject = (value) => {
-    setOpenProject(false);
+  const handleCloseProjectInfo = (value) => {
+    setOpenProjectInfo(false);
+    setSelectedValue(value);
+  };
+  const handleClosePasswordUpdate = (value) => {
+    setopenPasswordUpdate(false);
     setSelectedValue(value);
   };
 
@@ -366,30 +447,103 @@ export default function MiniDrawer() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography
-                    textAlign="center"
-                    onClick={handleClickOpenProject}
-                  >
-                    Profile
-                  </Typography>
-                  <SimpleDialog
-                    selectedValue={selectedValue}
-                    open={openProject}
-                    onClose={handleCloseProject}
-                  />
-                </MenuItem>
-                <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">Account</Typography>
-                </MenuItem>
-                <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center" onClick={() => navigate("/super-admin-dashboard/timesheets")}>TimeSheets</Typography>
-                </MenuItem>
-                <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center" onClick={() => navigate("/")}>
-                    Logout
-                  </Typography>
-                </MenuItem>
+                {/* <MenuItem  onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Profile</Typography>
+                  </MenuItem>
+                  <MenuItem  onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Account</Typography>
+                  </MenuItem>
+                  <MenuItem  onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center" onClick={()=> navigate("/")}>Logout</Typography>
+                  </MenuItem> */}
+                <div className="profileinfo-maindiv">
+                  <div>
+                    <div className="profileinfo-topcard">
+                      <div id="profileinfo-Pfofile">
+                        <img
+                          src={profile2}
+                          alt="Karmadev"
+                          className="profileinfo-Profile"
+                        />
+                      </div>
+                      <div className="profileinfo-profile2">
+                        <div className="profileinfo-username">
+                          <h3>Steven Mallet</h3>
+                        </div>
+                        <div className="profileinfo-usermail">
+                          <p>amanda@gmail.com</p>
+                        </div>
+                        <button onClick={handleClickOpenProjectInfo} className="profileinfo-Button">Edit</button>
+                        <UpdateMyProfile
+                          selectedValue={selectedValue}
+                          open={openProjectInfo}
+                          onClose={handleCloseProjectInfo}
+                        />
+                      </div>
+                    </div>
+                    <div className="profileinfo-bottomcard">
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <img
+                          src={user}
+                          alt="karmadev"
+                          className="profileinfo-user"
+                        />
+                        <Typography
+                          textAlign="center"
+                          onClick={handleClickOpenProjectInfo}
+                        >
+                          Update My Profile
+                        </Typography>
+                        <UpdateMyProfile
+                          selectedValue={selectedValue}
+                          open={openProjectInfo}
+                          onClose={handleCloseProjectInfo}
+                        />
+                      </MenuItem>
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <img
+                          src={clock}
+                          alt="karmadev"
+                          className="profileinfo-clock"
+                        />
+                        <Typography
+                          textAlign="center"
+                          onClick={() =>
+                            navigate("/super-admin-dashboard/timesheets")
+                          }
+                        >
+                          My Time Sheets
+                        </Typography>
+                      </MenuItem>
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <img
+                          src={lock}
+                          alt="karmadev"
+                          className="profileinfo-lock"
+                        />
+                        <Typography
+                          textAlign="center"
+                          onClick={handleClickOpenPasswordUpdate}
+                        >
+                          Update Password
+                        </Typography>
+                        <UpdatePassword
+                          selectedValue={selectedValue}
+                          open={openPasswordUpdate}
+                          onClose={handleClosePasswordUpdate}
+                        />
+                      </MenuItem>
+                    </div>
+                    <MenuItem onClick={handleCloseUserMenu}>
+                      <Typography
+                        textAlign="center"
+                        onClick={() => navigate("/")}
+                      >
+                        Logout
+                      </Typography>
+                    </MenuItem>
+                  </div>
+                </div>
               </Menu>
             </Box>
           </div>

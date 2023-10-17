@@ -56,18 +56,21 @@ function App() {
             <Route path="users" element={<TeamManagerDeveloper/>} />
             <Route path="projects" element={<TeamManagerProject/>} />
             <Route path="tasks" element={<TeamManagerTask/>} />
+            <Route path="timesheets" element={<TimeSheets/>} />
           </Route>
           {/* Developer Dashbaord */}
           <Route path="developer-dashboard" element={<DeveloperLayout/>}>
             <Route index element={<DeveloperDashboard/>} />
             <Route path="projects" element={<DeveloperProject/>} />
             <Route path="tasks" element={<DeveloperTask/>} />
+            <Route path="timesheets" element={<TimeSheets/>} />
           </Route>
           {/* Client Dashbaord */}
           <Route path="client-dashboard" element={<ClientLayout/>}>
             <Route index element={<ClientDashboard/>} />
             <Route path="projects" element={<ClientProject/>} />
             <Route path="tasks" element={<ClientTask/>} />
+            <Route path="timesheets" element={<TimeSheets/>} />
           </Route>
         </Route>
       </Routes>

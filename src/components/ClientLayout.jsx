@@ -42,6 +42,19 @@ import "./DashLayout.css";
 // import SuperadminClient from "../features/SuperAdmin-Client/SuperadminClient";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import clock from "../assets/clock.svg";
+import lock from "../assets/lock.svg";
+import user from "../assets/user.svg";
+import ClearIcon from "@mui/icons-material/Clear";
+import UpdatePasswordImg from "../assets/updatePassword.svg";
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  Switch,
+  TextField,
+} from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -109,6 +122,185 @@ const Drawer = styled(MuiDrawer, {
     "& .MuiDrawer-paper": closedMixin(theme),
   }),
 }));
+
+const label = { inputProps: { "aria-label": "Switch demo" } };
+
+// UPDATE PROFILE
+function UpdateMyProfile(props) {
+  const { onClose, selectedValue, open } = props;
+
+  const handleCloseProjectInfo = () => {
+    onClose(selectedValue);
+  };
+
+  return (
+    <Dialog onClose={handleCloseProjectInfo} open={open}>
+      <div className="ProfileInfoDialog">
+        <div>
+          <DialogTitle>
+            <div className="DialogHeader">
+              <p> Update My Profile</p>
+              <Button style={{ color: "#000" }}>
+                <ClearIcon onClick={handleCloseProjectInfo}></ClearIcon>
+              </Button>
+            </div>
+          </DialogTitle>
+        </div>
+        <DialogContent className="Container-1">
+          <div className="Dialog-textfield">
+            <p>First Name*</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>Last Name*</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>Email Address*</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>Telephone</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>position</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+        </DialogContent>
+        <DialogContent className="Container3">
+          <div className="switches">
+            <p>Social Profile</p>
+            <Switch {...label} />
+          </div>
+        </DialogContent>
+        <DialogContent>
+          <div className="Buttons">
+            <Button
+              style={{
+                color: "#000",
+                border: "1px solid black",
+                width: "50px",
+              }}
+              onClick={handleCloseProjectInfo}
+            >
+              Close
+            </Button>
+            <Button style={{ color: "#000", border: "1px solid black" }}>
+              Submit
+            </Button>
+          </div>
+        </DialogContent>
+      </div>
+    </Dialog>
+  );
+}
+
+//UPDATE PASSWORD
+function UpdatePassword(props) {
+  const { onClose, selectedValue, open } = props;
+
+  const handleClosePaswordUpdate = () => {
+    onClose(selectedValue);
+  };
+  return (
+    <Dialog onClose={handleClosePaswordUpdate} open={open}>
+      <div>
+        <div className="password-nav">
+          <DialogTitle>
+            <div className="DialogHeader">
+              <p> Update Password</p>
+              <Button style={{ color: "#000" }}>
+                <ClearIcon onClick={handleClosePaswordUpdate}></ClearIcon>
+              </Button>
+            </div>
+          </DialogTitle>
+
+          <DialogContent className="Container-1">
+            <div>
+              <img src={UpdatePasswordImg} alt="X" className="password-x" />
+            </div>
+            <div className="Password-TextField">
+              <p>Change Your password. Minimum of 6 characters </p>
+              <TextField
+                id="outlined-size-small"
+                defaultValue="Password"
+                size="small"
+                style={{
+                  width: "500px",
+                }}
+              ></TextField>
+            </div>
+            <br></br>
+            <div>
+              <TextField
+                id="outlined-size-small"
+                defaultValue="Confirm Password"
+                size="small"
+                style={{
+                  width: "500px",
+                }}
+              ></TextField>
+            </div>
+          </DialogContent>
+          <DialogContent>
+            <div className="Buttons">
+              <Button
+                style={{
+                  color: "#000",
+                  border: "1px solid black",
+                  width: "50px",
+                }}
+                onClick={handleClosePaswordUpdate}
+              >
+                Close
+              </Button>
+              <Button style={{ color: "#000", border: "1px solid black" }}>
+                Submit
+              </Button>
+            </div>
+          </DialogContent>
+        </div>
+      </div>
+    </Dialog>
+  );
+}
+
 export default function MiniDrawer() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -133,6 +325,25 @@ export default function MiniDrawer() {
 
   const navigate = useNavigate();
 
+  const [openProjectInfo, setOpenProjectInfo] = React.useState(false);
+  const [openPasswordUpdate, setopenPasswordUpdate] = React.useState(false);
+  const [selectedValue, setSelectedValue] = React.useState(false);
+
+  const handleClickOpenProjectInfo = () => {
+    setOpenProjectInfo(true);
+  };
+  const handleClickOpenPasswordUpdate = () => {
+    setopenPasswordUpdate(true);
+  };
+
+  const handleCloseProjectInfo = (value) => {
+    setOpenProjectInfo(false);
+    setSelectedValue(value);
+  };
+  const handleClosePasswordUpdate = (value) => {
+    setopenPasswordUpdate(false);
+    setSelectedValue(value);
+  };
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -184,8 +395,7 @@ export default function MiniDrawer() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                
-                <MenuItem  onClick={handleCloseUserMenu}>
+                {/* <MenuItem  onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">Profile</Typography>
                   </MenuItem>
                   <MenuItem  onClick={handleCloseUserMenu}>
@@ -193,7 +403,96 @@ export default function MiniDrawer() {
                   </MenuItem>
                   <MenuItem  onClick={handleCloseUserMenu}>
                     <Typography textAlign="center" onClick={()=> navigate("/")}>Logout</Typography>
-                  </MenuItem>
+                  </MenuItem> */}
+                <div className="profileinfo-maindiv">
+                  <div>
+                    <div className="profileinfo-topcard">
+                      <div id="profileinfo-Pfofile">
+                        <img
+                          src={profile2}
+                          alt="Karmadev"
+                          className="profileinfo-Profile"
+                        />
+                      </div>
+                      <div className="profileinfo-profile2">
+                        <div className="profileinfo-username">
+                          <h3>Steven Mallet</h3>{" "}
+                        </div>
+                        <div className="profileinfo-usermail">
+                          {" "}
+                          <p>amanda@gmail.com</p>
+                        </div>
+                        <button onClick={handleClickOpenProjectInfo} className="profileinfo-Button">Edit</button>
+                        <UpdateMyProfile
+                          selectedValue={selectedValue}
+                          open={openProjectInfo}
+                          onClose={handleCloseProjectInfo}
+                        />
+                      </div>
+                    </div>
+                    <div className="profileinfo-bottomcard">
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <img
+                          src={user}
+                          alt="karmadev"
+                          className="profileinfo-user"
+                        />
+                        <Typography
+                          textAlign="center"
+                          onClick={handleClickOpenProjectInfo}
+                        >
+                          Update My Profile
+                        </Typography>
+                        <UpdateMyProfile
+                          selectedValue={selectedValue}
+                          open={openProjectInfo}
+                          onClose={handleCloseProjectInfo}
+                        />
+                      </MenuItem>
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <img
+                          src={clock}
+                          alt="karmadev"
+                          className="profileinfo-clock"
+                        />
+                        <Typography
+                          textAlign="center"
+                          onClick={() =>
+                            navigate("/client-dashboard/timesheets")
+                          }
+                        >
+                          My Time Sheets
+                        </Typography>
+                      </MenuItem>
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <img
+                          src={lock}
+                          alt="karmadev"
+                          className="profileinfo-lock"
+                        />
+                        <Typography
+                          textAlign="center"
+                          onClick={handleClickOpenPasswordUpdate}
+                        >
+                          Update Password
+                        </Typography>
+                        <UpdatePassword
+                          selectedValue={selectedValue}
+                          open={openPasswordUpdate}
+                          onClose={handleClosePasswordUpdate}
+                        />
+                      </MenuItem>
+                    </div>
+                    <MenuItem onClick={handleCloseUserMenu}>
+                      <Typography
+                        textAlign="center"
+                        onClick={() => navigate("/")}
+                      >
+                        Logout
+                      </Typography>
+                    </MenuItem>
+                  </div>
+                </div>
               </Menu>
             </Box>
           </div>
@@ -213,102 +512,107 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <List>
           {/* Default Dashboard */}
-            <ListItem disablePadding sx={{ display: "block" }}>
-              <ListItemButton
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+                color: teal["A700"],
+                borderrighttopradius: "10px",
+              }}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  color: teal["A700"],
-                  borderrighttopradius: "10px",
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
                 }}
               >
-                <ListItemIcon
+                <DashboardRoundedIcon
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    color: teal["A700"],
+                    height: "32px",
+                    width: "32px",
                   }}
-                >
-                    <DashboardRoundedIcon
-                      sx={{
-                        color: teal["A700"],
-                        height: "32px",
-                        width: "32px",
-                      }}
-                      onClick={()=> navigate("/client-dashboard")}
-                    />
-
-                </ListItemIcon>
-                <ListItemText primary={"Developer"} sx={{ opacity: open ? 1 : 0 }} 
-                onClick={()=> navigate("/client-dashboard")}
+                  onClick={() => navigate("/client-dashboard")}
                 />
-              </ListItemButton>
-            </ListItem>
+              </ListItemIcon>
+              <ListItemText
+                primary={"Developer"}
+                sx={{ opacity: open ? 1 : 0 }}
+                onClick={() => navigate("/client-dashboard")}
+              />
+            </ListItemButton>
+          </ListItem>
 
-            {/* Task */}
-            <ListItem disablePadding sx={{ display: "block" }}>
-              <ListItemButton
+          {/* Task */}
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+                color: teal["A700"],
+              }}
+              onClick={() => navigate("/client-dashboard/tasks")}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  color: teal["A700"],
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
                 }}
-                onClick={()=> navigate("/client-dashboard/tasks")}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img
-                    src={taskicon}
-                    alt="taskIcon"
-                    style={{ color: green, height: "28px", width: "32px" }}
-                  />
-                </ListItemIcon>
-                <ListItemText primary={"Tasks"} sx={{ opacity: open ? 1 : 0 }} 
-                onClick={()=> navigate("/client-dashboard/tasks")} 
+                <img
+                  src={taskicon}
+                  alt="taskIcon"
+                  style={{ color: green, height: "28px", width: "32px" }}
                 />
-              </ListItemButton>
-            </ListItem>
+              </ListItemIcon>
+              <ListItemText
+                primary={"Tasks"}
+                sx={{ opacity: open ? 1 : 0 }}
+                onClick={() => navigate("/client-dashboard/tasks")}
+              />
+            </ListItemButton>
+          </ListItem>
 
-            {/* Projects */}
-            <ListItem disablePadding sx={{ display: "block" }}>
-              <ListItemButton
+          {/* Projects */}
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+                color: teal["A700"],
+              }}
+              onClick={() => navigate("/client-dashboard/projects")}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  color: teal["A700"],
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
                 }}
-                onClick={()=> navigate("/client-dashboard/projects")}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img
-                    src={proicon}
-                    alt="projects"
-                    style={{ color: green, height: "28px", width: "32px" }}
-                  />
-                </ListItemIcon>
-                <ListItemText primary={"Projects"} sx={{ opacity: open ? 1 : 0 }} 
-                onClick={()=> navigate("/client-dashboard/projects")}
+                <img
+                  src={proicon}
+                  alt="projects"
+                  style={{ color: green, height: "28px", width: "32px" }}
                 />
-              </ListItemButton>
-            </ListItem>
+              </ListItemIcon>
+              <ListItemText
+                primary={"Projects"}
+                sx={{ opacity: open ? 1 : 0 }}
+                onClick={() => navigate("/client-dashboard/projects")}
+              />
+            </ListItemButton>
+          </ListItem>
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-      <DrawerHeader />
+        <DrawerHeader />
 
         <Outlet />
       </Box>

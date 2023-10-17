@@ -21,10 +21,9 @@ const DeveloperHeader = () => {
           </Breadcrumbs>
         </Box>
       </div>
-      <div className="head-content2">
+      {/* <div className="head-content2">
         <Button className="addproject">+ Add Developer</Button>
-        {/* <Button className='TeamManagerProject-addproject'>+ Add Project</Button> */}
-      </div>
+      </div> */}
 
     </div>
   );
