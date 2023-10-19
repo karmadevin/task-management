@@ -32,9 +32,9 @@ import Badge from "@mui/material/Badge";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import taskicon from "../assets/taskicon.svg";
 // import logo from "../assets/logo.svg";
-import clients from "../assets/clients.svg";
-import leads from "../assets/leads.svg";
-import payslip from "../assets/payslip.svg";
+// import clients from "../assets/clients.svg";
+// import leads from "../assets/leads.svg";
+// import payslip from "../assets/payslip.svg";
 import user from "../assets/user.svg";
 import "./DashLayout.css";
 // import Superadminpayslip from "../features/Superadmin-payslip/Superadminpayslip";
@@ -42,6 +42,10 @@ import "./DashLayout.css";
 // import SuperadminClient from "../features/SuperAdmin-Client/SuperadminClient";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import clock from "../assets/clock.svg";
+import lock from "../assets/lock.svg";
+import ClearIcon from "@mui/icons-material/Clear";
+import UpdatePasswordImg from "../assets/updatePassword.svg";
 import {
   Button,
   Dialog,
@@ -50,11 +54,6 @@ import {
   Switch,
   TextField,
 } from "@mui/material";
-import ClearIcon from "@mui/icons-material/Clear";
-import clock from "../assets/clock.svg";
-import lock from "../assets/lock.svg";
-import PaswordEdit from "../assets/PaswordEdit.svg";
-import UpdatePasswordImg from "../assets/updatePassword.svg";
 
 const drawerWidth = 240;
 
@@ -121,57 +120,6 @@ const Drawer = styled(MuiDrawer, {
     ...closedMixin(theme),
     "& .MuiDrawer-paper": closedMixin(theme),
   }),
-}));
-
-const IOSSwitch = styled((props) => (
-  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
-))(({ theme }) => ({
-  width: 42,
-  height: 26,
-  padding: 0,
-  "& .MuiSwitch-switchBase": {
-    padding: 0,
-    margin: 2,
-    transitionDuration: "300ms",
-    "&.Mui-checked": {
-      transform: "translateX(16px)",
-      color: "#fff",
-      "& + .MuiSwitch-track": {
-        backgroundColor: theme.palette.mode === "dark" ? "#2ECA45" : "#65C466",
-        opacity: 1,
-        border: 0,
-      },
-      "&.Mui-disabled + .MuiSwitch-track": {
-        opacity: 0.5,
-      },
-    },
-    "&.Mui-focusVisible .MuiSwitch-thumb": {
-      color: "#33cf4d",
-      border: "6px solid #fff",
-    },
-    "&.Mui-disabled .MuiSwitch-thumb": {
-      color:
-        theme.palette.mode === "light"
-          ? theme.palette.grey[100]
-          : theme.palette.grey[600],
-    },
-    "&.Mui-disabled + .MuiSwitch-track": {
-      opacity: theme.palette.mode === "light" ? 0.7 : 0.3,
-    },
-  },
-  "& .MuiSwitch-thumb": {
-    boxSizing: "border-box",
-    width: 22,
-    height: 22,
-  },
-  "& .MuiSwitch-track": {
-    borderRadius: 26 / 2,
-    backgroundColor: theme.palette.mode === "light" ? "#9e9e9e" : "#bdbdbd",
-    opacity: 1,
-    transition: theme.transitions.create(["background-color"], {
-      duration: 500,
-    }),
-  },
 }));
 
 const label = { inputProps: { "aria-label": "Switch demo" } };
@@ -396,7 +344,7 @@ export default function MiniDrawer() {
     setopenPasswordUpdate(false);
     setSelectedValue(value);
   };
-
+  
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline style={{ color: pink }} />
@@ -468,9 +416,10 @@ export default function MiniDrawer() {
                       </div>
                       <div className="profileinfo-profile2">
                         <div className="profileinfo-username">
-                          <h3>Steven Mallet</h3>
+                          <h3>Steven Mallet</h3>{" "}
                         </div>
                         <div className="profileinfo-usermail">
+                          {" "}
                           <p>amanda@gmail.com</p>
                         </div>
                         <button onClick={handleClickOpenProjectInfo} className="profileinfo-Button">Edit</button>
@@ -509,7 +458,7 @@ export default function MiniDrawer() {
                         <Typography
                           textAlign="center"
                           onClick={() =>
-                            navigate("/super-admin-dashboard/timesheets")
+                            navigate("/manager-dashboard/timesheets")
                           }
                         >
                           My Time Sheets
@@ -562,8 +511,8 @@ export default function MiniDrawer() {
           </IconButton>
         </DrawerHeader>
         <List>
-          {["Dashboard", "Project"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
+          {/* Default Dashboard */}
+            <ListItem disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -580,136 +529,115 @@ export default function MiniDrawer() {
                     justifyContent: "center",
                   }}
                 >
-                  {index % 3 == 0 ? (
                     <DashboardRoundedIcon
                       sx={{
                         color: teal["A700"],
                         height: "32px",
                         width: "32px",
                       }}
-                      onClick={() => navigate("/super-admin-dashboard")}
+                      onClick={()=> navigate("/manager-dashboard")}
                     />
-                  ) : (
-                    <img
-                      src={proicon}
-                      alt="task icon"
-                      style={{ height: "32px", width: "32px" }}
-                      onClick={() =>
-                        navigate("/super-admin-dashboard/projects")
-                      }
-                    />
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
 
-          {["Task", "Payslip"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  color: teal["A700"],
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 3 == 0 ? (
-                    <img
-                      src={taskicon}
-                      alt="Karmaev.in"
-                      style={{ height: "28px", width: "32px" }}
-                      onClick={() => navigate("/super-admin-dashboard/tasks")}
-                    />
-                  ) : (
-                    <img
-                      src={payslip}
-                      alt="Karmadev.im"
-                      style={{ height: "32px", width: "32px" }}
-                      onClick={() => navigate("/super-admin-dashboard/payslip")}
-                    />
-                  )}
                 </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-          {["Leads", "User"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  color: teal["A700"],
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 3 == 0 ? (
-                    <img
-                      src={leads}
-                      alt="Karmaev.in"
-                      style={{ height: "28px", width: "32px" }}
-                      onClick={() => navigate("/super-admin-dashboard/leads")}
-                    />
-                  ) : (
-                    <img
-                      src={user}
-                      alt="Karmadev.im"
-                      style={{ height: "32px", width: "32px" }}
-                      onClick={() => navigate("/super-admin-dashboard/users")}
-                    />
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-          {/* Clients */}
-          <ListItem disablePadding sx={{ display: "block" }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-                color: teal["A700"],
-              }}
-              onClick={() => navigate("/super-admin-dashboard/clients")}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
-                }}
-              >
-                <img
-                  src={clients}
-                  alt="clients"
-                  style={{ color: green, height: "28px", width: "32px" }}
+                <ListItemText primary={"Dashboard"} sx={{ opacity: open ? 1 : 0 }} 
+                onClick={()=> navigate("/manager-dashboard")}
                 />
-              </ListItemIcon>
-              <ListItemText primary={"Client"} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
+              </ListItemButton>
+            </ListItem>
+
+            {/* Task */}
+            <ListItem disablePadding sx={{ display: "block" }}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                  color: teal["A700"],
+                }}
+                onClick={()=> navigate("/manager-dashboard/tasks")}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img
+                    src={taskicon}
+                    alt="taskIcon"
+                    style={{ color: green, height: "28px", width: "32px" }}
+                  />
+                </ListItemIcon>
+                <ListItemText primary={"Tasks"} sx={{ opacity: open ? 1 : 0 }} 
+                onClick={()=> navigate("/manager-dashboard/tasks")} 
+                />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Projects */}
+            <ListItem disablePadding sx={{ display: "block" }}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                  color: teal["A700"],
+                }}
+                onClick={()=> navigate("/manager-dashboard/projects")}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img
+                    src={proicon}
+                    alt="projects"
+                    style={{ color: green, height: "28px", width: "32px" }}
+                  />
+                </ListItemIcon>
+                <ListItemText primary={"Projects"} sx={{ opacity: open ? 1 : 0 }} 
+                onClick={()=> navigate("/manager-dashboard/projects")}
+                />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Users */}
+            <ListItem disablePadding sx={{ display: "block" }}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5,
+                  color: teal["A700"],
+                }}
+                onClick={()=> navigate("/manager-dashboard/users")}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img
+                    src={user}
+                    alt="user"
+                    style={{ color: green, height: "28px", width: "32px" }}
+                  />
+                </ListItemIcon>
+                <ListItemText primary={"Users"} sx={{ opacity: open ? 1 : 0 }} 
+                onClick={()=> navigate("/manager-dashboard/users")} 
+                />
+              </ListItemButton>
+            </ListItem>
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
+      <DrawerHeader />
 
         <Outlet />
       </Box>

@@ -1,0 +1,28 @@
+.icontitle {
+  color: rgb(136, 136, 139) !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  margin-bottom: 8px !important;
+}
+.iconsubtitle {
+  color: rgb(89, 89, 93) !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+}
+.iconimg {
+  color: rgb(136, 136, 139) !important;
+  margin-left: 15px !important;
+}
+.cardcontent {
+  padding: 18px !important;
+}
+.dashboardcard {
+  border: 2px solid;
+}
+.actioncard {
+  box-shadow: none !important;
+  display: flex;
+  border: 1px solid rgb(158, 158, 165) !important;
+  width: 25%;
+  margin-right: 40px;
+}

@@ -1,0 +1,143 @@
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  margin-bottom: 10px;
+}
+.head-content1 {
+  width: 50%;
+  height: 100%;
+  margin-left: 20px;
+}
+.head-content1 > h4 {
+  color: rgb(120, 117, 117);
+  margin-top: 10px;
+}
+.head-content1 > .box > .breadcrumbs {
+  font-size: 20px !important;
+  font-size: 10px !important;
+  font-weight: 600;
+  margin-top: -20px;
+}
+
+.typography {
+  font-size: 10px !important;
+  font-weight: 600;
+  color: rgb(120, 117, 117);
+}
+.head-content2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 120px;
+}
+.search {
+  padding: 4px 0;
+  border-radius: 5px;
+  display: flex;
+  background-color: rgb(221, 216, 216);
+}
+.searchIcon {
+  margin: auto !important;
+  height: 30px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+.search > input {
+  padding-left: 10px;
+  border: 0;
+  background-color: transparent;
+}
+.profileIcon {
+  margin-left: 10px;
+  border-radius: 5px;
+  padding: 7px 5px 2px 5px;
+  background-color: rgb(221, 216, 216);
+}
+
+.profileIcon img {
+  height: 25px;
+}
+
+.addproject {
+  margin-left: 10px !important;
+  color: white !important;
+  background-color: rgb(82, 180, 146) !important;
+  padding: 6px 20px 6px 20px !important;
+}
+
+.DialogHead {
+  background-color: #d9d9d9;
+  width: 500px;
+  height: 70px;
+}
+
+.DialogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px !important;
+}
+
+.DialogHeader p {
+  font-size: 18px;
+}
+
+.Container1 {
+  background-color: #ebeaea;
+}
+
+.Client {
+  display: block;
+}
+
+.chip {
+  display: block ;
+  width: 450px;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+}
+
+.Dialog-textfield {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.Dialog-textfield p {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.switches {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.Buttons {
+  gap: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.Filter-project {
+  width: 400px;
+}
+
+.Filter-Buttons {
+  gap: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Date {
+  gap: 9px;
+  display: flex;
+  align-items: center;
+}

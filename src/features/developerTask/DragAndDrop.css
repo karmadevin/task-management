@@ -1,0 +1,72 @@
+.dcard {
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 1px 15px;
+}
+.tit-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dcolumns {
+  display: flex;
+
+  margin-top: 10px;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.dcolumns-1 {
+  background-color: rgb(239, 255, 241);
+  border-radius: 15px !important;
+  border-top: 4px solid rgb(78, 119, 216);
+  width: 25%;
+  margin: 10px;
+  padding: 5px;
+}
+.dbutton {
+  font-weight: 500;
+  background-color: rgb(231, 252, 255);
+  color: rgb(0, 140, 132);
+  border-radius: 5px;
+  width: 100px;
+  padding: 4px 22px;
+  margin-top: 0px;
+}
+.lastcontent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  padding-bottom: 8px;
+}
+.lastcontent-pic {
+  display: flex;
+}
+
+.tit-icon > h3 {
+  color: rgb(89, 89, 93);
+  font-size: 18px !important;
+  font-weight: 600;
+}
+.dcard > div > span {
+  color: rgb(160, 160, 162);
+}
+.dcard > div {
+  padding-bottom: 5px;
+  font-size: 14px;
+}
+.dcolumns-1 > h2 {
+  padding-left: 15px;
+  color: rgb(128, 136, 132);
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.lastcontent-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}

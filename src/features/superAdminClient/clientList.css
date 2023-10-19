@@ -1,0 +1,68 @@
+.pic {
+  display: flex !important;
+  flex-direction: row !important;
+  border-bottom: none !important;
+  /* background-color: red; */
+}
+
+.table {
+  display: flex;
+  align-items: center;
+  width: 100% !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+.thead1 {
+  padding: 10px !important;
+  border-bottom: 1.6px solid black !important;
+}
+.theadcheckbox {
+  margin-top: 8px !important;
+}
+.tablerow > .Checkbox {
+  margin-top: 5px;
+}
+
+.tablerow {
+  border-bottom: 1px solid rgb(222, 219, 219) !important;
+}
+.icons {
+  font-size: 29px !important;
+  padding: 5px;
+  margin-right: 5px;
+}
+.iconscontent {
+  width: 20%;
+}
+.statuscontent {
+  width: 12%;
+}
+
+.statuscontent > span {
+  border: 1px solid green;
+  padding: 5px 10px;
+  background-color: rgb(213, 207, 207);
+  border: none;
+  border-radius: 10px;
+}
+
+.tableCell img {
+  margin-left: 5px;
+  height: 15px;
+}
+
+.titlecontent img {
+  height: 30px;
+  border-radius: 20px;
+}
+
+.Profile {
+  display: flex;
+  align-items: center !important;
+  justify-content: center;
+  gap: 20px;
+}
+
+.profile img {
+  border-radius: 20px;
+}
