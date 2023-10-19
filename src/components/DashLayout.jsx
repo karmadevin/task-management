@@ -42,6 +42,19 @@ import "./DashLayout.css";
 // import SuperadminClient from "../features/SuperAdmin-Client/SuperadminClient";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  Switch,
+  TextField,
+} from "@mui/material";
+import ClearIcon from "@mui/icons-material/Clear";
+import clock from "../assets/clock.svg";
+import lock from "../assets/lock.svg";
+import PaswordEdit from "../assets/PaswordEdit.svg";
+import UpdatePasswordImg from "../assets/updatePassword.svg";
 
 const drawerWidth = 240;
 
@@ -109,7 +122,237 @@ const Drawer = styled(MuiDrawer, {
     "& .MuiDrawer-paper": closedMixin(theme),
   }),
 }));
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
+const IOSSwitch = styled((props) => (
+  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
+))(({ theme }) => ({
+  width: 42,
+  height: 26,
+  padding: 0,
+  "& .MuiSwitch-switchBase": {
+    padding: 0,
+    margin: 2,
+    transitionDuration: "300ms",
+    "&.Mui-checked": {
+      transform: "translateX(16px)",
+      color: "#fff",
+      "& + .MuiSwitch-track": {
+        backgroundColor: theme.palette.mode === "dark" ? "#2ECA45" : "#65C466",
+        opacity: 1,
+        border: 0,
+      },
+      "&.Mui-disabled + .MuiSwitch-track": {
+        opacity: 0.5,
+      },
+    },
+    "&.Mui-focusVisible .MuiSwitch-thumb": {
+      color: "#33cf4d",
+      border: "6px solid #fff",
+    },
+    "&.Mui-disabled .MuiSwitch-thumb": {
+      color:
+        theme.palette.mode === "light"
+          ? theme.palette.grey[100]
+          : theme.palette.grey[600],
+    },
+    "&.Mui-disabled + .MuiSwitch-track": {
+      opacity: theme.palette.mode === "light" ? 0.7 : 0.3,
+    },
+  },
+  "& .MuiSwitch-thumb": {
+    boxSizing: "border-box",
+    width: 22,
+    height: 22,
+  },
+  "& .MuiSwitch-track": {
+    borderRadius: 26 / 2,
+    backgroundColor: theme.palette.mode === "light" ? "#9e9e9e" : "#bdbdbd",
+    opacity: 1,
+    transition: theme.transitions.create(["background-color"], {
+      duration: 500,
+    }),
+  },
+}));
+
+const label = { inputProps: { "aria-label": "Switch demo" } };
+
+// UPDATE PROFILE
+function UpdateMyProfile(props) {
+  const { onClose, selectedValue, open } = props;
+
+  const handleCloseProjectInfo = () => {
+    onClose(selectedValue);
+  };
+
+  return (
+    <Dialog onClose={handleCloseProjectInfo} open={open}>
+      <div className="ProfileInfoDialog">
+        <div>
+          <DialogTitle>
+            <div className="DialogHeader">
+              <p> Update My Profile</p>
+              <Button style={{ color: "#000" }}>
+                <ClearIcon onClick={handleCloseProjectInfo}></ClearIcon>
+              </Button>
+            </div>
+          </DialogTitle>
+        </div>
+        <DialogContent className="Container-1">
+          <div className="Dialog-textfield">
+            <p>First Name*</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>Last Name*</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>Email Address*</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>Telephone</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+          <div className="Dialog-textfield">
+            <p>position</p>
+            <TextField
+              id="outlined-size-small"
+              defaultValue=" "
+              size="small"
+              style={{
+                width: "350px",
+              }}
+            ></TextField>
+          </div>
+        </DialogContent>
+        <DialogContent className="Container3">
+          <div className="switches">
+            <p>Social Profile</p>
+            <Switch {...label} />
+          </div>
+        </DialogContent>
+        <DialogContent>
+          <div className="Buttons">
+            <Button
+              style={{
+                color: "#000",
+                border: "1px solid black",
+                width: "50px",
+              }}
+              onClick={handleCloseProjectInfo}
+            >
+              Close
+            </Button>
+            <Button style={{ color: "#000", border: "1px solid black" }}>
+              Submit
+            </Button>
+          </div>
+        </DialogContent>
+      </div>
+    </Dialog>
+  );
+}
+
+//UPDATE PASSWORD
+function UpdatePassword(props) {
+  const { onClose, selectedValue, open } = props;
+
+  const handleClosePaswordUpdate = () => {
+    onClose(selectedValue);
+  };
+  return (
+    <Dialog onClose={handleClosePaswordUpdate} open={open}>
+      <div>
+        <div className="password-nav">
+          <DialogTitle>
+            <div className="DialogHeader">
+              <p> Update Password</p>
+              <Button style={{ color: "#000" }}>
+                <ClearIcon onClick={handleClosePaswordUpdate}></ClearIcon>
+              </Button>
+            </div>
+          </DialogTitle>
+
+          <DialogContent className="Container-1">
+            <div>
+              <img src={UpdatePasswordImg} alt="X" className="password-x" />
+            </div>
+            <div className="Password-TextField">
+              <p>Change Your password. Minimum of 6 characters </p>
+              <TextField
+                id="outlined-size-small"
+                defaultValue="Password"
+                size="small"
+                style={{
+                  width: "500px",
+                }}
+              ></TextField>
+            </div>
+            <br></br>
+            <div>
+              <TextField
+                id="outlined-size-small"
+                defaultValue="Confirm Password"
+                size="small"
+                style={{
+                  width: "500px",
+                }}
+              ></TextField>
+            </div>
+          </DialogContent>
+          <DialogContent>
+            <div className="Buttons">
+              <Button
+                style={{
+                  color: "#000",
+                  border: "1px solid black",
+                  width: "50px",
+                }}
+                onClick={handleClosePaswordUpdate}
+              >
+                Close
+              </Button>
+              <Button style={{ color: "#000", border: "1px solid black" }}>
+                Submit
+              </Button>
+            </div>
+          </DialogContent>
+        </div>
+      </div>
+    </Dialog>
+  );
+}
+
+// const settings = ["Profile", "Account", "Dashboard", "Logout"];
 export default function MiniDrawer() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -134,6 +377,25 @@ export default function MiniDrawer() {
 
   const navigate = useNavigate();
 
+  const [openProjectInfo, setOpenProjectInfo] = React.useState(false);
+  const [openPasswordUpdate, setopenPasswordUpdate] = React.useState(false);
+  const [selectedValue, setSelectedValue] = React.useState(false);
+
+  const handleClickOpenProjectInfo = () => {
+    setOpenProjectInfo(true);
+  };
+  const handleClickOpenPasswordUpdate = () => {
+    setopenPasswordUpdate(true);
+  };
+
+  const handleCloseProjectInfo = (value) => {
+    setOpenProjectInfo(false);
+    setSelectedValue(value);
+  };
+  const handleClosePasswordUpdate = (value) => {
+    setopenPasswordUpdate(false);
+    setSelectedValue(value);
+  };
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -185,11 +447,103 @@ export default function MiniDrawer() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                {/* <MenuItem  onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Profile</Typography>
                   </MenuItem>
-                ))}
+                  <MenuItem  onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Account</Typography>
+                  </MenuItem>
+                  <MenuItem  onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center" onClick={()=> navigate("/")}>Logout</Typography>
+                  </MenuItem> */}
+                <div className="profileinfo-maindiv">
+                  <div>
+                    <div className="profileinfo-topcard">
+                      <div id="profileinfo-Pfofile">
+                        <img
+                          src={profile2}
+                          alt="Karmadev"
+                          className="profileinfo-Profile"
+                        />
+                      </div>
+                      <div className="profileinfo-profile2">
+                        <div className="profileinfo-username">
+                          <h3>Steven Mallet</h3>
+                        </div>
+                        <div className="profileinfo-usermail">
+                          <p>amanda@gmail.com</p>
+                        </div>
+                        <button onClick={handleClickOpenProjectInfo} className="profileinfo-Button">Edit</button>
+                        <UpdateMyProfile
+                          selectedValue={selectedValue}
+                          open={openProjectInfo}
+                          onClose={handleCloseProjectInfo}
+                        />
+                      </div>
+                    </div>
+                    <div className="profileinfo-bottomcard">
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <img
+                          src={user}
+                          alt="karmadev"
+                          className="profileinfo-user"
+                        />
+                        <Typography
+                          textAlign="center"
+                          onClick={handleClickOpenProjectInfo}
+                        >
+                          Update My Profile
+                        </Typography>
+                        <UpdateMyProfile
+                          selectedValue={selectedValue}
+                          open={openProjectInfo}
+                          onClose={handleCloseProjectInfo}
+                        />
+                      </MenuItem>
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <img
+                          src={clock}
+                          alt="karmadev"
+                          className="profileinfo-clock"
+                        />
+                        <Typography
+                          textAlign="center"
+                          onClick={() =>
+                            navigate("/super-admin-dashboard/timesheets")
+                          }
+                        >
+                          My Time Sheets
+                        </Typography>
+                      </MenuItem>
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <img
+                          src={lock}
+                          alt="karmadev"
+                          className="profileinfo-lock"
+                        />
+                        <Typography
+                          textAlign="center"
+                          onClick={handleClickOpenPasswordUpdate}
+                        >
+                          Update Password
+                        </Typography>
+                        <UpdatePassword
+                          selectedValue={selectedValue}
+                          open={openPasswordUpdate}
+                          onClose={handleClosePasswordUpdate}
+                        />
+                      </MenuItem>
+                    </div>
+                    <MenuItem onClick={handleCloseUserMenu}>
+                      <Typography
+                        textAlign="center"
+                        onClick={() => navigate("/")}
+                      >
+                        Logout
+                      </Typography>
+                    </MenuItem>
+                  </div>
+                </div>
               </Menu>
             </Box>
           </div>
@@ -233,14 +587,16 @@ export default function MiniDrawer() {
                         height: "32px",
                         width: "32px",
                       }}
-                      onClick={()=> navigate("/dashboard")}
+                      onClick={() => navigate("/super-admin-dashboard")}
                     />
                   ) : (
                     <img
                       src={proicon}
                       alt="task icon"
                       style={{ height: "32px", width: "32px" }}
-                      onClick={()=> navigate("/dashboard/projects")}
+                      onClick={() =>
+                        navigate("/super-admin-dashboard/projects")
+                      }
                     />
                   )}
                 </ListItemIcon>
@@ -271,14 +627,14 @@ export default function MiniDrawer() {
                       src={taskicon}
                       alt="Karmaev.in"
                       style={{ height: "28px", width: "32px" }}
-                      onClick={()=> navigate("/dashboard/tasks")}
+                      onClick={() => navigate("/super-admin-dashboard/tasks")}
                     />
                   ) : (
                     <img
                       src={payslip}
                       alt="Karmadev.im"
                       style={{ height: "32px", width: "32px" }}
-                      onClick={()=> navigate("/dashboard/payslip")}
+                      onClick={() => navigate("/super-admin-dashboard/payslip")}
                     />
                   )}
                 </ListItemIcon>
@@ -308,15 +664,14 @@ export default function MiniDrawer() {
                       src={leads}
                       alt="Karmaev.in"
                       style={{ height: "28px", width: "32px" }}
-                      onClick={()=> navigate("/dashboard/leads")}
+                      onClick={() => navigate("/super-admin-dashboard/leads")}
                     />
                   ) : (
                     <img
                       src={user}
                       alt="Karmadev.im"
                       style={{ height: "32px", width: "32px" }}
-                      onClick={()=> navigate("/dashboard/users")}
-
+                      onClick={() => navigate("/super-admin-dashboard/users")}
                     />
                   )}
                 </ListItemIcon>
@@ -324,37 +679,37 @@ export default function MiniDrawer() {
               </ListItemButton>
             </ListItem>
           ))}
-            {/* Clients */}
-            <ListItem disablePadding sx={{ display: "block" }}>
-              <ListItemButton
+          {/* Clients */}
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+                color: teal["A700"],
+              }}
+              onClick={() => navigate("/super-admin-dashboard/clients")}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  color: teal["A700"],
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
                 }}
-                onClick={()=> navigate("/dashboard/clients")}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img
-                    src={clients}
-                    alt="clients"
-                    style={{ color: green, height: "28px", width: "32px" }}
-                  />
-                </ListItemIcon>
-                <ListItemText primary={"Client"} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
+                <img
+                  src={clients}
+                  alt="clients"
+                  style={{ color: green, height: "28px", width: "32px" }}
+                />
+              </ListItemIcon>
+              <ListItemText primary={"Client"} sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-      <DrawerHeader />
+        <DrawerHeader />
 
         <Outlet />
       </Box>

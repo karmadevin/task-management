@@ -5,7 +5,7 @@ import ClientList from "./clientList";
 const SuperAdminClient = () => {
   return (
     <div className="SuperadminUser">
-      <ClientHeader/>
+      <ClientHeader />
       <ClientList />
     </div>
   );

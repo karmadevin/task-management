@@ -1,0 +1,11 @@
+.details{
+    padding: 20px 100px;
+}
+.light{
+    color: grey;
+    font-size: 15px;
+    font-weight: 400;
+}
+.dhead{
+    text-decoration: underline;
+}

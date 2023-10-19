@@ -12,7 +12,8 @@ const SuperAdminProjects = () => {
       <ProjectHeading />
       <div className="superadminproject-project">
         {CardData.map((data, index) => (
-          <ProjectCard key={index}
+          <ProjectCard
+            key={index}
             count={data.count}
             status={data.status}
             color={data.color}

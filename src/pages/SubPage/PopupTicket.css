@@ -1,0 +1,60 @@
+.ticdiv{
+    width: 100%;
+    background-color: rgb(244, 247, 244);
+    display: flex;
+    padding: 0;
+    margin-top: 20px;
+}
+.Ticket-Options{
+    background-color: rgb(212, 209, 209);
+    padding: 15px 10px;
+}
+.tic-segthree{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 15px;
+}
+.line{
+    margin: 0px 15px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+.tic-textfieldthree{
+    border: 1px solid black !important;
+    border-radius: 5px  ;
+}
+.thirty{
+    margin: 20px;
+    width: 30% !important;
+    /* background-color: green; */
+    background-color: white;
+}
+.seventy{
+    width: 70%;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+}
+.tic-textfieldfour{
+    width: 100%;
+    border: 1px solid black !important;
+    border-radius: 5px;
+    margin-bottom: 30px !important;
+}
+.tic-textarea{
+    width: 100%;
+    border: 1px solid black !important;
+    border-radius: 5px;
+    margin-bottom: 10px !important;
+}
+.drag{
+    height: 100px;
+    border: 1px dashed black;
+}
+.moreh{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}

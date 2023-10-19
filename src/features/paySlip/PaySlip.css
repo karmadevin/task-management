@@ -1,0 +1,114 @@
+
+
+  
+  .payslip-longinput{
+    background-color: white;
+    border: black solid 1px;
+    border-radius: 5px;
+    color: black;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+
+  .payslip-longinput,
+  p {
+    margin: 0px;
+    text-align: start;
+    font-size: 12px;
+  }
+
+
+.payslip-Coloumn1 {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  width: 500px;
+
+  .payslip-Coloumn1,
+  input {
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: px;
+    background: white;
+    color: black;
+    margin-top: 0px !important;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  .payslip-Coloumn1,
+  input {
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 10px;
+    background: white;
+    color: black;
+    margin-top: 0px !important;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+
+  .payslip-Coloumn1,
+  p {
+    margin: 0px;
+    text-align: start;
+    font-size: 12px;
+  }
+}
+
+.payslip-Coloumn2 {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  width: 500px;
+
+  .payslip-Coloumn1,
+  input {
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 10px;
+    background: white;
+    color: black;
+    margin-top: 0px !important;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+
+  .payslip-Coloumn2,
+  p {
+    margin: 0px;
+    text-align: start;
+    font-size: 12px;
+  }
+
+}
+
+.payslip-Subdiv {
+  display: flex;
+  gap: 50px;
+}
+
+.payslip-maindiv {
+  margin: 0px;
+  padding: 0px;
+}
+#payslip-longinput{
+padding-bottom: 20px;
+}
+.payslip-bottom-btn{
+  display: flex;
+  justify-content: end;
+  background-color: white;
+}
+.payslip-bottom-btn{
+  display: flex;
+  justify-content: end;
+  background-color: white;
+}
+.payslip-bottom-button{
+  background-color: white;
+  color: black;
+}

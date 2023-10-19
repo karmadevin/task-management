@@ -1,0 +1,90 @@
+.left{
+    margin: 10px !important;
+    margin-left: 30px;
+    width: 20% !important;
+    background-color: white;
+}
+.bella{
+    width: 100% !important;
+    text-align: center;
+    
+}
+.bella1{
+    padding-left: 20px;
+}
+.bellahead{
+    font-size: 15px;
+    color: gray;
+    margin-bottom: -10px !important;
+}
+.bellahead1{
+    font-size: 16px;
+    font-weight: 500;
+   
+}
+.default{
+    background-color: rgb(169,167,248);
+    color: white;
+    padding: 1px 13px;
+    width: 80px;
+    border-radius: 15px;
+
+}
+.Active{
+    background-color: rgb(36,210,181);
+    color: white;
+    padding: 1px 17px;
+    width: 80px;
+    border-radius: 15px;
+
+}
+.Design{
+    background-color: rgb(36,210,181);
+    color: white;
+    padding: 1px 26px;
+    width: 150px;
+    border-radius: 15px;
+
+}
+.bella2{
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+.p11{
+    font-size: 15px;
+    color: gray;
+    margin-bottom: -10px !important;
+width: 130px;
+}
+.p1{
+    font-size: 14px;
+   border-bottom: 4px solid rgb(112,198,232);
+    margin-bottom: -5px !important;
+width: 80px;
+}
+.p2{
+    font-size: 14px;
+   border-bottom: 4px solid rgb(75,202,72);
+    margin-bottom: -5px !important;
+width: 80px;
+}
+.p3{
+    font-size: 14px;
+   border-bottom: 4px solid rgb(232,162,112);
+    margin-bottom: 5px !important;
+width: 80px;
+}
+.p4{
+    font-size: 14px;
+   border-bottom: 4px solid rgb(236,61,80);
+    margin-bottom: -5px !important;
+width: 80px;
+}
+.fle{
+    display: flex;
+    margin-bottom: 10px;
+}
+.bella3{
+    padding-left: 20px;
+    margin-bottom: 30px;
+}

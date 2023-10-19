@@ -1,0 +1,50 @@
+/* Add this CSS to your stylesheet or component */
+.overalltabs{
+    background-color: rgb(241,247,253);
+    
+}
+
+
+.tabs {
+  padding-top: 40px;
+  margin: auto;
+  width: 97%;
+  border-bottom: 2px solid rgb(210, 208, 208);
+  }
+  
+  .tabs > button {
+    background-color: rgb(241,247,253) !important;
+   border: none;
+   width: 10%;
+    
+  }
+  
+  button.active {
+    
+    border-bottom: 3px solid blue;
+  }
+  /* .tab-item{
+    
+  }
+  .tab-content{
+    
+    
+  }
+  .tab-content-text {
+    
+  }
+  .tab-content-text > h5{
+    
+  }
+  .tab-content-text > h5 > span{
+   
+  }
+  .tab-content-text > p{
+   
+
+  }
+  .tab-content-text > div{
+    
+  } */
+ 
+  

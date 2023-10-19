@@ -1,0 +1,82 @@
+.TeamManagerProject-pic{
+    display: flex !important;
+    flex-direction: row !important;
+    border-bottom:none !important;
+   
+    
+}
+
+.TeamManagerProject-table{
+    width: 100% !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    
+    
+}
+.TeamManagerProject-thead1{
+    
+    padding: 10px !important;
+    border-bottom: 1.6px solid black !important;
+    
+}
+.TeamManagerProject-theadcheckbox{
+margin-top: 8px !important;
+}
+.TeamManagerProject-tablerow > .TeamManagerProject-Checkbox{
+    margin-top: -30px;
+    
+}
+
+.TeamManagerProject-tablerow {
+    
+    border-bottom: 1px solid rgb(222, 219, 219) !important;
+}
+.TeamManagerProject-icons{
+   font-size: 29px !important;
+   padding: 5px;
+   margin-right: 5px;
+}
+.TeamManagerProject-iconscontent{
+    width: 20%;
+}
+.TeamManagerProject-statuscontent{
+    width: 12%;
+    
+}
+.TeamManagerProject-colorbarcontent{
+    width: 10%;
+}
+.TeamManagerProject-statuscontent > span{
+    border: 1px solid green;
+    padding: 5px 10px;
+    background-color: rgb(213, 207, 207);
+    border: none;
+    border-radius: 10px;
+    
+}
+@media (min-width: 320px) and (max-width:1000px) {
+    .TeamManagerProject-pic{
+        
+        display: flex !important;
+        flex-direction: column !important;
+        border-bottom:none !important;
+        
+    }
+    .TeamManagerProject-statuscontent{
+        width: 15%;
+        
+    }
+    .TeamManagerProject-statuscontent > span{
+        border: 1px solid green;
+        margin-left: -10px;
+        margin-right: -10px;
+        padding: 2px 3px;
+        background-color: rgb(213, 207, 207);
+        border: none;
+        border-radius: 5px;
+        font-size: 12px;
+        
+    }
+    
+}
+

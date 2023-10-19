@@ -5,8 +5,8 @@ import UserList from "./userList";
 const SuperAdminUser = () => {
   return (
     <div className="SuperadminUser">
-      <UserHeader/>
-      <UserList/>
+      <UserHeader />
+      <UserList />
     </div>
   );
 };

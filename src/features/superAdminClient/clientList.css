@@ -56,12 +56,13 @@
   border-radius: 20px;
 }
 
-.profile {
+.Profile {
   display: flex;
   align-items: center !important;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
 }
 
-.profile img{ 
+.profile img {
   border-radius: 20px;
 }

@@ -28,7 +28,8 @@ function Tabs() {
           work: "Logo Design",
           avatars:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYHW3Vy1-oeLGeE7xoybQzImGHBOLp2zkekg&usqp=CAU",
-        },{
+        },
+        {
           id: 1,
           title: "Project",
           name: "Henry",
@@ -47,7 +48,8 @@ function Tabs() {
           work: "Logo Design",
           avatars:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYHW3Vy1-oeLGeE7xoybQzImGHBOLp2zkekg&usqp=CAU",
-        },{
+        },
+        {
           id: 1,
           title: "Project",
           name: "Henry",

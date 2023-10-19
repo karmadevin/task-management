@@ -1,81 +1,143 @@
-.superadminleads-heading{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height:70px;
-    margin-bottom: 10px;
-    
+.superadminleads-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  margin-bottom: 10px;
 }
-.superadminleads-head-content1{
-    
-    width: 50%;
-    height: 100%;
-    margin-left: 20px;
+.superadminleads-head-content1 {
+  width: 50%;
+  height: 100%;
+  margin-left: 20px;
 }
-.superadminleads-head-content1 > h2{
-    letter-spacing: 1px;
-   color: rgb(120, 117, 117);
+.superadminleads-head-content1 > h2 {
+  letter-spacing: 1px;
+  color: rgb(120, 117, 117);
+  margin-top: 10px;
+}
+.superadminleads-head-content1
+  > .superadminleads-box
+  > .superadminleads-breadcrumbs {
+  font-size: 20px !important;
+  font-size: 10px !important;
+  font-weight: 600;
+  margin-top: -20px;
+}
+
+.superadminleads-typography {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  color: rgb(120, 117, 117);
+}
+.superadminleads-head-content2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 50px;
+}
+.superadminleads-search {
+  padding: 4px 0;
+  border-radius: 5px;
+  display: flex;
+  background-color: rgb(221, 216, 216);
+}
+.superadminleads-searchIcon {
+  margin: auto !important;
+  height: 30px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+.superadminleads-search > input {
+  padding-left: 10px;
+  border: 0;
+  background-color: transparent;
+}
+.superadminleads-profileIcon {
+  margin-left: 10px;
+  border-radius: 5px;
+  padding: 7px 5px 2px 5px;
+  background-color: rgb(221, 216, 216);
+}
+.superadminleads-addproject {
+  margin-left: 10px !important;
+  color: white !important;
+  background-color: rgb(82, 180, 146) !important;
+  padding: 6px 20px 6px 20px !important;
+}
+@media (min-width: 320px) and (max-width: 700px) {
+  .superadminleads-head-content1 > h4 {
+    font-size: 15px;
+    color: rgb(120, 117, 117);
     margin-top: 10px;
-}
-.superadminleads-head-content1 > .superadminleads-box >.superadminleads-breadcrumbs{
-    
-   font-size: 20px !important;
-   font-size: 10px !important;
-   font-weight: 600;
-    margin-top: -20px;
-    
-
+  }
 }
 
+.LeadHead {
+  width: 500px;
+  height: 70px;
+}
 
-.superadminleads-typography{
-    font-size: 10px !important;
-   font-weight: 800 !important;
-   color: rgb(120, 117, 117);
+.LeadHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px !important;
 }
-.superadminleads-head-content2{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 50px;
-    
-}
-.superadminleads-search{
-    padding: 4px 0;
-    border-radius: 5px;
-    display: flex;
-   background-color: rgb(221, 216, 216);
-}
-.superadminleads-searchIcon{
-    
-    margin: auto !important;
-    height: 30px;
-    padding-top: 5px;
-    padding-left: 10px;
-}
-.superadminleads-search > input{
-    padding-left: 10px;
-    border:0;
-    background-color: transparent;
-}
-.superadminleads-profileIcon{
-    margin-left: 10px;
-    border-radius: 5px; 
-    padding: 7px 5px 2px 5px ;
-    background-color: rgb(221, 216, 216);
-}
-.superadminleads-addproject{
-    margin-left: 10px !important;
-    color: white !important;
-background-color: rgb(82, 180, 146) !important;
-padding: 6px 20px 6px 20px !important;
-}
-@media (min-width: 320px) and (max-width:700px) {
-    .superadminleads-head-content1 > h4{
-        font-size: 15px;
-        color: rgb(120, 117, 117);
-         margin-top: 10px;
-     }
-     
 
+.DialogHeader p {
+  font-size: 18px;
+}
+
+.Client {
+  display: block;
+}
+
+.chip {
+  display: block;
+  width: 450px;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+}
+
+.Dialog-textfield {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.Dialog-textfield p {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.switches {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.Buttons {
+  gap: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.Filter-project {
+  width: 400px;
+}
+
+.Filter-Buttons {
+  gap: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Date {
+  gap: 9px;
+  display: flex;
+  align-items: center;
 }

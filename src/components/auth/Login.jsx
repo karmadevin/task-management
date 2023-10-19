@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
 import "./Login.css";
-import Logo from "./assets/Logo.png";
-import doo1 from "./assets/doodles/Vector_4[1].png";
-import doo2 from "./assets/doodles/Vector_16[1].png";
-import doo3 from "./assets/doodles/Vector_17[1].png";
-import HeroImage from "./assets/HeroImage.svg";
+import Logo from "../../assets/Logo.png";
+import doo1 from "../../assets/doodles/Vector_4[1].png";
+import doo2 from "../../assets/doodles/Vector_16[1].png";
+import doo3 from "../../assets/doodles/Vector_17[1].png";
+import HeroImage from "../../assets/HeroImage.svg";
 import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
@@ -35,7 +35,7 @@ const Login = () => {
       }),
   });
 
-  const { handleSubmit, values, handleChange, handleBlur, touched, errors } =
+  const { handleSubmit, values, handleChange, touched, errors } =
     useFormik({
       initialValues: {
         email: "",
@@ -142,7 +142,7 @@ const Login = () => {
 
                 <div className="Login-Btns">
                   <div className="login-btn">
-                    <Link to="/dashboard" >
+                    <Link to="/super-admin-dashboard" >
                       <Button
                         type="submit"
                         variant="contained"
@@ -158,7 +158,7 @@ const Login = () => {
                     </Link>
                   </div>
                   <div className="login-btn">
-                    <a href="#">
+                    <Link to="/manager-dashboard">
                       <Button
                         type="submit"
                         variant="contained"
@@ -171,10 +171,10 @@ const Login = () => {
                       >
                         Login as Team Manager
                       </Button>
-                    </a>
+                    </Link>
                   </div>
                   <div className="login-btn">
-                    <a href="#">
+                    <Link to="/developer-dashboard">
                       <Button
                         type="submit"
                         variant="contained"
@@ -187,10 +187,10 @@ const Login = () => {
                       >
                         Login in as Developer
                       </Button>
-                    </a>
+                    </Link>
                   </div>
                   <div className="login-btn">
-                    <a href="#">
+                    <Link to="/client-dashboard">
                       <Button
                         type="submit"
                         variant="contained"
@@ -203,7 +203,7 @@ const Login = () => {
                       >
                         Login as Client
                       </Button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </form>
